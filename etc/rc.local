@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# issue with 5850u 
-# disables cpu threads
-echo 'off' | sudo tee /sys/devices/system/cpu/smt/control
