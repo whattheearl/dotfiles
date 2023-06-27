@@ -25,11 +25,12 @@ This documents new installation
 ## tools
 | name   | url                                                                |
 | ------ | ------------------------------------------------------------------ |
+| docker | https://docs.docker.com/engine/installfedora                       |
 | nvm    | https://github.com/nvm-sh/nvm#git-install                          |
 | dotnet | https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora |
 
 ## gnome-extensions
-| name     | url                                                  |
-| -------- | ---------------------------------------------------- |
-| caffeine | https://extensions.gnome.org/extension/517/caffeine/ |
+| name     | url                                                 |
+| -------- | --------------------------------------------------- |
+| caffeine | https://extensions.gnome.org/extension/517/caffeine |
 
