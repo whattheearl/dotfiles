@@ -2,11 +2,13 @@
 This documents new installation
 
 ## apps
-| name    | url                                                                                        |
-| ------- | ------------------------------------------------------------------------------------------ |
-| vscode  | https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions |
-| slack   | https://flathub.org/apps/com.slack.Slack                                                   |
-| discord | https://flathub.org/apps/com.discordapp.Discord                                            |
+| name    | description     | url                                                                                        |
+| ------- | --------------- | ------------------------------------------------------------------------------------------ |
+| vscode  | ide             | https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions |
+| slack   | chat            | https://flathub.org/apps/com.slack.Slack                                                   |
+| discord | chat            | https://flathub.org/apps/com.discordapp.Discord                                            |
+| corectl | amd gpu fan ctl | https://gitlab.com/corectrl/corectrl/-/wikis/Installation                                  |
+
 
 ## shell
 | name                         | url                                                                         |
