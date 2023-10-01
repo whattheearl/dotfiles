@@ -1,4 +1,4 @@
-# Installation of k3s
+# setup webserver
 192.168.88.2
 
 ## tools

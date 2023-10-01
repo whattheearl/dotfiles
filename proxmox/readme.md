@@ -41,10 +41,11 @@ https://pve.proxmox.com/wiki/Web_Interface_Via_Nginx_Proxy
 
 ```bash
 # setup proxy
+scp proxmox/nginx/proxmox.conf root@192.168.88.69:/etc/nginx/conf.d/proxmox.conf
+ssh jon@192.168.88.69
 apt install nginx
 rm /etc/nginx/sites-enabled/default
 nano /etc/nginx/conf.d/proxmox.conf
 nginx -t 
 systemctl restart nginx
-
 ```
