@@ -1,5 +1,6 @@
 # Installation of Proxmox
 https://192.168.88.69:8006
+https://pve.wte.sh
 
 | name                        | description          | url                                        |
 | --------------------------- | -------------------- | ------------------------------------------ |
@@ -37,7 +38,7 @@ https://192.168.88.69:8006
 | disks       | /dev/sda, /dev/sdb (14tb hdd) |
 
 ## configure reverse proxy
-https://pve.proxmox.com/wiki/Web_Interface_Via_Nginx_Proxy
+not required but it is easier than remembering the specific pve port... https://pve.proxmox.com/wiki/Web_Interface_Via_Nginx_Proxy
 
 ```bash
 # setup proxy
