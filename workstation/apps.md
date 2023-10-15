@@ -31,7 +31,8 @@ This documents new installation
 | kubectl | https://github.com/kubernetes/kubectl                              |
 
 ## gnome-extensions
-| name     | url                                                 |
-| -------- | --------------------------------------------------- |
-| caffeine | https://extensions.gnome.org/extension/517/caffeine |
-
+| name         | url                                                                     |
+| ------------ | ----------------------------------------------------------------------- |
+| caffeine     | https://extensions.gnome.org/extension/517/caffeine                     |
+| RDP helper   | https://extensions.gnome.org/extension/4338/allow-locked-remote-desktop |
+| Status Icons | https://extensions.gnome.org/extension/615/appindicator-support/        |
