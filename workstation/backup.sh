@@ -12,10 +12,18 @@ restic -r s3:http://truenas.wte.sh:9000/backup-workstation \
     --exclude="*out*" \
     --exclude="*.var*" \
     --exclude="*bin*" \
-    --exclude="*.git*" \
     --exclude="*.angular*" \
     --exclude="*.sveltekit*" \
     --exclude="*cache*" \
     --verbose \
     backup ~/
+
+restic -r s3:http://truenas.wte.sh:9000/backup-workstation \
+    --verbose \
+    forget \
+    --keep-daily 7 \
+    --keep-weekly 4 \
+    --keep-monthly 12 \
+    --keep-yearly 7
+    
 
