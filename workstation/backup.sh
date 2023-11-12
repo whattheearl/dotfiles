@@ -15,6 +15,7 @@ restic -r s3:http://truenas.wte.sh:9000/backup-workstation \
     --exclude="*.angular*" \
     --exclude="*.sveltekit*" \
     --exclude="*cache*" \
+    --exclude="*/tmp/*" \
     --verbose \
     backup ~/
 
