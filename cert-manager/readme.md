@@ -1,6 +1,7 @@
-
 ## install helm
+
 https://helm.sh/docs/intro/install/
+
 ```bash
 sudo dnf install helm
 helm repo add jetstack https://charts.jetstack.io

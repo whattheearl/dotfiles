@@ -1,14 +1,17 @@
 # install tailscale
+
 https://tailscale.com/kb/1050/install-fedora/
 ip: 192.168.88.3
 user: jon
 
 ## iso
+
 | name          | description          | url                                        |
 | ------------- | -------------------- | ------------------------------------------ |
 | fedora server | Fedora Server 38 DVD | https://fedoraproject.org/server/download/ |
 
 ## create Fedora VM in proxmox
+
 | property      | value                               |
 | ------------- | ----------------------------------- |
 | node          | pve                                 |
@@ -25,7 +28,6 @@ user: jon
 | gateway       | 192.168.88.1                        |
 | dns           | 192.168.88.1                        |
 
-
 ```bash
 sudo dnf config-manager --add-repo https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 sudo dnf install tailscale
@@ -35,6 +37,7 @@ tailscale ip -4
 ```
 
 ## setup subnet (network node)
+
 https://tailscale.com/kb/1019/subnets/
 
 ```bash
@@ -46,4 +49,3 @@ sudo tailscale up --advertise-routes=192.168.88.0/24
 ```
 
 enable route on tailscale https://login.tailscale.com/admin/machines
-

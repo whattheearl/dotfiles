@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "format": "bun prettier . --write"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "3.3.2"
+  }
+}

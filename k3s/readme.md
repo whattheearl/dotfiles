@@ -1,13 +1,16 @@
 todo
+
 - terraform
 - packer
 
 # setup cluster
+
 node1: 192.168.88.10 | node1.wte.sh
 node2: 192.168.88.11 | node2.wte.sh
 node3: 192.168.88.12 | node3.wte.sh
 
 ## tools
+
 | name          | description          | url                                        |
 | ------------- | -------------------- | ------------------------------------------ |
 | k3sup         | k3s over ssh         | https://github.com/alexellis/k3sup         |
@@ -15,6 +18,7 @@ node3: 192.168.88.12 | node3.wte.sh
 | helm          | k8s chart installer  | https://helm.sh/docs/intro/install/        |
 
 ## proxmox config
+
 | property      | value                               |
 | ------------- | ----------------------------------- |
 | node          | pve                                 |
@@ -29,4 +33,3 @@ node3: 192.168.88.12 | node3.wte.sh
 | memory        | 4096                                |
 | gateway       | 192.168.88.1                        |
 | dns           | 192.168.88.1                        |
-

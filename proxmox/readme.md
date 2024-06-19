@@ -1,4 +1,5 @@
 # Installation of Proxmox
+
 https://192.168.88.69:8006
 https://pve.wte.sh
 
@@ -10,6 +11,7 @@ https://pve.wte.sh
 | fedora server               | Fedora Server 38 DVD | https://fedoraproject.org/server/download/ |
 
 ## config
+
 | property             | value         |
 | -------------------- | ------------- |
 | bootdisk filesystem  | ext4          |
@@ -21,7 +23,9 @@ https://pve.wte.sh
 | dns                  | 192.168.88.1  |
 
 ## storage pools
+
 ### fastd
+
 | property    | value                          |
 | ----------- | ------------------------------ |
 | add storage | false                          |
@@ -30,6 +34,7 @@ https://pve.wte.sh
 | disks       | /dev/sda, /dev/sdb (512gb sdd) |
 
 ### rust
+
 | property    | value                         |
 | ----------- | ----------------------------- |
 | add storage | false                         |
@@ -38,6 +43,7 @@ https://pve.wte.sh
 | disks       | /dev/sda, /dev/sdb (14tb hdd) |
 
 ## configure reverse proxy
+
 not required but it is easier than remembering the specific pve port... https://pve.proxmox.com/wiki/Web_Interface_Via_Nginx_Proxy
 
 ```bash
@@ -47,6 +53,6 @@ ssh jon@192.168.88.69
 apt install nginx
 rm /etc/nginx/sites-enabled/default
 nano /etc/nginx/conf.d/proxmox.conf
-nginx -t 
+nginx -t
 systemctl restart nginx
 ```
