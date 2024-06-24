@@ -6,7 +6,7 @@ if $(tmux ls | grep -q $selected_folder); then
 	tmux a -t $selected_folder
 else	
 	cd $selected_folder
-	tmux new-session -n nvim -d 'nvim .'
+	tmux new-session -n tmux
 	tmux rename-session $selected_folder
 	tmux a
 fi
