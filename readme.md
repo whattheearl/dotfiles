@@ -25,15 +25,16 @@ This documents new installation
 
 ## tools
 
-| name    | url                                                                |
-| ------- | ------------------------------------------------------------------ |
-| git     | https://git-scm.com/                                               |
-| docker  | https://docs.docker.com/engine/installfedora                       |
-| nvm     | https://github.com/nvm-sh/nvm#git-install                          |
-| dotnet  | https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora |
-| restic  | https://github.com/restic/restic                                   |
-<!-- | k3sup   | https://github.com/alexellis/k3sup                                 | -->
-<!-- | kubectl | https://github.com/kubernetes/kubectl                              | -->
+| name   | url                                                                |
+| ------ | ------------------------------------------------------------------ |
+| git    | https://git-scm.com/                                               |
+| docker | https://docs.docker.com/engine/installfedora                       |
+| nvm    | https://github.com/nvm-sh/nvm#git-install                          |
+| dotnet | https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora |
+| restic | https://github.com/restic/restic                                   |
+
+<!--   | k3sup                                                              | https://github.com/alexellis/k3sup    | -->
+<!--   | kubectl                                                            | https://github.com/kubernetes/kubectl | -->
 
 ## gnome-extensions
 
