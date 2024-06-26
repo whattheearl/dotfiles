@@ -3,7 +3,6 @@
 # alacritty -e /home/jon/wte/docs/scripts/find-project.sh
 selected_folder="$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
 folder="$(basename $selected_folder)"
-sleep 2
 if $(tmux ls | grep -q $folder); then
 	tmux a -t $folder
 else	
