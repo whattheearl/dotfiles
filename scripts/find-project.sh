@@ -1,12 +1,14 @@
 #!/bin/bash
 # settings > keyboard > keyboard shortcuts > custom shortcuts
-# kitty -e /home/jon/wte/docs/workstation/scripts/find-project.sh
+# alacritty -e /home/jon/wte/docs/scripts/find-project.sh
 selected_folder="$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
-if $(tmux ls | grep -q $selected_folder); then
-	tmux a -t $selected_folder
+folder="$(basename $selected_folder)"
+sleep 2
+if $(tmux ls | grep -q $folder); then
+	tmux a -t $folder
 else	
 	cd $selected_folder
-	tmux new-session -n tmux
-	tmux rename-session $selected_folder
+	tmux new-session -n tmux -d
+	tmux rename-session $folder
 	tmux a
 fi
