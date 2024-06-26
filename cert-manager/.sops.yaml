@@ -1,3 +1,0 @@
-creation_rules:
-  - path_regexp: \secret.(yml|yaml)$
-    encrypted_regex: "^(.*api-token.*)$"
