@@ -4,9 +4,9 @@
 
 
 source ~/.zshrc
-selected_folder="$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | /home/jon/.fzf/bin/fzf)"
+selected_folder="$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
 folder="$(basename $selected_folder)"
-i $(tmux ls | grep -q $folder); then
+if $(tmux ls | grep -q $folder); then
 	tmux a -t $folder
 else	
 	cd $selected_folder
