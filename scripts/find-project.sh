@@ -1,9 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 # settings > keyboard > keyboard shortcuts > custom shortcuts
 # alacritty -e /home/jon/wte/docs/scripts/find-project.sh
-selected_folder="$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
+
+
+source ~/.zshrc
+selected_folder="$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | /home/jon/.fzf/bin/fzf)"
 folder="$(basename $selected_folder)"
-if $(tmux ls | grep -q $folder); then
+i $(tmux ls | grep -q $folder); then
 	tmux a -t $folder
 else	
 	cd $selected_folder
