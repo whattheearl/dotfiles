@@ -1,3 +1,5 @@
+config_folder = ~/.config
+
 # ==================================================================================== #
 # HELPERS
 # ==================================================================================== #
@@ -36,3 +38,10 @@ push: format no-dirty
 ## install: copys configuration to $XDG_CONFIG_HOME/.config/*
 install:
 	cp -r ./config/* "$XDG_CONFIG_HOME/.config/"
+
+## sync: synchronize configuration
+sync:
+	cp -r ${config_folder}/nvim ./config
+	cp -r ${config_folder}/wezterm ./config
+	cp -r ${config_folder}/tmux ./config
+	cp -r ${config_folder}/zsh ./config
