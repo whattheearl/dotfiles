@@ -21,7 +21,7 @@ no-dirty:
 # QUALITY CONTROL
 # ==================================================================================== #
 
-## format
+## format: format files
 format:
 	@bunx prettier . --write
 
@@ -29,10 +29,10 @@ format:
 # OPERATIONS
 # ==================================================================================== #
 
-## push
+## push: push to github
 push: format no-dirty
 	git push
 
-## install
+## install: copys configuration to $XDG_CONFIG_HOME/.config/*
 install:
-	cp -r ./config/* ~/.config/
+	cp -r ./config/* "$XDG_CONFIG_HOME/.config/"
