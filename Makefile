@@ -37,11 +37,16 @@ push: format no-dirty
 
 ## install: copys configuration to $XDG_CONFIG_HOME/.config/*
 install:
-	cp -r ./config/* "$XDG_CONFIG_HOME/.config/"
+	@rm -rf ${config_folder}/nvim
+	@rm -rf ${config_folder}/wezterm
+	@rm -rf ${config_folder}/tmux
+	@rm -rf ${config_folder}/zsh
+	@cp -r ./config/* ${config_folder}
 
 ## sync: synchronize configuration
 sync:
-	cp -r ${config_folder}/nvim ./config
-	cp -r ${config_folder}/wezterm ./config
-	cp -r ${config_folder}/tmux ./config
-	cp -r ${config_folder}/zsh ./config
+	@rm -rf ./config/nvim/.git
+	@cp -r ${config_folder}/nvim ./config
+	@cp -r ${config_folder}/wezterm ./config
+	@cp -r ${config_folder}/tmux ./config
+	@cp -r ${config_folder}/zsh ./config
