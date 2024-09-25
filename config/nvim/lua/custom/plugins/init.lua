@@ -3,6 +3,13 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+  -- sveltekit
+  spec = {
+    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
+    { import = 'lazyvim.plugins.extras.lang.svelte' },
+    { import = 'plugins' },
+  },
+
   {
     'christoomey/vim-tmux-navigator',
     cmd = {

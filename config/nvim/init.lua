@@ -616,6 +616,13 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         tsserver = {},
+        svelte = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = vim.fn.has 'nvim-0.10' == 0 and { dynamicRegistration = true },
+            },
+          },
+        },
         --
 
         lua_ls = {
