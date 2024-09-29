@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local config = {}
 
+config.default_prog = { "tmux" }
 config.window_decorations = "RESIZE"
 config.window_padding = {
   left = 2,
