@@ -3,6 +3,17 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+  {
+    'stevearc/oil.nvim',
+    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    config = {
+      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' }),
+    },
+  },
   -- sveltekit
   spec = {
     { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
