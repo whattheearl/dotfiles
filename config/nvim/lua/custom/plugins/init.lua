@@ -6,8 +6,8 @@ return {
 
   require 'custom.plugins.oil',
   require 'custom.plugins.vim-tmux-navigator',
-  require 'github-nvim-theme',
-  require 'markdown-preview',
+  require 'custom.plugins.github-nvim-theme',
+  require 'custom.plugins.markdown-preview',
   -- sveltekit
   spec = {
     { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
