@@ -1,8 +1,13 @@
 local wezterm = require("wezterm")
+local os = require("os")
 local config = {}
 
 config.default_prog = { "tmux" }
-config.window_decorations = "RESIZE"
+
+if wezterm.target_triple ~= "aarch64-unknown-linux-gnu" then
+  config.window_decorations = "RESIZE"
+end
+
 config.window_padding = {
   left = 0,
   right = 0,
