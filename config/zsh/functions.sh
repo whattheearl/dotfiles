@@ -3,6 +3,7 @@
 # alacritty -e /home/jon/wte/docs/scripts/find-project.sh
 
 function cds() {
+  # TODO: filter by input? check if only one result and automatically complete?
   project_path="$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
   session_name="$(basename $project_path)"
   if [ "$TERM_PROGRAM" != "tmux" ]; then
