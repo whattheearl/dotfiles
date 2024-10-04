@@ -615,7 +615,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
+        -- ts config moved below
         svelte = {
           capabilities = {
             workspace = {
@@ -640,6 +640,14 @@ require('lazy').setup({
           },
         },
       }
+
+      -- temp not sure why debian has not updated
+      if vim.loop.os_gethostname() == 'ws' then
+        servers.tsserver = {}
+      end
+      if vim.loop.os_gethostname() == 'air' then
+        servers.ts_ls = {}
+      end
 
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
