@@ -641,11 +641,10 @@ require('lazy').setup({
         },
       }
 
-      -- temp not sure why debian has not updated
+      -- handle import error, not sure why debian is behind
       if vim.loop.os_gethostname() == 'ws' then
         servers.tsserver = {}
-      end
-      if vim.loop.os_gethostname() == 'air' then
+      else
         servers.ts_ls = {}
       end
 
