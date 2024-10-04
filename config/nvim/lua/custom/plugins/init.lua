@@ -3,8 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-
-  require 'custom.plugins.oil',
   require 'custom.plugins.vim-tmux-navigator',
   require 'custom.plugins.github-nvim-theme',
   require 'custom.plugins.markdown-preview',
