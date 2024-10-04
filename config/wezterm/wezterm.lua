@@ -1,8 +1,5 @@
 local wezterm = require("wezterm")
-local os = require("os")
 local config = {}
-
-config.default_prog = { "tmux" }
 
 if wezterm.target_triple ~= "aarch64-unknown-linux-gnu" then
   config.window_decorations = "RESIZE"
