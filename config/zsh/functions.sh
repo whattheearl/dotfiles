@@ -1,6 +1,4 @@
 #! /usr/env/bin zsh
-# settings > keyboard > keyboard shortcuts > custom shortcuts
-# alacritty -e /home/jon/wte/docs/scripts/find-project.sh
 
 # TODO: explore filter by input, autoexpand
 function cds() {
@@ -18,8 +16,6 @@ function cds() {
     tmux switch-client -t $session_name
   fi
 }
-
-
 
 function cdp() {
   cd "$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
