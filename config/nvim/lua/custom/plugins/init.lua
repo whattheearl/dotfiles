@@ -6,6 +6,7 @@ return {
   require 'custom.plugins.vim-tmux-navigator',
   require 'custom.plugins.github-nvim-theme',
   require 'custom.plugins.markdown-preview',
+  require 'custom.plugins.lazygit',
   -- sveltekit
   spec = {
     { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
