@@ -1,10 +1,6 @@
 local wezterm = require("wezterm")
 local config = {}
 
-if wezterm.target_triple ~= "aarch64-unknown-linux-gnu" then
-  config.window_decorations = "RESIZE"
-end
-
 config.hide_tab_bar_if_only_one_tab = true
 
 config.window_padding = {
