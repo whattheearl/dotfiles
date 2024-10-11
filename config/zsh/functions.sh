@@ -11,3 +11,7 @@ function caps-to-control() {
 function add-make() {
   cp ~/wte/docs/templates/Makefile .
 }
+
+function add-npmrc() {
+  cp ~/wte/docs/templates/.npmrc .
+}
