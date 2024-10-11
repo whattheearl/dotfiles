@@ -25,3 +25,7 @@ function caps-to-control() {
   gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
   setxkbmap -option caps:ctrl_modifier 
 }
+
+function add-makefile() {
+  cp ~/wte/docs/templates/Makefile .
+}
