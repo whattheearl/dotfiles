@@ -8,6 +8,6 @@ function caps-to-control() {
   setxkbmap -option caps:ctrl_modifier 
 }
 
-function add-makefile() {
+function add-make() {
   cp ~/wte/docs/templates/Makefile .
 }
