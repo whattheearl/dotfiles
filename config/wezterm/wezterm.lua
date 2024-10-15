@@ -11,7 +11,6 @@ config.window_padding = {
 }
 
 config.warn_about_missing_glyphs = false
-config.font = wezterm.font("JetBrains Mono")
 config.color_scheme = "Google Dark (Gogh)"
 
 return config
