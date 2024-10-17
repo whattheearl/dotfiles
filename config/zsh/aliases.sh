@@ -9,3 +9,4 @@ alias cds=~/wte/docs/scripts/sessionizer.sh
 alias notes="/home/jon/wte/docs/scripts/sessionizer.sh /home/jon/wte/notes"
 alias docs="~/wte/docs/scripts/sessionizer.sh ~/wte/docs"
 alias tpc=~/wte/docs/scripts/sessionizer.sh "~/tyl/tcp-profile-c"
+alias devd=$HOME/tyl/dev-cli/src/index.ts $@
