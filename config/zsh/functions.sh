@@ -8,10 +8,25 @@ function caps-to-control() {
   setxkbmap -option caps:ctrl_modifier 
 }
 
+function caps-to-esc() {
+  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
+  setxkbmap -option caps:ctrl_modifier  
+}
+
 function add-make() {
   cp ~/wte/docs/templates/Makefile .
 }
 
 function add-npmrc() {
   cp ~/wte/docs/templates/.npmrc .
+}
+
+function add-editorconfig() {
+  cp ~/wte/docs/templates/.editorconfig .
+}
+
+function add-prettierrc() {
+  # add to package.json dev
+  # add format script
+  cp ~/wte/docs/templates/.prettierrc .
 }
