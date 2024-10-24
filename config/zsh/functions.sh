@@ -25,6 +25,10 @@ function add-editorconfig() {
   cp ~/wte/docs/templates/.editorconfig .
 }
 
+function add-nugetconfig() {
+  cp ~/wte/docs/templates/NuGet.config .
+}
+
 function add-prettierrc() {
   # add to package.json dev
   # add format script
