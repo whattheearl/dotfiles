@@ -3,14 +3,9 @@ function cdp() {
   cd "$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
 }
 
-function caps-to-control() {
-  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-  setxkbmap -option caps:ctrl_modifier 
-}
-
+# use tweaks?
 function caps-to-esc() {
-  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
-  setxkbmap -option caps:ctrl_modifier  
+  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
 }
 
 function swap-alt-win() {
