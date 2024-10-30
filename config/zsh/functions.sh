@@ -13,6 +13,10 @@ function caps-to-esc() {
   setxkbmap -option caps:ctrl_modifier  
 }
 
+function swap-alt-win() {
+  gsettings set org.gnome.desktop.input-sources xkb-options "['altwin:swap_alt_win']"
+}
+
 function add-make() {
   cp ~/wte/docs/templates/Makefile .
 }
