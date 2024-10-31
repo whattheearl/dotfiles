@@ -3,12 +3,15 @@ function cdp() {
   cd "$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
 }
 
-# use tweaks?
-function caps-to-esc() {
+function gnome-remove-animations() {
+  gsettings set org.gnome.desktop.interface enable-animations false
+}
+
+function gnome-caps-to-esc() {
   gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
 }
 
-function swap-alt-win() {
+function gnome-swap-alt-win() {
   gsettings set org.gnome.desktop.input-sources xkb-options "['altwin:swap_alt_win']"
 }
 
