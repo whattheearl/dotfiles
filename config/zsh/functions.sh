@@ -3,16 +3,14 @@ function cdp() {
   cd "$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
 }
 
-function gnome-remove-animations() {
+function gnome-customize() {
   gsettings set org.gnome.desktop.interface enable-animations false
+  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape', 'altwin:swap_alt_win']"
 }
 
-function gnome-caps-to-esc() {
-  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
-}
-
-function gnome-swap-alt-win() {
-  gsettings set org.gnome.desktop.input-sources xkb-options "['altwin:swap_alt_win']"
+function gnome-reset() {
+  gsettings set org.gnome.desktop.interface enable-animations true
+  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:caps', 'altwin:altwin']"
 }
 
 function add-make() {
