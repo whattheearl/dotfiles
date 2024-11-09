@@ -41,3 +41,4 @@ install:
 	@ln -sf ${PWD}/config/wezterm ${HOME}/.config
 	@ln -sf ${PWD}/config/tmux ${HOME}/.config
 	@ln -sf ${PWD}/config/zsh ${HOME}/.config
+	@ln  ${PWD}/config/taskwarrior/.taskrc ${HOME}/.taskrc
