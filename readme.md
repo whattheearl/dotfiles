@@ -4,13 +4,16 @@ This documents new installation
 
 ## apps
 
-| name    | description     | url                                                                                        |
-| ------- | --------------- | ------------------------------------------------------------------------------------------ |
-| vscode  | ide             | https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions |
-| discord | chat            | https://flathub.org/apps/com.discordapp.Discord                                            |
-| corectl | amd gpu fan ctl | https://gitlab.com/corectrl/corectrl/-/wikis/Installation                                  |
-| neovim  | editor          | https://github.com/neovim/neovim/blob/master/INSTALL.md                                    |
-| wezterm | terminal        | https://wezfurlong.org/wezterm/installation.html                                           |
+| name        | description     | url                                                                                        |
+| ----------- | --------------- | ------------------------------------------------------------------------------------------ |
+| vscode      | ide             | https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions |
+| discord     | chat            | https://flathub.org/apps/com.discordapp.Discord                                            |
+| corectl     | amd gpu fan ctl | https://gitlab.com/corectrl/corectrl/-/wikis/Installation                                  |
+| neovim      | editor          | https://github.com/neovim/neovim/blob/master/INSTALL.md                                    |
+| wezterm     | terminal        | https://wezfurlong.org/wezterm/installation.html                                           |
+| espanso     | text expander   | https://espanso.org/docs/install/linux/#choosing-the-right-install-method                  |
+| taskwarrior | task manager    | https://taskwarrior.org/download/                                                          |
+| nb          | note manager    | https://xwmx.github.io/nb/#installation                                                    |
 
 ## shell
 
