@@ -13,6 +13,10 @@ function gnome-reset() {
   gsettings set org.gnome.desktop.input-sources xkb-options "[]"
 }
 
+function i3-customize() {
+  setxkbmap -option caps:swapescape
+}
+
 function add-make() {
   cp ~/wte/docs/templates/Makefile .
 }
