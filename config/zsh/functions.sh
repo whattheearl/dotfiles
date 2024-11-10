@@ -8,9 +8,9 @@ function gnome-customize() {
   gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape', 'altwin:swap_alt_win']"
 }
 
-function gnome-reset() {
+function gnome-reset() { 
   gsettings set org.gnome.desktop.interface enable-animations true
-  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:caps', 'altwin:altwin']"
+  gsettings set org.gnome.desktop.input-sources xkb-options "[]"
 }
 
 function add-make() {
