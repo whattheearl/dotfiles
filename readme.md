@@ -35,7 +35,14 @@ This documents new installation
 | dotnet | https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora |
 | restic | https://github.com/restic/restic                                   |
 
-## gnome-extensions
+## i3wm
+
+| name       | url                                |
+| ---------- | ---------------------------------- |
+| i3         | https://wiki.debian.org/i3         |
+| pulseaudio | https://wiki.debian.org/PulseAudio |
+
+## gdm3 (gnome-extensions)
 
 | name         | url                                                                     |
 | ------------ | ----------------------------------------------------------------------- |
