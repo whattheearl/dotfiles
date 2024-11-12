@@ -15,7 +15,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=/home/jon/.task
+data.location=/home/jon/wte/task
 
 news.version=2.6.0 
 # To use the default location of the XDG directories,
