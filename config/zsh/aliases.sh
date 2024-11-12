@@ -3,6 +3,7 @@ alias poc="docker compose -f ~/tyl/poc-node-bff/docker-compose/platform-dev-envi
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
 
 alias v=nvim $@
+alias t=task $@
 
 alias cds=~/wte/docs/scripts/sessionizer.sh
 alias notes="/home/jon/wte/docs/scripts/sessionizer.sh /home/jon/wte/notes"
