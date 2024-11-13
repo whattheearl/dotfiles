@@ -4,7 +4,6 @@
 -- See the kickstart.nvim README for more information
 return {
   require 'custom.plugins.vim-tmux-navigator',
-  require 'custom.plugins.markdown-preview',
   require 'custom.plugins.lazygit',
   -- sveltekit
   spec = {
