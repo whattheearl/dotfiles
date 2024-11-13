@@ -13,7 +13,6 @@ This documents new installation
 | wezterm     | terminal        | https://wezfurlong.org/wezterm/installation.html                                           |
 | espanso     | text expander   | https://espanso.org/docs/install/linux/#choosing-the-right-install-method                  |
 | taskwarrior | task manager    | https://taskwarrior.org/download/                                                          |
-| nb          | note manager    | https://xwmx.github.io/nb/#installation                                                    |
 
 ## shell
 
@@ -37,10 +36,12 @@ This documents new installation
 
 ## i3wm
 
-| name       | url                                |
-| ---------- | ---------------------------------- |
-| i3         | https://wiki.debian.org/i3         |
-| pulseaudio | https://wiki.debian.org/PulseAudio |
+| name           | info                                       | url                                                        |
+| -------------- | ------------------------------------------ | ---------------------------------------------------------- |
+| i3             | tiling window manager                      | https://wiki.debian.org/i3                                 |
+| pulseaudio     | sound controls                             | https://wiki.debian.org/PulseAudio                         |
+| bluez-firmware | (ws) bluetoothfirmware maybe fixes issues? | https://packages.debian.org/search?keywords=bluez-firmware |
+| caffeine       | prevent idle while at home                 | https://packages.debian.org/sid/misc/caffeine              |
 
 ## gdm3 (gnome-extensions)
 
