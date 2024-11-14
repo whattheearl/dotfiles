@@ -4,15 +4,13 @@ This documents new installation
 
 ## apps
 
-| name        | description     | url                                                                                        |
-| ----------- | --------------- | ------------------------------------------------------------------------------------------ |
-| vscode      | ide             | https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions |
-| discord     | chat            | https://flathub.org/apps/com.discordapp.Discord                                            |
-| corectl     | amd gpu fan ctl | https://gitlab.com/corectrl/corectrl/-/wikis/Installation                                  |
-| neovim      | editor          | https://github.com/neovim/neovim/blob/master/INSTALL.md                                    |
-| wezterm     | terminal        | https://wezfurlong.org/wezterm/installation.html                                           |
-| espanso     | text expander   | https://espanso.org/docs/install/linux/#choosing-the-right-install-method                  |
-| taskwarrior | task manager    | https://taskwarrior.org/download/                                                          |
+| name    | description     | url                                                                                        |
+| ------- | --------------- | ------------------------------------------------------------------------------------------ |
+| vscode  | ide             | https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions |
+| discord | chat            | https://flathub.org/apps/com.discordapp.Discord                                            |
+| corectl | amd gpu fan ctl | https://gitlab.com/corectrl/corectrl/-/wikis/Installation                                  |
+| neovim  | editor          | https://github.com/neovim/neovim/blob/master/INSTALL.md                                    |
+| wezterm | terminal        | https://wezfurlong.org/wezterm/installation.html                                           |
 
 ## shell
 
@@ -33,15 +31,6 @@ This documents new installation
 | nvm    | https://github.com/nvm-sh/nvm#git-install                          |
 | dotnet | https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora |
 | restic | https://github.com/restic/restic                                   |
-
-## i3wm
-
-| name           | info                                       | url                                                        |
-| -------------- | ------------------------------------------ | ---------------------------------------------------------- |
-| i3             | tiling window manager                      | https://wiki.debian.org/i3                                 |
-| pulseaudio     | sound controls                             | https://wiki.debian.org/PulseAudio                         |
-| bluez-firmware | (ws) bluetoothfirmware maybe fixes issues? | https://packages.debian.org/search?keywords=bluez-firmware |
-| caffeine       | prevent idle while at home                 | https://packages.debian.org/sid/misc/caffeine              |
 
 ## gdm3 (gnome-extensions)
 
