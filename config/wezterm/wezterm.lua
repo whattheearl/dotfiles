@@ -36,4 +36,8 @@ config.keys = {
         action = wezterm.action.DisableDefaultAssignment,
     },
 }
+
+-- disable prompt
+config.skip_close_confirmation_for_processes_named = { "flatpak-spawn" }
+
 return config
