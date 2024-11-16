@@ -38,6 +38,12 @@ config.keys = {
 }
 
 -- disable prompt
-config.skip_close_confirmation_for_processes_named = { "flatpak-spawn" }
+config.skip_close_confirmation_for_processes_named = {
+    "flatpak-spawn",
+    "bash",
+    "sh",
+    "zsh",
+    "tmux",
+}
 
 return config
