@@ -11,10 +11,10 @@ config.window_padding = {
 }
 
 config.warn_about_missing_glyphs = false
+
 config.color_scheme = "Google Dark (Gogh)"
 
 config.keys = {
-    -- unbind SUPER keys
     {
         key = "-",
         mods = "SUPER",
@@ -37,7 +37,6 @@ config.keys = {
     },
 }
 
--- disable prompt
 config.skip_close_confirmation_for_processes_named = {
     "flatpak-spawn",
     "bash",

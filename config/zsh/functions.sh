@@ -3,10 +3,6 @@ function cdp() {
   cd "$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
 }
 
-function n {
-    nvim /home/jon/wte/notes/today.md
-}
-
 function gnome-customize() {
   gsettings set org.gnome.desktop.interface enable-animations false
   gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape', 'altwin:swap_alt_win']"
