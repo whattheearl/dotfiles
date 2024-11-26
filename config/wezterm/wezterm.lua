@@ -40,6 +40,11 @@ config.keys = {
         mods = "CTRL",
         action = wezterm.action.DisableDefaultAssignment,
     },
+    {
+        key = "Tab",
+        mods = "SHIFT|CTRL",
+        action = wezterm.action.DisableDefaultAssignment,
+    },
 }
 
 config.skip_close_confirmation_for_processes_named = {
