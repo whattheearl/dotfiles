@@ -12,6 +12,12 @@ alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compo
 alias bs="make -C ~/tyl/v2brandingservice $@"
 alias bsc="docker compose -f ~/tyl/v2brandingservice/docker-compose.yml $@"
 
+# jeddit
+alias jed="make -C ~/wte/jeddit $@"
+
+# wteos 
+alias wte="make -C ~/wte/wteos $@"
+
 # dotnet 
 alias kiota="${HOME}/.dotnet/tools/kiota $@"
 
