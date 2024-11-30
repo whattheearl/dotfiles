@@ -12,7 +12,8 @@
     /*padding: 2px 8px;*/
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     color: #ffffff;
     padding: 0 8px;
     /*padding: 2px 8px;*/
@@ -66,7 +67,7 @@
 window#waybar {
     background: #1f1f1f;
     border-bottom: 1px solid #332b2b;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     transition-property: background-color;
 }
 
@@ -95,7 +96,6 @@ window#waybar {
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
-
 
 /* Custom Stuff */
 #custom-audio {
