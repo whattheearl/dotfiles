@@ -647,6 +647,13 @@ require('lazy').setup({
         -- ts config moved below
         tsserver = {},
         --
+        svelte = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = vim.fn.has 'nvim-0.10' == 0 and { dynamicRegistration = true },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
