@@ -37,10 +37,9 @@ push: format no-dirty
 
 ## install: copys configuration to $XDG_CONFIG_HOME/.config/*
 install:
-	@ln -sf ${PWD}/config/nvim ${HOME}/.config
-	@ln -sf ${PWD}/config/wezterm ${HOME}/.config
-	@ln -sf ${PWD}/config/tmux ${HOME}/.config
-	@ln -sf ${PWD}/config/zsh ${HOME}/.config
-	@ln -sf ${PWD}/config/i3 ${HOME}/.config
-	@ln -sf ${PWD}/config/i3status ${HOME}/.config
-	@ln -f ${PWD}/config/taskwarrior/.taskrc ${HOME}/.taskrc
+	@ln -sf ${PWD}/nvim ${HOME}/.config
+	@ln -sf ${PWD}/wezterm ${HOME}/.config
+	@ln -sf ${PWD}/tmux ${HOME}/.config
+	@ln -sf ${PWD}/zsh ${HOME}/.config
+	@ln -sf ${PWD}/sway ${HOME}/.config
+	@ln -sf ${PWD}/waybar ${HOME}/.config
