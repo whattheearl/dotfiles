@@ -1,7 +1,12 @@
 # ==================================================================================== #
-# VARIABLES 
+# VARIABLES
 # ==================================================================================== #
 
+SERVER=
+CONTAINER_REGISTRY=
+CONTAINER_REGISTRY_USER=
+TAG=
+BUILD_PATH=
 
 # ==================================================================================== #
 # HELPERS
@@ -27,24 +32,69 @@ no-dirty:
 # ==================================================================================== #
 
 ## format: format files
-.PHONEY: format
+.PHONY: format
 format:
-	echo update makefile
+	@npm run format 
+
+## format: format files
+.PHONY: lint 
+lint:
+	@npm run lint
 
 # ==================================================================================== #
 # DEVELOPMENT 
 # ==================================================================================== #
 
 ## dev: starts dev server
-.PHONEY: dev 
+.PHONY: dev 
 dev:
-	echo update makefile
+	npm i;
+	npm run dev;
 
 # ==================================================================================== #
 # PUBLISH 
 # ==================================================================================== #
 
-## deploy: deploys to server 
-.PHONEY: deploy 
-deploy:
-	echo update makefile
+## login: login to container registry
+.PHONY: login
+login:
+	@echo ${GITHUB_TOKEN} | docker login ${CONTAINER_REGISTRY} -u ${CONTAINER_REGISTRY_USER} --password-stdin
+
+## build: build container
+.PHONY: build
+build:
+	@docker build . --tag ${TAG}
+
+## publish: publish docker container
+.PHONY: publish 
+publish:
+	@docker push ${TAG}
+
+# ==================================================================================== #
+# DEPLOYMENT
+# ==================================================================================== #
+
+## start: start service 
+.PHONY: start 
+start: 
+	@docker compose pull
+	@docker compose up -d
+
+## stop: stop service 
+.PHONY: stop 
+stop: 
+	@docker compose stop
+
+## env: sync environmental variables
+.PHONY: env
+env:
+	@ssh ${SERVER} "rm -rf ${BUILD_PATH}; git clone https://github.com/whattheearl/jeddit ${BUILD_PATH}" || exit 1
+	@scp .env.prod "${SERVER}:${BUILD_PATH}/.env.prod"
+	@scp Makefile "${SERVER}:${BUILD_PATH}/Makefile"
+
+## deploy: deploy service
+# .PHONY: deploy
+deploy: env
+	@ssh ${SERVER} "make -C ${BUILD_PATH} build"
+	@ssh ${SERVER} "make -C ${BUILD_PATH} publish"
+	@ssh ${SERVER} "make -C ${BUILD_PATH} start"
