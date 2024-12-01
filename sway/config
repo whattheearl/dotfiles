@@ -38,8 +38,8 @@ default_border pixel 2
 # Set the Wallpaper:
 output * bg $HOME/.config/sway/wallpaper.jpg fill
 
-# DPI
-output DP-3 scale 2
+# Monitor settings
+output DP-3 pos 0 0 res 3840x2160 scale 2
 
 #====================================#
 # Activate the panel                 #
@@ -53,6 +53,7 @@ bar {
 #====================================#
 # Keyboard Shortcuts (Sway-specific) #
 #====================================#
+
 # Set the modifier key to super:
 set $mod Mod4
 
@@ -215,6 +216,9 @@ bindsym $mod+minus scratchpad show
 #===============================#
 # Keyboard Shortcuts (Hardware) #
 #===============================#
+# Video
+bindsym $mod+Shift+r exec "~/.config/sway/change-resolution.sh"
+
 # Audio
 bindsym XF86AudioRaiseVolume exec "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+8 waybar"
 bindsym XF86AudioLowerVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+8 waybar"
