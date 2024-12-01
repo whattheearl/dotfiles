@@ -236,10 +236,10 @@ bindsym XF86MonBrightnessUp exec light -A 10
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
-bindsym $mod+shift+Return exec flatpak run io.github.zen_browser.zen
+bindsym $mod+Shift+Return exec flatpak run io.github.zen_browser.zen
 
 # Open a file manager:
-bindsym ctrl+$mod+f exec pcmanfm
+bindsym $mod+Shift+Backslash exec $term start -- ranger
 
 # Open a terminal emulator:
 set $term wezterm 
@@ -250,8 +250,6 @@ bindsym $mod+Shift+q kill
 
 # Open the application launcher:
 bindsym $mod+space exec $menu
-
-# Open the application launcher (alternate version):
 bindsym $mod+d exec $menu
 
 #======#
