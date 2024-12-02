@@ -645,7 +645,6 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts config moved below
-        tsserver = {},
         --
         svelte = {
           capabilities = {
@@ -671,6 +670,12 @@ require('lazy').setup({
         },
       }
 
+      if os.getenv 'HOST' == 'air' then
+        servers.ts_ls = {}
+      end
+      if os.getenv 'HOST' == 'ws' then
+        servers.tsserver = {}
+      end
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
