@@ -50,10 +50,19 @@ bar {
 }
 
 #====================================#
-# Keyboard remapping                 #
+# Keyboard map                       #
 #====================================#
 
 input "type:keyboard" xkb_options caps:escape
+
+#====================================#
+# Mouse settings                     #
+#====================================#
+
+input "1452:854:Apple_MTP_multi-touch" {
+    tap enabled
+    natural_scroll disabled
+}
 
 #====================================#
 # Keyboard Shortcuts (Sway-specific) #
@@ -241,13 +250,13 @@ bindsym XF86MonBrightnessUp exec light -A 10
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
-bindsym $mod+Shift+Return exec flatpak run io.github.zen_browser.zen
+bindsym $mod+Shift+Return exec flatpak run io.github.zen_browser.zen || firefox
 
 # Open a file manager:
 bindsym $mod+Shift+Backslash exec $term start -- ranger
 
 # Open a terminal emulator:
-set $term wezterm 
+set $term "wezterm || flatpak run org.wezfurlong.wezterm"
 bindsym $mod+Return exec $term
 
 # Kill focused window:
