@@ -60,7 +60,6 @@ input "type:keyboard" xkb_options caps:escape
 #====================================#
 
 input "1452:854:Apple_MTP_multi-touch" {
-    tap enabled
     natural_scroll disabled
 }
 
