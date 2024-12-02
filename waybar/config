@@ -24,9 +24,9 @@
     "margin-bottom": 0,
 
     // Choose the order of the modules
-    "modules-center": ["sway/workspaces", "tray"],
+    "modules-center": ["sway/workspaces"],
     "modules-left": ["custom/hostname"],
-    "modules-right": [ "custom/audio","network","battery","clock"],
+    "modules-right": ["tray", "custom/audio","network","battery","clock"],
 
     // Configuration for individual modules
      "sway/workspaces": {
@@ -41,7 +41,7 @@
     },
 
     "clock": {
-        "timezone": "America/Detroit",
+        "timezone": "America/Seattle",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}",
     },
