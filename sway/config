@@ -49,6 +49,11 @@ bar {
     swaybar_command waybar
 }
 
+#====================================#
+# Keyboard remapping                 #
+#====================================#
+
+input "type:keyboard" xkb_options caps:escape
 
 #====================================#
 # Keyboard Shortcuts (Sway-specific) #
