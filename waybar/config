@@ -41,7 +41,7 @@
     },
 
     "clock": {
-        "timezone": "America/Seattle",
+        "timezone": "US/Pacific",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%I:%M}",
         "format-alt": "{:%Y-%m-%d}",
