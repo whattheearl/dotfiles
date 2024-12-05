@@ -18,9 +18,6 @@ alias jed="make -C ~/wte/jeddit $@"
 # wteos 
 alias wte="make -C ~/wte/wteos $@"
 
-# dotnet 
-alias kiota="${HOME}/.dotnet/tools/kiota $@"
-
 # notes
 alias n="cd ~/wte/notes && v ~/wte/notes/today.md"
 
