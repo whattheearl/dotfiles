@@ -31,6 +31,11 @@ config.keys = {
         action = wezterm.action.DisableDefaultAssignment,
     },
     {
+        key = "n",
+        mods = "SUPER",
+        action = wezterm.action.DisableDefaultAssignment,
+    },
+    {
         key = "f",
         mods = "SUPER",
         action = wezterm.action.DisableDefaultAssignment,
