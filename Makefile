@@ -43,3 +43,4 @@ install:
 	@ln -sf ${PWD}/zsh ${HOME}/.config
 	@ln -sf ${PWD}/sway ${HOME}/.config
 	@ln -sf ${PWD}/waybar ${HOME}/.config
+	@ln -sf ${PWD}/wofi ${HOME}/.config
