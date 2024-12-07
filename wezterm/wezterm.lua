@@ -12,7 +12,7 @@ config.window_padding = {
 
 config.warn_about_missing_glyphs = false
 
-config.color_scheme = "Google Dark (Gogh)"
+-- config.color_scheme = "Google Dark (Gogh)"
 
 config.keys = {
     {
@@ -22,6 +22,11 @@ config.keys = {
     },
     {
         key = "+",
+        mods = "SUPER",
+        action = wezterm.action.DisableDefaultAssignment,
+    },
+    {
+        key = "t",
         mods = "SUPER",
         action = wezterm.action.DisableDefaultAssignment,
     },
