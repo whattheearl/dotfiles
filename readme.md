@@ -29,6 +29,7 @@ This documents new installation
 | nvm    | https://github.com/nvm-sh/nvm#git-install                          |
 | dotnet | https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora |
 | restic | https://github.com/restic/restic                                   |
+| fzf    | https://github.com/junegunn/fzf                                    |
 
 ## window manager
 
