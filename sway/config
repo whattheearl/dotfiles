@@ -249,7 +249,7 @@ bindsym XF86MonBrightnessUp exec light -A 10
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
-bindsym $mod+n exec librewolf || firefox
+bindsym $mod+Shift+Return exec librewolf || firefox
 
 # Open a file manager:
 bindsym $mod+Shift+Backslash exec $term start -- ranger
