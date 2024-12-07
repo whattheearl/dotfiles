@@ -4,13 +4,11 @@ This documents new installation
 
 ## apps
 
-| name    | description     | url                                                                                        |
-| ------- | --------------- | ------------------------------------------------------------------------------------------ |
-| vscode  | ide             | https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions |
-| discord | chat            | https://flathub.org/apps/com.discordapp.Discord                                            |
-| corectl | amd gpu fan ctl | https://gitlab.com/corectrl/corectrl/-/wikis/Installation                                  |
-| neovim  | editor          | https://github.com/neovim/neovim/blob/master/INSTALL.md                                    |
-| wezterm | terminal        | https://wezfurlong.org/wezterm/installation.html                                           |
+| name    | url                                                     |
+| ------- | ------------------------------------------------------- |
+| discord | https://flathub.org/apps/com.discordapp.Discord         |
+| neovim  | https://github.com/neovim/neovim/blob/master/INSTALL.md |
+| wezterm | https://wezfurlong.org/wezterm/installation.html        |
 
 ## shell
 
@@ -22,7 +20,7 @@ This documents new installation
 | zsh-syntax-highlighting      | https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md |
 | zsh-history-substring-search | https://github.com/zsh-users/zsh-history-substring-search                   |
 
-## tools
+## cli tools
 
 | name   | url                                                                |
 | ------ | ------------------------------------------------------------------ |
@@ -32,10 +30,19 @@ This documents new installation
 | dotnet | https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora |
 | restic | https://github.com/restic/restic                                   |
 
+## window manager
+
+| name   | url                                         |
+| ------ | ------------------------------------------- |
+| sway   | https://wiki.debian.org/sway                |
+| wofi   | https://packages.debian.org/bullseye/wofi   |
+| waybar | https://packages.debian.org/bullseye/waybar |
+
 ## gdm3 (gnome-extensions)
 
 | name         | url                                                                     |
 | ------------ | ----------------------------------------------------------------------- |
+| corectl      | https://gitlab.com/corectrl/corectrl/-/wikis/Installation               |
 | caffeine     | https://extensions.gnome.org/extension/517/caffeine                     |
 | RDP helper   | https://extensions.gnome.org/extension/4338/allow-locked-remote-desktop |
 | Status Icons | https://extensions.gnome.org/extension/615/appindicator-support/        |
