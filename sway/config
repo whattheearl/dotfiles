@@ -245,18 +245,17 @@ bindsym XF86MonBrightnessUp exec light -A 10
 #=============================================#
 # Keyboard Shortcuts (launching applications) #
 #=============================================#
-# Set up wofi to replace dmenu as the launcher of choice:
+# Launch application menu:
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
 bindsym $mod+Shift+Return exec librewolf || firefox
 
-# Open a file manager:
-bindsym $mod+Shift+Backslash exec $term start -- ranger
+# Launch file manager:
+bindsym $mod+Shift+Backslash exec "wezterm start -- ranger || flatpak run org.wezfurlong.wezterm start -- ranger"
 
-# Open a terminal emulator:
-set $term "wezterm || flatpak run org.wezfurlong.wezterm"
-bindsym $mod+Return exec $term
+# Launch terminal emulator:
+bindsym $mod+Return exec "wezterm || flatpak run org.wezfurlong.wezterm"
 
 # Kill focused window:
 bindsym $mod+Shift+q kill
