@@ -22,7 +22,7 @@ alias wte="make -C ~/wte/wteos $@"
 alias n="cd ~/wte/notes && v ~/wte/notes/today.md"
 
 # tmux-session
-alias cds=$HOME/wte/docs/scripts/sessionizer.sh $@
+alias cds=$HOME/wte/dotfiles/scripts/sessionizer.sh $@
 
 # dev-cli
 alias devd=$HOME/tyl/dev-cli/src/index.ts $@
