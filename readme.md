@@ -1,6 +1,4 @@
-# Install
-
-This documents new installation
+# Dotfiles
 
 ## apps
 
@@ -20,7 +18,7 @@ This documents new installation
 | zsh-history-substring-search | https://github.com/zsh-users/zsh-history-substring-search                   |
 | zsh-syntax-highlighting      | https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md |
 
-## cli tools
+## cli
 
 | name   | url                                                                |
 | ------ | ------------------------------------------------------------------ |
