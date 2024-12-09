@@ -27,5 +27,9 @@ alias cds=$HOME/wte/dotfiles/scripts/sessionizer.sh $@
 # dev-cli
 alias devd=$HOME/tyl/dev-cli/src/index.ts $@
 
-# jeddit
-alias jed="make -C ${HOME}/wte/jeddit"
+# edit config
+alias ec="cd $HOME/wte/dotfiles && v ."
+alias ez="cd $HOME/wte/dotfiles/zsh && v .zshrc"
+alias en="cd $HOME/wte/dotfiles/nvim && v init.lua"
+alias et="cd $HOME/wte/dotfiles/tmux && v tmux.conf"
+alias ew="cd $HOME/wte/dotfiles/wezterm && v wezterm.lua"

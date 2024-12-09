@@ -1,11 +1,11 @@
 #! /usr/bin/env bash
 
-source ~/.config/zsh/source.sh
-source ~/.config/zsh/paths.sh
-source ~/.config/zsh/aliases.sh
-source ~/.config/zsh/functions.sh
-source ~/.config/zsh/hotkeys.sh
-source ~/.config/zsh/secrets.sh
+source $HOME/.config/zsh/source.sh
+source $HOME/.config/zsh/paths.sh
+source $HOME/.config/zsh/aliases.sh
+source $HOME/.config/zsh/functions.sh
+source $HOME/.config/zsh/hotkeys.sh
+source $HOME/.config/zsh/secrets.sh
 
 # vi mode
 set -o vi
