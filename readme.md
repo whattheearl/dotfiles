@@ -2,11 +2,12 @@
 
 ## apps
 
-| name    | url                                                     |
-| ------- | ------------------------------------------------------- |
-| discord | https://flathub.org/apps/com.discordapp.Discord         |
-| neovim  | https://github.com/neovim/neovim/blob/master/INSTALL.md |
-| wezterm | https://wezfurlong.org/wezterm/installation.html        |
+| name    | url                                                               | arguments                |
+| ------- | ----------------------------------------------------------------- | ------------------------ |
+| code    | [docs](https://code.visualstudio.com/download)                    | --ozone-platform=wayland |
+| discord | [flathub](https://flathub.org/apps/com.discordapp.Discord)        |                          |
+| neovim  | [github](https://github.com/neovim/neovim/blob/master/INSTALL.md) |                          |
+| wezterm | [docs](https://wezfurlong.org/wezterm/installation.html)          |                          |
 
 ## shell
 
