@@ -1,26 +1,15 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
-# reference https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
-project_path=$1
-if [ ! -d "$project_path" ]; then
-  directories=$(find ~/tyl/* ~/wte/* -maxdepth 0 -type d)
-  if [ -z $project_path ]; then
-    project_path=$(echo "$directories" | fzf)
-  else
-    project_path=$(echo "$directories" | fzf --query $project_path)
-  fi
-
-  if [ "$project_path" = "" ]; then
-    return 0
-  fi
+# INFO: reference https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+selected=$(find $HOME/wte $HOME/tyl -maxdepth 1 -mindepth 1 -type d | fzf)
+if [[ -z "$selected" ]]; then
+    exit 0
 fi
-
-session_name="$(basename $project_path)"
+session_name="$(basename $selected)"
 
 if [ "$TERM_PROGRAM" != "tmux" ]; then
-  tmux attach -t $session_name || tmux new -s $session_name -c $project_path
+    tmux attach -t $session_name || tmux new -s $session_name -c $selected
 else
-  tmux new -s $session_name -d -c $project_path &> /dev/null
-  tmux switch-client -t $session_name
+    tmux new -s $session_name -d -c $selected &> /dev/null
+    tmux switch-client -t $session_name
 fi
- 
