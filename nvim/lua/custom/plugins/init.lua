@@ -4,9 +4,7 @@
 -- See the kickstart.nvim README for more information
 return {
   require 'custom.plugins.vim-tmux-navigator',
-  require 'custom.plugins.lazygit',
   require 'custom.plugins.harpoon',
-  -- sveltekit
   spec = {
     { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
     { import = 'lazyvim.plugins.extras.lang.svelte' },
