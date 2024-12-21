@@ -28,6 +28,11 @@ vim.keymap.set("n", "<A-2>", "2gt", { noremap = true })
 vim.keymap.set("n", "<A-3>", "3gt", { noremap = true })
 vim.keymap.set("n", "<A-4>", "4gt", { noremap = true })
 vim.keymap.set("n", "<A-5>", "5gt", { noremap = true })
+vim.keymap.set("n", "<leader>1", "1gt", { noremap = true })
+vim.keymap.set("n", "<leader>2", "2gt", { noremap = true })
+vim.keymap.set("n", "<leader>3", "3gt", { noremap = true })
+vim.keymap.set("n", "<leader>4", "4gt", { noremap = true })
+vim.keymap.set("n", "<leader>5", "5gt", { noremap = true })
 vim.keymap.set("n", "<leader>j", "1gt", { noremap = true })
 vim.keymap.set("n", "<leader>k", "2gt", { noremap = true })
 vim.keymap.set("n", "<leader>l", "3gt", { noremap = true })
@@ -35,6 +40,7 @@ vim.keymap.set("n", "<leader>;", "4gt", { noremap = true })
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { noremap = true })
 vim.keymap.set("n", "<C-c>", ":tabclose<CR>", { noremap = true })
 
+vim.keymap.set("n", "<leader>et", ":tabnew ~/wte/notes/today.md<CR>", { noremap = true })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
