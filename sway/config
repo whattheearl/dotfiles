@@ -79,13 +79,12 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
-# $mod+b or $mod+v, for horizontal and vertical splits
-bindsym $mod+b splith
-bindsym $mod+v splitv
-
 # Move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+
+# Bluetooth
+bindsym $mod+b exec "~/.config/sway/select-bluetooth.sh"
 
 # Video
 bindsym $mod+r exec "~/.config/sway/change-resolution.sh"
