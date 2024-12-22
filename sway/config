@@ -102,13 +102,20 @@ bindsym XF86MonBrightnessUp exec light -A 10
 # Launch application menu:
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
-# Launch your browser:
+# Launch browser:
 bindsym $mod+Shift+Return exec librewolf || firefox
 exec --no-startup-id "librewolf || firefox"
 assign [app_id="LibreWolf|Firefox"] 2
 
+# Launch browser:
+bindsym $mod+m exec spotify
+exec --no-startup-id spotify
+assign [class="Spotify"] 10
+
 # Launch file manager:
 bindsym $mod+f exec nautilus
+exec --no-startup-id nautilus
+assign [app_id="Nautilus"] 3
 
 # Launch terminal emulator:
 bindsym $mod+Return exec "wezterm || flatpak run org.wezfurlong.wezterm"
