@@ -5,13 +5,7 @@ default_border none
 output DP-3 pos 0 0 res 3840x2160 scale 2
 
 bar {
-    position top
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 # swap esc with capslock
@@ -136,6 +130,7 @@ bindsym $mod+Shift+Return exec librewolf || firefox
 bindsym $mod+f exec nautilus
 
 # Launch terminal emulator:
+bindsym $mod+t exec "wezterm start --class wezterm"
 bindsym $mod+Return exec "wezterm || flatpak run org.wezfurlong.wezterm"
 
 # Kill focused window:
