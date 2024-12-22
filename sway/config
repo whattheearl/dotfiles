@@ -43,27 +43,6 @@ bindsym $mod+Shift+l move right
 # to floating windows:
 floating_modifier $mod normal
 
-# Resizing containers:
-mode "resize" {
-    # Resize windows with arrow keys:
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
-    # "cult of vim" version:
-    bindsym h resize shrink width 10px
-    bindsym j resize grow height 10px
-    bindsym k resize shrink height 10px
-    bindsym l resize grow width 10px
-
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
-
 # Switch to workspace
 set $ws1 "1"
 set $ws2 "2"
@@ -109,7 +88,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Video
-bindsym $mod+Shift+r exec "~/.config/sway/change-resolution.sh"
+bindsym $mod+r exec "~/.config/sway/change-resolution.sh"
 
 # Audio
 bindsym XF86AudioRaiseVolume exec "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
