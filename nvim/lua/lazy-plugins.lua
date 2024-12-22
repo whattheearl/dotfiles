@@ -12,7 +12,15 @@ require("lazy").setup({
     require("kickstart.plugins.nvim-lspconfig"),
     require("kickstart.plugins.telescope"),
     require("kickstart.plugins.todo-comments"),
-    require("kickstart.plugins.tokyonight"),
+    -- require("kickstart.plugins.tokyonight"),
+    {
+        "xero/evangelion.nvim",
+        lazy = false,
+        priority = 1000,
+        init = function()
+            vim.cmd.colorscheme("evangelion")
+        end,
+    },
     require("kickstart.plugins.treesitter"),
     require("kickstart.plugins.vim-sleuth"),
     require("kickstart.plugins.whichkey"),
