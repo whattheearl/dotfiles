@@ -40,6 +40,7 @@ vim.keymap.set("n", "<leader>;", "4gt", { noremap = true })
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { noremap = true })
 vim.keymap.set("n", "<C-c>", ":tabclose<CR>", { noremap = true })
 
+vim.keymap.set("n", "<leader>et", ":tabnew ~/wte/notes/today.md<CR>", { noremap = true })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
