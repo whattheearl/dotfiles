@@ -125,13 +125,16 @@ set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
 bindsym $mod+Shift+Return exec librewolf || firefox
+exec --no-startup-id "librewolf || firefox"
+assign [app_id="LibreWolf|Firefox"] 2
 
 # Launch file manager:
 bindsym $mod+f exec nautilus
 
 # Launch terminal emulator:
-bindsym $mod+t exec "wezterm start --class wezterm"
 bindsym $mod+Return exec "wezterm || flatpak run org.wezfurlong.wezterm"
+exec --no-startup-id "wezterm || flatpak run org.wezfurlong.wezterm"
+assign [app_id="wezterm|org.wezfurlong.wezterm"] 1
 
 # Kill focused window:
 bindsym $mod+q kill
