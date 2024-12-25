@@ -14,23 +14,23 @@ function gnome-reset() {
 }
 
 function add-make() {
-  cp ~/wte/docs/templates/Makefile .
+  cp ~/wte/dotfiles/templates/Makefile .
 }
 
 function add-npmrc() {
-  cp ~/wte/docs/templates/.npmrc .
+  cp ~/wte/dotfiles/templates/.npmrc .
 }
 
 function add-editorconfig() {
-  cp ~/wte/docs/templates/.editorconfig .
+  cp ~/wte/dotfiles/templates/.editorconfig .
 }
 
 function add-nugetconfig() {
-  cp ~/wte/docs/templates/NuGet.config .
+  cp ~/wte/dotfiles/templates/NuGet.config .
 }
 
 function add-prettierrc() {
   # add to package.json dev
   # add format script
-  cp ~/wte/docs/templates/.prettierrc .
+  cp ~/wte/dotfiles/templates/.prettierrc .
 }
