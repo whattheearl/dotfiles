@@ -3,12 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  require 'custom.plugins.blink-cmp',
-  require 'custom.plugins.harpoon',
+  require 'custom.plugins.evangelion-theme',
   require 'custom.plugins.vim-tmux-navigator',
-  spec = {
-    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
-    { import = 'lazyvim.plugins.extras.lang.svelte' },
-    { import = 'plugins' },
-  },
 }
