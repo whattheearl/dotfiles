@@ -1,100 +1,37 @@
-# ==================================================================================== #
-# VARIABLES
-# ==================================================================================== #
-
 SERVER=
 CONTAINER_REGISTRY=
 CONTAINER_REGISTRY_USER=
 TAG=
 BUILD_PATH=
 
-# ==================================================================================== #
-# HELPERS
-# ==================================================================================== #
+.PHONY: help format lint dev build publish
 
 ## help: print this help message
-.PHONY: help
 help:
 	@echo 'Usage:'
 	@echo ${MAKEFILE_LIST}
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
 
-.PHONY: confirm
-confirm:
-	@echo -n 'Are you sure [y/N]' && read ans && [ $${ans:-N} = y ]
-
-.PHONY: no-dirty
-no-dirty:
-	@test -z "$(shell git status --porcelain)"
-
-# ==================================================================================== #
-# QUALITY CONTROL
-# ==================================================================================== #
-
 ## format: format files
-.PHONY: format
 format:
-	@npm run format 
+	@echo not implemented && exit 1
 
 ## format: format files
-.PHONY: lint 
 lint:
-	@npm run lint
-
-# ==================================================================================== #
-# DEVELOPMENT 
-# ==================================================================================== #
+	@echo not implemented && exit 1
 
 ## dev: starts dev server
-.PHONY: dev 
 dev:
-	npm i;
-	npm run dev;
-
-# ==================================================================================== #
-# PUBLISH 
-# ==================================================================================== #
-
-## login: login to container registry
-.PHONY: login
-login:
-	@echo ${GITHUB_TOKEN} | docker login ${CONTAINER_REGISTRY} -u ${CONTAINER_REGISTRY_USER} --password-stdin
+	@echo not implemented && exit 1
 
 ## build: build container
-.PHONY: build
 build:
-	@docker build . --tag ${TAG}
+	@echo not implemented && exit 1
 
 ## publish: publish docker container
-.PHONY: publish 
 publish:
-	@docker push ${TAG}
-
-# ==================================================================================== #
-# DEPLOYMENT
-# ==================================================================================== #
-
-## start: start service 
-.PHONY: start 
-start: 
-	@docker compose pull
-	@docker compose up -d
-
-## stop: stop service 
-.PHONY: stop 
-stop: 
-	@docker compose stop
-
-## env: sync environmental variables
-.PHONY: env
-env:
-	@ssh ${SERVER} "rm -rf ${BUILD_PATH}; git clone https://github.com/whattheearl/jeddit ${BUILD_PATH}" || exit 1
-	@scp .env.prod "${SERVER}:${BUILD_PATH}/.env.prod"
-	@scp Makefile "${SERVER}:${BUILD_PATH}/Makefile"
+	@echo not implemented && exit 1
 
 ## deploy: deploy service
-# .PHONY: deploy
-deploy: env
-	@ssh ${SERVER} "make -C ${BUILD_PATH} build"
-	@ssh ${SERVER} "make -C ${BUILD_PATH} publish"
-	@ssh ${SERVER} "make -C ${BUILD_PATH} start"
+deploy: 
+	@echo not implemented && exit 1
