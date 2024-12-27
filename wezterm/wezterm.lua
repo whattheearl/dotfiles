@@ -6,7 +6,7 @@ config.debug_key_events = true
 
 config.hide_tab_bar_if_only_one_tab = true
 
-config.font_size = 11.0
+config.font_size = 9.8
 
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
