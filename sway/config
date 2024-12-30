@@ -106,7 +106,7 @@ bindsym $mod+Shift+Return exec librewolf || firefox
 exec --no-startup-id "librewolf || firefox"
 assign [app_id="LibreWolf|Firefox"] 2
 
-# Launch browser:
+# Launch spotify:
 bindsym $mod+m exec spotify
 exec --no-startup-id spotify
 assign [class="Spotify"] 10
