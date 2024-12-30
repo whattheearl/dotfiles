@@ -1,0 +1,129 @@
+# set modkey to super
+set $mod Mod4
+
+# keys
+bindsym $mod+escape exec "i3lock --color 000000"
+bindsym $mod+q kill
+bindsym $mod+c reload
+bindsym $mod+x exec "i3-msg exit"
+
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+
+# settings
+font pango:monospace 8
+default_border pixel 0
+default_floating_border pixel 0
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# sound
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# terminal
+bindsym $mod+Return exec wezterm
+exec --no-startup-id wezterm start --class terminal
+assign [class="terminal"] 1
+
+# browser
+bindsym $mod+shift+Return exec librewolf
+for_window [class="browser|teams|excalidraw|Librewolf"] floating disable
+exec --no-startup-id librewolf -p default-default --class browser
+assign [class="browser"] 2
+
+# filemanager
+bindsym $mod+shift+f exec nautilus
+# exec --no-startup-id nautilus
+assign [class="org.gnome.Nautilus"] 4
+
+# teams
+set $browser_teams librewolf -p teams --class teams https://teams.microsoft.com/v2/
+bindsym $mod+shift+t exec $browser_teams
+# exec --no-startup-id $browser_teams
+assign [class="teams"] 5
+
+# draw
+set $browser_draw librewolf -p default --class excalidraw https://excalidraw.com/
+bindsym $mod+shift+e exec $browser_draw
+# exec --no-startup-id $browser_draw
+assign [class="excalidraw"] 6
+
+# music
+bindsym $mod+shift+s exec spotify
+exec --no-startup-id spotify --class spotify
+assign [class="Spotify"] 10
+
+# menu
+bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+space exec --no-startup-id dmenu_run
+
+# bottles
+bindsym $mod+shift+b exec flatpak run com.usebottles.bottles
+
+# obs
+bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
+
+# discord
+bindsym $mod+shift+d exec flatpak run com.discordapp.Discord
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+z fullscreen toggle
+
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bar {
+    wheel_up_cmd nop
+    wheel_down_cmd nop
+    status_command i3status
+}
