@@ -2,13 +2,13 @@
 set $mod Mod4
 
 # keys
-bindsym $mod+escape exec "i3lock --color 000000"
+bindsym $mod+Escape exec "i3lock --color 000000"
 bindsym $mod+q kill
 bindsym $mod+c reload
 bindsym $mod+x exec "i3-msg exit"
 
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # settings
@@ -31,27 +31,20 @@ exec --no-startup-id wezterm start --class terminal
 assign [class="terminal"] 1
 
 # browser
-bindsym $mod+shift+Return exec librewolf
-for_window [class="browser|teams|excalidraw|Librewolf"] floating disable
+for_window [class="browser|Librewolf"] floating disable
 exec --no-startup-id librewolf -p default-default --class browser
 assign [class="browser"] 2
 
 # filemanager
 bindsym $mod+shift+f exec nautilus
-# exec --no-startup-id nautilus
+exec --no-startup-id nautilus
 assign [class="org.gnome.Nautilus"] 4
 
 # teams
-set $browser_teams librewolf -p teams --class teams https://teams.microsoft.com/v2/
-bindsym $mod+shift+t exec $browser_teams
-# exec --no-startup-id $browser_teams
-assign [class="teams"] 5
+bindsym $mod+shift+t exec librewolf https://teams.microsoft.com/v2/
 
 # draw
-set $browser_draw librewolf -p default --class excalidraw https://excalidraw.com/
-bindsym $mod+shift+e exec $browser_draw
-# exec --no-startup-id $browser_draw
-assign [class="excalidraw"] 6
+bindsym $mod+shift+e exec librewolf https://excalidraw.com/
 
 # music
 bindsym $mod+shift+s exec spotify
