@@ -3,6 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-    require("custom.plugins.vim-tmux-navigator"),
+    require("custom.plugins.copilot"),
     require("custom.plugins.oil"),
+    require("custom.plugins.vim-tmux-navigator"),
 }
