@@ -3,7 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-    require("custom.plugins.evangelion-theme"),
     require("custom.plugins.vim-tmux-navigator"),
     require("custom.plugins.oil"),
 }

@@ -5,7 +5,6 @@
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "conform.nvim": { "branch": "master", "commit": "339b3e4519ec49312d34fcfa275aa15bfaa67025" },
   "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "4f56c06215d10c4fcfee8a7f04ba766c114aece0" },
-  "evangelion.nvim": { "branch": "main", "commit": "d53f34f42d344e69303361064d4bcb46811f7fe6" },
   "fidget.nvim": { "branch": "main", "commit": "9238947645ce17d96f30842e61ba81147185b657" },
   "gitsigns.nvim": { "branch": "main", "commit": "5f808b5e4fef30bd8aca1b803b4e555da07fc412" },
   "indent-blankline.nvim": { "branch": "master", "commit": "259357fa4097e232730341fa60988087d189193a" },
