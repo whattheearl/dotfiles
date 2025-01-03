@@ -20,8 +20,8 @@ tiling_drag modifier titlebar
 
 # sound
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -31,20 +31,22 @@ exec --no-startup-id wezterm start --class terminal
 assign [class="terminal"] 1
 
 # browser
-for_window [class="browser|Librewolf"] floating disable
-exec --no-startup-id librewolf -p default-default --class browser
-assign [class="browser"] 2
+set $browser firefox
+bindsym $mod+shift+Return exec firefox
+# for_window [class="Librewolf"] floating disable
+# exec --no-startup-id librewolf
+# assign [class="LibreWolf"] 2
 
 # filemanager
 bindsym $mod+shift+f exec nautilus
-exec --no-startup-id nautilus
+# exec --no-startup-id nautilus
 assign [class="org.gnome.Nautilus"] 4
 
 # teams
-bindsym $mod+shift+t exec librewolf https://teams.microsoft.com/v2/
+bindsym $mod+shift+t exec $browser https://teams.microsoft.com/v2/
 
 # draw
-bindsym $mod+shift+e exec librewolf https://excalidraw.com/
+bindsym $mod+shift+e exec $browser https://excalidraw.com/
 
 # music
 bindsym $mod+shift+s exec spotify
