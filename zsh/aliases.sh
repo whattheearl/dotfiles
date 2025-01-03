@@ -9,8 +9,8 @@ alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compo
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
 
 # branding-service
-alias bs="make -C ~/tyl/v2brandingservice $@"
-alias bsc="docker compose -f ~/tyl/v2brandingservice/docker-compose.yml $@"
+alias bs="make -C ~/tyl/branding-service-v2 $@"
+alias bsc="docker compose -f ~/tyl/branding-service-v2/docker-compose.yaml $@"
 
 # jeddit
 alias jed="make -C ~/wte/jeddit $@"
