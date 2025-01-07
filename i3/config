@@ -10,6 +10,7 @@ bindsym $mod+x exec "i3-msg exit"
 exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id xset s off -dpms
 
 # settings
 font pango:monospace 8
