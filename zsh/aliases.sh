@@ -12,6 +12,9 @@ alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compo
 alias bs="make -C ~/tyl/branding-service-v2 $@"
 alias bsc="docker compose -f ~/tyl/branding-service-v2/docker-compose.yaml $@"
 
+# lazygit
+alias lg="lazygit"
+
 # jeddit
 alias jed="make -C ~/wte/jeddit $@"
 
