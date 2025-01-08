@@ -4,6 +4,7 @@ local config = {}
 -- config.default_prog = { "/usr/bin/tmux", "new-session", "-A", "-s default" }
 -- config.inherit_cwd = true
 config.hide_tab_bar_if_only_one_tab = true
+config.window_close_confirmation = "NeverPrompt"
 
 -- config.font_size = 8
 -- config.font_size = 9.8
