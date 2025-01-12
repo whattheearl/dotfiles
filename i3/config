@@ -27,34 +27,28 @@ bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOUR
 
 # terminal
 bindsym $mod+Return exec wezterm
-exec --no-startup-id wezterm start --class terminal
-assign [class="terminal"] 1
+exec --no-startup-id wezterm
 
 # browser
 set $browser firefox
 bindsym $mod+shift+Return exec firefox
-# for_window [class="Librewolf"] floating disable
-# exec --no-startup-id librewolf
-# assign [class="LibreWolf"] 2
 
 # filemanager
 bindsym $mod+shift+f exec nautilus
-# exec --no-startup-id nautilus
-assign [class="org.gnome.Nautilus"] 4
 
 # teams
 bindsym $mod+shift+t exec $browser https://teams.microsoft.com/v2/
 
-# draw
+# excalidraw
 bindsym $mod+shift+e exec $browser https://excalidraw.com/
+
+# discord
+bindsym $mod+d exec flatpak run com.discordapp.Discord
 
 # music
 bindsym $mod+shift+s exec spotify
-exec --no-startup-id spotify --class spotify
-assign [class="Spotify"] 10
 
 # menu
-bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+space exec --no-startup-id dmenu_run
 
 # bottles
