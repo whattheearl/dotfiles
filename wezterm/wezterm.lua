@@ -57,7 +57,6 @@ config.keys = {
     { key = "2", mods = "CTRL", action = wezterm.action.ActivateTab(1) },
     { key = "3", mods = "CTRL", action = wezterm.action.ActivateTab(2) },
     { key = "4", mods = "CTRL", action = wezterm.action.ActivateTab(3) },
-    { key = "Tab", mods = "CTRL", action = wezterm.action.ActivateLastTab },
     { key = "t", mods = "CTRL", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
     { key = "q", mods = "CTRL", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
     { key = "h", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
@@ -73,6 +72,5 @@ config.keys = {
     -- { key = "k", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Up") },
     -- { key = "l", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Right") },
 }
-
 
 return config
