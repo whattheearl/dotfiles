@@ -9,4 +9,5 @@ export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:$HOME/.dotnet/tools/kiota
 export PATH=$PATH:/opt/nvim-linux64/bin
+export PATH=$PATH:$HOME/wte/dotfiles/scripts
 export EDITOR=nvim
