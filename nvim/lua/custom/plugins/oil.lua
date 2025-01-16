@@ -3,7 +3,9 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
-        show_hidden = true,
+        view_options = {
+            show_hidden = true,
+        },
     },
     -- Optional dependencies
     -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
