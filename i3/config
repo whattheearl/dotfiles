@@ -2,10 +2,10 @@
 set $mod Mod4
 
 # keys
-bindsym $mod+Escape exec "i3lock --color 000000"
-bindsym $mod+q kill
-bindsym $mod+c reload
-bindsym $mod+x exec "i3-msg exit"
+bindsym $mod+shift+Escape exec "i3lock --color 000000"
+bindsym $mod+shift+q kill
+bindsym $mod+shift+c reload
+bindsym $mod+shift+x exec "i3-msg exit"
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
