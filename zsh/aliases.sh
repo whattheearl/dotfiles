@@ -1,3 +1,7 @@
+# temp
+alias b="bs docker-reset"
+alias t="bs test-integration"
+
 # vim
 alias v=nvim $@
 
@@ -9,8 +13,8 @@ alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compo
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
 
 # branding-service
-alias bs="make -C ~/tyl/branding-service-v2 $@"
-alias bsc="docker compose -f ~/tyl/branding-service-v2/docker-compose.yaml $@"
+alias bs="make -C ~/tyl/tcp-branding-api $@"
+alias bsc="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
 
 # lazygit
 alias lg="lazygit"
@@ -36,3 +40,5 @@ alias ez="cd $HOME/wte/dotfiles/zsh && v .zshrc"
 alias en="cd $HOME/wte/dotfiles/nvim && v init.lua"
 alias et="cd $HOME/wte/dotfiles/tmux && v tmux.conf"
 alias ew="cd $HOME/wte/dotfiles/wezterm && v wezterm.lua"
+
+
