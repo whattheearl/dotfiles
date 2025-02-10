@@ -41,13 +41,14 @@ packages:
 
 ## ssh: adds ssh keys
 ssh:
-	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.privateKey" > .ssh/id_ed25519
-	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.publicKey" > .ssh/id_ed25519.pub
-	chmod 400 $HOME/.ssh/id_ed25519m -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
+	mkdir -p ${HOME}/.ssh
+	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.privateKey" > ${HOME}/.ssh/id_ed25519
+	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.publicKey" > ${HOME}/.ssh/id_ed25519.pub
+	chmod 400 ${HOME}/.ssh/id_ed25519
 
 ## aur: 3rd party package manager
 aur:
-	git clone https://aur.archlinux.org/yay.git $HOME/apps/yay
+	git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay
 	cd "${HOME}/apps/yay"
 	makepkg -si
 
