@@ -21,21 +21,23 @@ symlinks:
 
 ## packages: installs arch packages
 packages:
-	sudo pacman -S bluez bluez-utils
-	sudo pacman -S wezterm \
+	sudo pacman -S --noconfirm \
+		bluez \
+		bluez-utils \
+		wezterm \
 		zsh \
 		zsh-history-substring-search \
 		zsh-autosuggestions \
-		zsh-syntax-highlighting
-	sudo pacman -S git \
+		zsh-syntax-highlighting \
+		git \
 		make \
 		neovim \
 		code \
 		jq \
 		base-devel \
 		dotnet-sdk-8.0 \
-		lua
-	sudo pacman -S firefox \
+		lua \
+		firefox \
 		bitwarden-cli \
 		xorg-xrandr
 
@@ -46,6 +48,10 @@ ssh:
 	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.publicKey" > ${HOME}/.ssh/id_ed25519.pub
 	chmod 400 ${HOME}/.ssh/id_ed25519
 
+## env: adds envvars
+env:
+	bw get item bcac7ee2-d117-4341-a81a-b2380125a710 | jq -r ".notes" > ${HOME}/wte/dotfiles/zsh/secrets.sh
+
 ## aur: 3rd party package manager
 aur:
 	git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay
@@ -54,7 +60,8 @@ aur:
 
 ## aur-packages: installs 3rd party packages
 aur-packages:
-	yay -S oh-my-zsh-git \
+	yay -S --noconfirm \
 		zsh-theme-powerlevel10k-git \
 		lazygit-git
+		# nvm
 
