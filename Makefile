@@ -21,12 +21,12 @@ symlinks:
 
 ## packages: installs arch packages
 packages:
+	sudo pacman -S bluez bluez-utils
 	sudo pacman -S wezterm \
 		zsh \
 		zsh-history-substring-search \
 		zsh-autosuggestions \
 		zsh-syntax-highlighting
-
 	sudo pacman -S git \
 		make \
 		neovim \
@@ -35,7 +35,6 @@ packages:
 		base-devel \
 		dotnet-sdk-8.0 \
 		lua
-
 	sudo pacman -S firefox \
 		bitwarden-cli \
 		xorg-xrandr
