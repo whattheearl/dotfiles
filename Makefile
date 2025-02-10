@@ -19,20 +19,42 @@ symlinks:
 	# ln -sf ${PWD}/sway ${HOME}/.config
 	ln -sf ${PWD}/wofi ${HOME}/.config
 
-## nvim
-nvim:
-	@rm -rf ${BUILD_DIR}/neovim
-	@git clone --depth 1 -b v0.10.3 https://github.com/neovim/neovim ${BUILD_DIR}/neovim
-	@cd ${BUILD_DIR}/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-	@echo "\n\nRun 'sudo cp ${BUILD_DIR}/neovim/build/bin/nvim /usr/local/bin/nvim'"
+## packages: installs arch packages
+packages:
+	sudo pacman -S wezterm \
+		zsh \
+		zsh-history-substring-search \
+		zsh-autosuggestions \
+		zsh-syntax-highlighting
 
-## fzf
-fzf:
-	@rm -rf ${BUILD_DIR}/fzf
-	@git clone --depth 1 https://github.com/junegunn/fzf ${BUILD_DIR}/fzf
-	@FZF_VERSION=0.57.0 make -C ${BUILD_DIR}/fzf
-	@echo "\n\nRun 'sudo cp ${BUILD_DIR}/fzf/target/fzf-linux_amd64 /usr/local/bin/fzf'"
+	sudo pacman -S git \
+		make \
+		neovim \
+		code \
+		jq \
+		base-devel \
+		dotnet-sdk-8.0 \
+		lua
 
-## clean-nvim
-clean-nvim: 
-	rm -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
+	sudo pacman -S firefox \
+		bitwarden-cli \
+		xorg-xrandr
+
+## ssh: adds ssh keys
+ssh:
+	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.privateKey" > .ssh/id_ed25519
+	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.publicKey" > .ssh/id_ed25519.pub
+	chmod 400 $HOME/.ssh/id_ed25519m -rf ~/.cache/nvim ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim
+
+## aur: 3rd party package manager
+aur:
+	git clone https://aur.archlinux.org/yay.git $HOME/apps/yay
+	cd "${HOME}/apps/yay"
+	makepkg -si
+
+## aur-packages: installs 3rd party packages
+aur-packages:
+	yay -S oh-my-zsh-git \
+		zsh-theme-powerlevel10k-git \
+		lazygit-git
+
