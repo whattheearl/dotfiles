@@ -30,6 +30,7 @@ packages:
 		zsh-autosuggestions \
 		zsh-syntax-highlighting \
 		git \
+		docker \
 		make \
 		neovim \
 		code \
@@ -39,6 +40,7 @@ packages:
 		lua \
 		firefox \
 		bitwarden-cli \
+		flatpak \
 		xorg-xrandr
 
 ## ssh: adds ssh keys
@@ -55,7 +57,7 @@ env:
 ## aur: 3rd party package manager
 aur:
 	git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay
-	cd "${HOME}/apps/yay"
+	cd ${HOME}/apps/yay
 	makepkg -si
 
 ## aur-packages: installs 3rd party packages
@@ -65,3 +67,6 @@ aur-packages:
 		lazygit-git
 		# nvm
 
+## flatpak-packages: install flatpak applications
+flatpak-packages;
+	flatpak install com.usebottles.bottles
