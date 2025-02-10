@@ -31,6 +31,8 @@ packages:
 		zsh-syntax-highlighting \
 		git \
 		docker \
+		docker-compose \
+		docker-buildx \
 		make \
 		neovim \
 		code \
