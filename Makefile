@@ -39,10 +39,13 @@ packages:
 		jq \
 		base-devel \
 		dotnet-sdk-8.0 \
+		aspnet-runtime-8.0 \
 		lua \
 		firefox \
 		bitwarden-cli \
 		flatpak \
+		restic \
+		tldr \
 		xorg-xrandr
 
 ## ssh: adds ssh keys
