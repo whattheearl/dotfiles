@@ -48,7 +48,7 @@ end
 
 config.keys = {
     { key = "+", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-    { key = "-", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+    -- { key = "-", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
     { key = "0", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
     { key = "f", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
     { key = "n", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
@@ -61,8 +61,8 @@ config.keys = {
     { key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
     { key = "h", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
     { key = "l", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(1) },
-    { key = "-", mods = "CTRL|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-    { key = "|", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "-", mods = "SUPER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+    { key = "\\", mods = "SUPER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     split_nav("move", "h"),
     split_nav("move", "j"),
     split_nav("move", "k"),
