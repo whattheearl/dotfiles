@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
-#
+
+bindkey -e
+
 export DOTNET_CLI_TELEMETRY_OPTOUT='true'
 export NVM_DIR=${HOME}/.nvm
 export BUN_INSTALL=$HOME/.bun
@@ -34,7 +36,10 @@ export PATH=$PATH:$HOME/wte/dotfiles/scripts
 
 alias b="bs docker-reset"
 alias t="bs test-integration"
+alias client="make -C ~/tyl/tcp-ops-center client"
+alias bff="make -C ~/tyl/tcp-ops-center bff"
 alias v=nvim $@
+alias dev="bun run ~/tyl/dev-cli/dist/index.js $@"
 alias dc="docker compose $@"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
