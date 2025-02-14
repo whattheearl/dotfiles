@@ -8,18 +8,19 @@ export BUN_INSTALL=$HOME/.bun
 export EDITOR=nvim
 HISTFILE=${HOME}/.zsh_history
 SAVEHIST=100000
+setopt inc_append_history
+setopt share_history
 [ -s "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [ -s "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" ] && source "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" 
 [ -s "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [ -s "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ] && source "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme"
 [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+[ -s "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ] && source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
 [ -s "/home/jon/.bun/_bun" ] && source "/home/jon/.bun/_bun"
 [ -s "/Users/jon/.bun/_bun" ] && source "/Users/jon/.bun/_bun"
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s ~/.p10k.zsh ] && source ~/.p10k.zsh
+[ -s ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s $HOME/.config/zsh/secrets.sh ] && source $HOME/.config/zsh/secrets.sh
 
 export PATH=$PATH:/Users/jon/.dotnet/tools
 export PATH=$PATH:$HOME/.config/homebrew/bin
@@ -58,20 +59,6 @@ alias en="cd $HOME/wte/dotfiles/nvim && v init.lua"
 alias et="cd $HOME/wte/dotfiles/tmux && v tmux.conf"
 alias ew="cd $HOME/wte/dotfiles/wezterm && v wezterm.lua"
 
-function cdp() {
-  cd "$(find ~ -maxdepth 2 -type d -path '/home/jon/wte/**' -or -path '/home/jon/tyl/**' -not -path '*/.cache*' | fzf)"
-}
-
-function gnome-customize() {
-  gsettings set org.gnome.desktop.interface enable-animations false
-  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape', 'altwin:swap_alt_win']"
-}
-
-function gnome-reset() { 
-  gsettings set org.gnome.desktop.interface enable-animations true
-  gsettings set org.gnome.desktop.input-sources xkb-options "[]"
-}
-
 function add-make() {
   cp ~/wte/dotfiles/templates/Makefile .
 }
@@ -89,10 +76,6 @@ function add-nugetconfig() {
 }
 
 function add-prettierrc() {
-  # add to package.json dev
-  # add format script
   cp ~/wte/dotfiles/templates/.prettierrc .
 }
-
-source $HOME/.config/zsh/secrets.sh
 
