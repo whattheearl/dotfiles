@@ -22,31 +22,32 @@ symlinks:
 ## packages: installs arch packages
 packages:
 	sudo pacman -S --noconfirm \
+		aspnet-runtime-8.0 \
+		base-devel \
+		bitwarden-cli \
 		bluez \
 		bluez-utils \
-		wezterm \
-		zsh \
-		zsh-history-substring-search \
-		zsh-autosuggestions \
-		zsh-syntax-highlighting \
-		git \
-		docker \
-		docker-compose \
-		docker-buildx \
-		make \
-		neovim \
 		code \
-		jq \
-		base-devel \
+		docker \
+		docker-buildx \
+		docker-compose \
 		dotnet-sdk-8.0 \
-		aspnet-runtime-8.0 \
-		lua \
 		firefox \
-		bitwarden-cli \
 		flatpak \
+		git \
+		jq \
+		lua \
+		make \
+		man \
+		neovim \
 		restic \
 		tldr \
+		wezterm \
 		xorg-xrandr
+		zsh \
+		zsh-autosuggestions \
+		zsh-history-substring-search \
+		zsh-syntax-highlighting \
 
 ## ssh: adds ssh keys
 ssh:
