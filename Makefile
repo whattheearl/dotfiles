@@ -32,8 +32,10 @@ packages:
 		docker-buildx \
 		docker-compose \
 		dotnet-sdk-8.0 \
+		fd \ 
 		firefox \
 		flatpak \
+		gcc 
 		git \
 		jq \
 		lua \
@@ -43,14 +45,16 @@ packages:
 		neovim \
 		postgresql \
 		restic \
+		ripgrep \
 		tldr \
+		unzip 
 		wezterm \
 		xclip \
-		xorg-xrandr
+		xorg-xrandr \
 		zsh \
 		zsh-autosuggestions \
 		zsh-history-substring-search \
-		zsh-syntax-highlighting \
+		zsh-syntax-highlighting 
 
 ## ssh: adds ssh keys
 ssh:
