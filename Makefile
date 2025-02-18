@@ -39,10 +39,13 @@ packages:
 		lua \
 		make \
 		man \
+		mariadb \
 		neovim \
+		postgresql \
 		restic \
 		tldr \
 		wezterm \
+		xclip \
 		xorg-xrandr
 		zsh \
 		zsh-autosuggestions \
