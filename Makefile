@@ -21,7 +21,7 @@ symlinks:
 
 ## packages: installs arch packages
 packages:
-	sudo pacman -S --noconfirm \
+	sudo pacman -S --noconfirm --needed \
 		aspnet-runtime-8.0 \
 		base-devel \
 		bitwarden-cli \
@@ -32,10 +32,10 @@ packages:
 		docker-buildx \
 		docker-compose \
 		dotnet-sdk-8.0 \
-		fd \ 
+		fd \
 		firefox \
 		flatpak \
-		gcc 
+		gcc \
 		git \
 		jq \
 		lua \
@@ -47,14 +47,14 @@ packages:
 		restic \
 		ripgrep \
 		tldr \
-		unzip 
+		unzip \
 		wezterm \
 		xclip \
 		xorg-xrandr \
 		zsh \
 		zsh-autosuggestions \
 		zsh-history-substring-search \
-		zsh-syntax-highlighting 
+		zsh-syntax-highlighting
 
 ## ssh: adds ssh keys
 ssh:
@@ -81,5 +81,5 @@ aur-packages:
 		# nvm
 
 ## flatpak-packages: install flatpak applications
-flatpak-packages;
+flatpak-packages:
 	flatpak install com.usebottles.bottles
