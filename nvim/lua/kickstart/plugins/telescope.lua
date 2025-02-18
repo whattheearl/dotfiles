@@ -65,6 +65,7 @@ return {
                         "node_modules",
                         "build",
                         "dist",
+                        "package-lock.json",
                         "yarn.lock",
                     },
                     mappings = {
