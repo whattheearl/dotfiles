@@ -58,24 +58,10 @@ alias ez="cd $HOME/wte/dotfiles/zsh && v .zshrc"
 alias en="cd $HOME/wte/dotfiles/nvim && v init.lua"
 alias et="cd $HOME/wte/dotfiles/tmux && v tmux.conf"
 alias ew="cd $HOME/wte/dotfiles/wezterm && v wezterm.lua"
-
-function add-make() {
-  cp ~/wte/dotfiles/templates/Makefile .
-}
-
-function add-npmrc() {
-  cp ~/wte/dotfiles/templates/.npmrc .
-}
-
-function add-editorconfig() {
-  cp ~/wte/dotfiles/templates/.editorconfig .
-}
-
-function add-nugetconfig() {
-  cp ~/wte/dotfiles/templates/NuGet.config .
-}
-
-function add-prettierrc() {
-  cp ~/wte/dotfiles/templates/.prettierrc .
-}
-
+alias ff-opscenter="firefox http://admin.tcpci.com/portal/ops-center &"
+alias ff-admincenter="firefox https://dev-admin.tcpci.com/org/admin-center/dashboard &"
+alias cp-make="cp ~/wte/dotfiles/templates/Makefile ."
+alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
+alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
+alias cp-nugetconfig="cp ~/wte/dotfiles/templates/NuGet.config ."
+alias cp-prettierrc="cp ~/wte/dotfiles/templates/.prettierrc ."
