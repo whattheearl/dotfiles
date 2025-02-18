@@ -58,8 +58,6 @@ config.keys = {
     { key = "3", mods = "CTRL", action = wezterm.action.ActivateTab(2) },
     { key = "4", mods = "CTRL", action = wezterm.action.ActivateTab(3) },
     { key = "5", mods = "CTRL", action = wezterm.action.ActivateTab(4) },
-    { key = "6", mods = "CTRL", action = wezterm.action.ActivateTab(5) },
-    { key = "7", mods = "CTRL", action = wezterm.action.ActivateTab(6) },
     { key = "t", mods = "CTRL|SHIFT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
     { key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
     { key = "h", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
