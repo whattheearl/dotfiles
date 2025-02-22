@@ -34,6 +34,7 @@ packages:
 		dotnet-sdk-8.0 \
 		fd \
 		firefox \
+		flameshot \
 		flatpak \
 		gcc \
 		git \
