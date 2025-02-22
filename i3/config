@@ -33,31 +33,16 @@ exec --no-startup-id wezterm
 set $browser firefox
 bindsym $mod+shift+Return exec firefox
 
-# filemanager
-bindsym $mod+shift+f exec nautilus
-
+# filemanager?
 # teams
 bindsym $mod+shift+t exec $browser https://teams.microsoft.com/v2/
-
 # excalidraw
 bindsym $mod+shift+e exec $browser https://excalidraw.com/
-
-# discord
-bindsym $mod+d exec flatpak run com.discordapp.Discord
-
-# music
 bindsym $mod+shift+s exec spotify
-
 # menu
 bindsym $mod+space exec --no-startup-id dmenu_run
-
-# bottles
 bindsym $mod+shift+b exec flatpak run com.usebottles.bottles
-
-# obs
 bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
-
-# discord
 bindsym $mod+shift+d exec flatpak run com.discordapp.Discord
 
 # change focus
