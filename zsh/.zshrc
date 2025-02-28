@@ -65,3 +65,19 @@ alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
 alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
 alias cp-nugetconfig="cp ~/wte/dotfiles/templates/NuGet.config ."
 alias cp-prettierrc="cp ~/wte/dotfiles/templates/.prettierrc ."
+
+function claude() {
+  local prompt="$1"
+  shift
+  curl -s -X POST https://api.anthropic.com/v1/messages \
+    -H "Content-Type: application/json" \
+    -H "x-api-key: $AI_CLAUDE" \
+    -H "anthropic-version: 2023-06-01" \
+    -d "{
+      \"model\": \"claude-3-7-sonnet-20250219\",
+      \"max_tokens\": 1024,
+      \"messages\": [
+        {\"role\": \"user\", \"content\": \"$prompt\"}
+      ]
+    }" | jq -r ".content[0].text" $@
+}
