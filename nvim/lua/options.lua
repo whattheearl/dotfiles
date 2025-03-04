@@ -1,10 +1,9 @@
 vim.opt.breakindent = true
 vim.opt.cursorline = true
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.inccommand = "split"
 vim.opt.list = false
--- vim.opt.list = true
--- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.modeline = false
 vim.opt.mouse = "a"
 vim.opt.number = true
