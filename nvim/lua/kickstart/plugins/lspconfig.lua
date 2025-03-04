@@ -118,6 +118,7 @@ return {
                         },
                     },
                 },
+                astro = {},
             }
 
             require("mason").setup()
