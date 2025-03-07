@@ -81,3 +81,16 @@ function claude() {
       ]
     }" | jq -r ".content[0].text" $@
 }
+
+function gemini() {
+    local prompt="$1"
+    shift
+    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${AI_GEMINI}" \
+    -H 'Content-Type: application/json' \
+    -X POST \
+    -d  "{
+      \"contents\": [
+        {\"parts\": [{\"text\": \"$prompt\"}]}
+      ]
+    }" | jq -r ".candidates[0].content.parts[0].text" $@
+}
