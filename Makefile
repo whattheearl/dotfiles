@@ -83,4 +83,5 @@ aur-packages:
 
 ## flatpak-packages: install flatpak applications
 flatpak-packages:
-	flatpak install com.usebottles.bottles
+	flatpak install com.usebottles.bottles \
+	flatpak install com.discordapp.Discord
