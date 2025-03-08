@@ -81,6 +81,13 @@ aur-packages:
 		lazygit-git
 		# nvm
 
+## brew-packages: install apple packages
+brew-packages:
+	brew install powerlevel10k \
+		zsh-autosuggestions \
+		zsh-syntax-highlighting \
+		nvm
+
 ## flatpak-packages: install flatpak applications
 flatpak-packages:
 	flatpak install com.usebottles.bottles \

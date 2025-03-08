@@ -11,9 +11,12 @@ SAVEHIST=100000
 setopt inc_append_history
 setopt share_history
 [ -s "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[ -s "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [ -s "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" ] && source "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" 
 [ -s "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[ -s "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [ -s "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ] && source "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme"
+[ -s "/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme" ] && source "/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme"
 [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
 [ -s "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ] && source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
 [ -s "/home/jon/.bun/_bun" ] && source "/home/jon/.bun/_bun"
@@ -36,8 +39,6 @@ export PATH=$PATH:$HOME/.dotnet/tools/kiota
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
 
-alias b="bs docker-reset"
-alias t="bs test-integration"
 alias client="make -C ~/tyl/tcp-ops-center client"
 alias bff="make -C ~/tyl/tcp-ops-center bff"
 alias v=nvim $@
