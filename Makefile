@@ -27,7 +27,6 @@ packages:
 		bitwarden-cli \
 		bluez \
 		bluez-utils \
-		code \
 		docker \
 		docker-buildx \
 		docker-compose \
@@ -78,7 +77,8 @@ aur:
 aur-packages:
 	yay -S --noconfirm \
 		zsh-theme-powerlevel10k-git \
-		lazygit-git
+		lazygit-git \
+		visual-studio-code-bin
 		# nvm
 
 ## flatpak-packages: install flatpak applications
