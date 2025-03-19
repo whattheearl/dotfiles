@@ -28,12 +28,12 @@ bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOUR
 # terminal
 bindsym $mod+Return exec wezterm
 exec --no-startup-id wezterm
-
 # browser
 set $browser firefox
 bindsym $mod+shift+Return exec firefox
-
-# filemanager?
+# filemanager
+# screenshot
+bindsym $mod+shift+p exec flameshot gui
 # teams
 bindsym $mod+shift+t exec $browser https://teams.microsoft.com/v2/
 # excalidraw
