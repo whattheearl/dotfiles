@@ -75,7 +75,8 @@ aur:
 
 ## aur-packages: installs 3rd party packages
 aur-packages:
-	yay -S --noconfirm \
+	yay -Syu --noconfirm \
+		oh-my-zsh-git \
 		zsh-theme-powerlevel10k-git \
 		lazygit-git \
 		visual-studio-code-bin
