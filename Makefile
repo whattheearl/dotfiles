@@ -1,6 +1,6 @@
 BUILD_DIR=/tmp/dotfile/
 
-.PHONY: help install clean-nvim nvim fzf
+.PHONY: help packages symlinks ssh env pacman-packages aur aur-packages flatpak-packages
 
 ## help: print this help message
 help:
@@ -16,11 +16,10 @@ symlinks:
 	ln -sf ${PWD}/zsh/.zshrc ${HOME}/.zshrc
 	ln -sf ${PWD}/zsh ${HOME}/.config
 	ln -sf ${PWD}/i3 ${HOME}/.config
-	# ln -sf ${PWD}/sway ${HOME}/.config
 	ln -sf ${PWD}/wofi ${HOME}/.config
 
 ## packages: installs arch packages
-packages:
+pacman-packages:
 	sudo pacman -S --noconfirm --needed \
 		aspnet-runtime-8.0 \
 		base-devel \
@@ -65,7 +64,7 @@ ssh:
 
 ## env: adds envvars
 env:
-	bw get item bcac7ee2-d117-4341-a81a-b2380125a710 | jq -r ".notes" > ${HOME}/wte/dotfiles/zsh/secrets.sh
+	bw get item bcac7ee2-d117-4341-a81a-b2380125a710 | jq -r ".notes" >> ${HOME}/wte/dotfiles/zsh/secrets.sh
 
 ## aur: 3rd party package manager
 aur:
