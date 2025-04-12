@@ -28,6 +28,7 @@ return {
 
       -- Allows extra capabilities provided by nvim-cmp
       "hrsh7th/cmp-nvim-lsp",
+      { "Decodetalkers/csharpls-extended-lsp.nvim", lazy = true },
     },
     config = function()
       -- Brief aside: **What is LSP?**
