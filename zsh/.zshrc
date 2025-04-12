@@ -2,9 +2,10 @@
 
 bindkey -e
 
-alias b="bs docker-test"
-alias r="bs docker-reset"
-alias t="bs test-integration"
+alias b="make -C ~/tyl/tcp-branding-api docker-test"
+alias r="make -C ~/tyl/tcp-branding-api docker-reset && make -C ~/tyl/tcp-branding-api docker-test"
+alias t="make -C ~/tyl/tcp-branding-api test-integration"
+
 alias client="make -C ~/tyl/tcp-ops-center client"
 alias bff="make -C ~/tyl/tcp-ops-center bff"
 alias v="nvim $@"
