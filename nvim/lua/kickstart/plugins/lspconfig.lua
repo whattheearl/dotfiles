@@ -226,6 +226,13 @@ return {
         -- ts_ls = {},
         --
         ts_ls = {},
+        svelte = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = vim.fn.has("nvim-0.10") == 0 and { dynamicRegistration = true },
+            },
+          },
+        },
         csharp_ls = {
           handlers = {
             ["textDocument/definition"] = require("csharpls_extended").handler,
