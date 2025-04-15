@@ -1,21 +1,16 @@
 #! /usr/bin/env bash
 
-bindkey -e
-
+# INFO: project alias
 alias b="make -C ~/tyl/tcp-branding-api docker-test"
 alias r="make -C ~/tyl/tcp-branding-api docker-reset && make -C ~/tyl/tcp-branding-api docker-test"
 alias t="make -C ~/tyl/tcp-branding-api test-integration"
 
-alias client="make -C ~/tyl/tcp-ops-center client"
-alias bff="make -C ~/tyl/tcp-ops-center bff"
+# INFO: tool alias
 alias v="nvim $@"
-alias dev="bun run ~/tyl/dev-cli/dist/index.js $@"
-alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@"
-alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
-alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
 alias lg="lazygit"
-alias n="cd ~/wte/notes && v ~/wte/notes/today.md"
-alias devd=$HOME/tyl/dev-cli/src/index.ts $@
+alias ff="firefox $@"
+
+# INFO: open aliases
 alias e-zshrc="nvim ~/.zshrc"
 alias e-dotfiles="cd $HOME/wte/dotfiles && nvim ./readme.md"
 alias e-neovim="cd $HOME/wte/dotfiles/nvim && nvim ./init.lua"
@@ -28,6 +23,15 @@ alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
 alias cp-nugetconfig="cp ~/wte/dotfiles/templates/NuGet.config ."
 alias cp-prettierrc="cp ~/wte/dotfiles/templates/.prettierrc ."
 
+# INFO: tcp alias
+alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
+alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml $@"
+alias dev="$HOME/tyl/dev-cli/src/index.ts $@"
+alias n="cd ~/wte/notes && v ~/wte/notes/today.md"
+alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@"
+alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
+
+# INFO: path
 export DOTNET_CLI_TELEMETRY_OPTOUT='true'
 export NVM_DIR=${HOME}/.nvm
 export BUN_INSTALL=$HOME/.bun
@@ -46,6 +50,7 @@ export PATH=$PATH:$HOME/.dotnet/tools/kiota
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
 
+# INFO: zsh config
 ZSH=/usr/share/oh-my-zsh/
 plugins=(git docker-compose)
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
@@ -53,21 +58,27 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
+# INFO: zsh plugins
 [ -s "$ZSH/oh-my-zsh.sh" ] && source $ZSH/oh-my-zsh.sh
-[ -s "/home/jon/.bun/_bun" ] && source "/home/jon/.bun/_bun"
-[ -s "/home/jon/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ] && source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
-[ -s "/home/jon/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
-[ -s "/home/jon/.fzf.zsh" ] && source ~/.fzf.zsh
-[ -s "/home/jon/.p10k.zsh" ] && source ~/.p10k.zsh
-[ -s "/home/jon/tyl/google-identity/google-cloud-sdk/completion.zsh.inc" ] && source "/home/jon/tyl/google-identity/google-cloud-sdk/completion.zsh.inc"
-[ -s "/home/jon/tyl/google-identity/google-cloud-sdk/path.zsh.inc" ] && source "/home/jon/tyl/google-identity/google-cloud-sdk/path.zsh.inc"
-[ -s "/Users/jon/.bun/_bun" ] && source "/Users/jon/.bun/_bun"
-[ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
 [ -s "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ] && source "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme"
 [ -s "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [ -s "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" ] && source "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" 
 [ -s "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[ -s "/home/jon/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ] && source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
+[ -s "/home/jon/.p10k.zsh" ] && source ~/.p10k.zsh
 
+# INFO: cli tools / completion
+[ -s "/home/jon/.bun/_bun" ] && source "/home/jon/.bun/_bun"
+[ -s "/home/jon/.fzf.zsh" ] && source ~/.fzf.zsh
+[ -s "/home/jon/tyl/google-identity/google-cloud-sdk/completion.zsh.inc" ] && source "/home/jon/tyl/google-identity/google-cloud-sdk/completion.zsh.inc"
+[ -s "/home/jon/tyl/google-identity/google-cloud-sdk/path.zsh.inc" ] && source "/home/jon/tyl/google-identity/google-cloud-sdk/path.zsh.inc"
+[ -s "/Users/jon/.bun/_bun" ] && source "/Users/jon/.bun/_bun"
+[ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
+
+# INFO: secret env var
+[ -s "/home/jon/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
+
+# INFO: ai tools
 function claude() {
   local prompt="$1"
   shift
