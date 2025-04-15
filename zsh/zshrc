@@ -15,8 +15,8 @@ alias e-zshrc="nvim ~/.zshrc"
 alias e-dotfiles="cd $HOME/wte/dotfiles && nvim ./readme.md"
 alias e-neovim="cd $HOME/wte/dotfiles/nvim && nvim ./init.lua"
 alias e-wezterm="cd $HOME/wte/dotfiles/wezterm && v wezterm.lua"
-alias ff-opscenter="firefox http://admin.tcpci.com/portal/ops-center &"
-alias ff-admincenter="firefox https://dev-admin.tcpci.com/org/admin-center/dashboard &"
+alias ff-opscenter="firefox https://admin.tcpci.com/portal/ops-center &"
+alias ff-admincenter="firefox https://waynecountypa-admin.tcpci.com/org/admin-center/dashboard &"
 alias cp-make="cp ~/wte/dotfiles/templates/Makefile ."
 alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
 alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
@@ -60,23 +60,27 @@ fi
 
 # INFO: zsh plugins
 [ -s "$ZSH/oh-my-zsh.sh" ] && source $ZSH/oh-my-zsh.sh
+[ -s "$HOME/.oh-oh-zsh/oh-my-zsh.sh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
+[ -s /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme ] && source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+[ -s /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -s /opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 [ -s "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ] && source "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme"
 [ -s "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [ -s "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" ] && source "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" 
 [ -s "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-[ -s "/home/jon/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ] && source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
-[ -s "/home/jon/.p10k.zsh" ] && source ~/.p10k.zsh
+[ -s "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ] && source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
+[ -s "$HOME/.p10k.zsh" ] && source ~/.p10k.zsh
 
 # INFO: cli tools / completion
-[ -s "/home/jon/.bun/_bun" ] && source "/home/jon/.bun/_bun"
-[ -s "/home/jon/.fzf.zsh" ] && source ~/.fzf.zsh
-[ -s "/home/jon/tyl/google-identity/google-cloud-sdk/completion.zsh.inc" ] && source "/home/jon/tyl/google-identity/google-cloud-sdk/completion.zsh.inc"
-[ -s "/home/jon/tyl/google-identity/google-cloud-sdk/path.zsh.inc" ] && source "/home/jon/tyl/google-identity/google-cloud-sdk/path.zsh.inc"
-[ -s "/Users/jon/.bun/_bun" ] && source "/Users/jon/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+[ -s "$HOME/.fzf.zsh" ] && source ~/.fzf.zsh
+[ -s "$HOME/tyl/google-identity/google-cloud-sdk/completion.zsh.inc" ] && source "$HOME/tyl/google-identity/google-cloud-sdk/completion.zsh.inc"
+[ -s "$HOME/tyl/google-identity/google-cloud-sdk/path.zsh.inc" ] && source "$HOME/tyl/google-identity/google-cloud-sdk/path.zsh.inc"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
 
 # INFO: secret env var
-[ -s "/home/jon/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
+[ -s "$HOME/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
 
 # INFO: ai tools
 function claude() {
