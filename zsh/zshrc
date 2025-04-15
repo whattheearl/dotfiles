@@ -9,7 +9,6 @@ alias t="make -C ~/tyl/tcp-branding-api test-integration"
 alias v="nvim $@"
 alias lg="lazygit"
 alias ff="firefox $@"
-
 # INFO: open aliases
 alias e-zshrc="nvim ~/.zshrc"
 alias e-dotfiles="cd $HOME/wte/dotfiles && nvim ./readme.md"
@@ -22,12 +21,11 @@ alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
 alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
 alias cp-nugetconfig="cp ~/wte/dotfiles/templates/NuGet.config ."
 alias cp-prettierrc="cp ~/wte/dotfiles/templates/.prettierrc ."
-
+alias n="cd ~/wte/notes && v ~/wte/notes/today.md"
 # INFO: tcp alias
 alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
 alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml $@"
 alias dev="$HOME/tyl/dev-cli/src/index.ts $@"
-alias n="cd ~/wte/notes && v ~/wte/notes/today.md"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
 
@@ -50,17 +48,17 @@ export PATH=$PATH:$HOME/.dotnet/tools/kiota
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
 
-# INFO: zsh config
-ZSH=/usr/share/oh-my-zsh/
+# INFO: zsh 
+[ -s /usr/share/oh-my-zsh/ ] && ZSH=/usr/share/oh-my-zsh/
 plugins=(git docker-compose)
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-# INFO: zsh plugins
+# INFO: source
 [ -s "$ZSH/oh-my-zsh.sh" ] && source $ZSH/oh-my-zsh.sh
-[ -s "$HOME/.oh-oh-zsh/oh-my-zsh.sh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
+# [ -s "$HOME/.oh-oh-zsh/oh-my-zsh.sh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
 [ -s /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme ] && source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 [ -s /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -s /opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
@@ -70,8 +68,6 @@ fi
 [ -s "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [ -s "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ] && source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
 [ -s "$HOME/.p10k.zsh" ] && source ~/.p10k.zsh
-
-# INFO: cli tools / completion
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 [ -s "$HOME/.fzf.zsh" ] && source ~/.fzf.zsh
 [ -s "$HOME/tyl/google-identity/google-cloud-sdk/completion.zsh.inc" ] && source "$HOME/tyl/google-identity/google-cloud-sdk/completion.zsh.inc"
@@ -79,8 +75,6 @@ fi
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 [ -s /opt/homebrew/opt/nvm/nvm.sh ] && source /opt/homebrew/opt/nvm/nvm.sh
 [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
-
-# INFO: secret env var
 [ -s "$HOME/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
 
 # INFO: ai tools
