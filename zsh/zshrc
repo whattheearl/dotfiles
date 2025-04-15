@@ -77,6 +77,7 @@ fi
 [ -s "$HOME/tyl/google-identity/google-cloud-sdk/completion.zsh.inc" ] && source "$HOME/tyl/google-identity/google-cloud-sdk/completion.zsh.inc"
 [ -s "$HOME/tyl/google-identity/google-cloud-sdk/path.zsh.inc" ] && source "$HOME/tyl/google-identity/google-cloud-sdk/path.zsh.inc"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+[ -s /opt/homebrew/opt/nvm/nvm.sh ] && source /opt/homebrew/opt/nvm/nvm.sh
 [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
 
 # INFO: secret env var
