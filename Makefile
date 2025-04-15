@@ -13,8 +13,7 @@ symlinks:
 	ln -sf ${PWD}/nvim ${HOME}/.config
 	ln -sf ${PWD}/wezterm ${HOME}/.config
 	ln -sf ${PWD}/tmux ${HOME}/.config
-	ln -sf ${PWD}/zsh/.zshrc ${HOME}/.zshrc
-	ln -sf ${PWD}/zsh ${HOME}/.config
+	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
 	ln -sf ${PWD}/i3 ${HOME}/.config
 	ln -sf ${PWD}/wofi ${HOME}/.config
 
@@ -66,14 +65,18 @@ ssh:
 env:
 	bw get item bcac7ee2-d117-4341-a81a-b2380125a710 | jq -r ".notes" >> ${HOME}/wte/dotfiles/zsh/secrets.sh
 
+## packages-brew: adds brew packages for air
+packages-brew:
+	brew install tldr	
+
 ## aur: 3rd party package manager
 aur:
 	git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay
 	cd ${HOME}/apps/yay
 	makepkg -si
 
-## aur-packages: installs 3rd party packages
-aur-packages:
+## packages-aur: installs 3rd party packages
+packages-aur:
 	yay -Syu --noconfirm \
 		oh-my-zsh-git \
 		zsh-theme-powerlevel10k-git \
@@ -81,7 +84,7 @@ aur-packages:
 		visual-studio-code-bin
 		# nvm
 
-## flatpak-packages: install flatpak applications
-flatpak-packages:
+## packages-flatpak: install flatpak applications
+packages-flatpak:
 	flatpak install com.usebottles.bottles \
 	flatpak install com.discordapp.Discord
