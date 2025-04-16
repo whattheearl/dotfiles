@@ -24,7 +24,7 @@ alias cp-prettierrc="cp ~/wte/dotfiles/templates/.prettierrc ."
 alias n="cd ~/wte/notes && v ~/wte/notes/today.md"
 # INFO: tcp alias
 alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
-alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml $@"
+alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml -f ~/tyl/tcp-community-service-dev-compose/infrastructure/docker-compose.yml $@"
 alias dev="$HOME/tyl/dev-cli/src/index.ts $@"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
