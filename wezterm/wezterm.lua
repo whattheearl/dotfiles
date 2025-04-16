@@ -1,17 +1,10 @@
 local wezterm = require("wezterm")
 local config = {}
 
--- config.default_prog = { "/usr/bin/tmux", "new-session", "-A", "-s default" }
--- config.inherit_cwd = true
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = "NeverPrompt"
-
--- config.font_size = 8
 config.font_size = 14
--- config.font_size = 10.5
-
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-
 config.warn_about_missing_glyphs = false
 
 local function is_vim(pane)
@@ -64,14 +57,16 @@ config.keys = {
   { key = "l", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(1) },
   { key = "-", mods = "SUPER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
   { key = "\\", mods = "SUPER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  -- move between split panes
   split_nav("move", "h"),
   split_nav("move", "j"),
   split_nav("move", "k"),
   split_nav("move", "l"),
-  -- { key = "h", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Left") },
-  -- { key = "j", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Down") },
-  -- { key = "k", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Up") },
-  -- { key = "l", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Right") },
+  -- resize panes
+  split_nav("resize", "h"),
+  split_nav("resize", "j"),
+  split_nav("resize", "k"),
+  split_nav("resize", "l"),
 }
 
 return config
