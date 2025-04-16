@@ -3,7 +3,12 @@ local config = {}
 
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = "NeverPrompt"
-config.font_size = 14
+
+if wezterm.target_triple == "aarch64-apple-darwin" then
+  config.font_size = 14.0
+else
+  config.font_size = 9
+end
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.warn_about_missing_glyphs = false
 
