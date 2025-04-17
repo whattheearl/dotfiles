@@ -75,7 +75,7 @@ return {
         documentation = { auto_show = false, auto_show_delay_ms = 500 },
         menu = {
           draw = {
-            columns = { { "kind" }, { "label", "label_description", gap = 1 } },
+            columns = { { "label", "label_description", gap = 1 }, { "kind" } },
           },
         },
       },
