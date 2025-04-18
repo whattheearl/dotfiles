@@ -6,9 +6,11 @@ return {
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
+        "angular",
         "bash",
         "c",
         "c_sharp",
+        "css",
         "diff",
         "html",
         "lua",
@@ -16,12 +18,14 @@ return {
         "markdown",
         "markdown_inline",
         "query",
+        "scss",
         "svelte",
         "vim",
         "vimdoc",
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
+
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
@@ -29,7 +33,15 @@ return {
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { "ruby" },
       },
+
       indent = { enable = true, disable = { "ruby" } },
+
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+        pattern = { "*.component.html", "*.container.html" },
+        callback = function()
+          vim.treesitter.start(nil, "angular")
+        end,
+      }),
     },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
