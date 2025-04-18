@@ -38,6 +38,7 @@ return {
         scss = { "prettierd" },
         css = { "prettierd" },
         htmlangular = { "prettierd" },
+        csharp = { "csharpier" },
       },
     },
   },
