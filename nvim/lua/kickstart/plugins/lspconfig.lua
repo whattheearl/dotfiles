@@ -222,21 +222,15 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
-        svelte = {
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = vim.fn.has("nvim-0.10") == 0 and { dynamicRegistration = true },
-            },
-          },
-        },
+        angularls = {},
+        cssls = {},
         csharp_ls = {
           handlers = {
             ["textDocument/definition"] = require("csharpls_extended").handler,
             ["textDocument/typeDefinition"] = require("csharpls_extended").handler,
           },
         },
-        angularls = {},
+        eslint_d = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -251,6 +245,14 @@ return {
             },
           },
         },
+        svelte = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = vim.fn.has("nvim-0.10") == 0 and { dynamicRegistration = true },
+            },
+          },
+        },
+        ts_ls = {},
       }
 
       -- Ensure the servers and tools above are installed
