@@ -34,6 +34,7 @@ return {
         markdown = { "prettierd" },
         javascript = { "prettierd" },
         typescript = { "prettierd" },
+        html = { "prettier" },
       },
     },
   },
