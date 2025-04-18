@@ -224,12 +224,7 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         angularls = {},
         cssls = {},
-        csharp_ls = {
-          handlers = {
-            ["textDocument/definition"] = require("csharpls_extended").handler,
-            ["textDocument/typeDefinition"] = require("csharpls_extended").handler,
-          },
-        },
+        csharp_ls = {},
         eslint_d = {},
         lua_ls = {
           -- cmd = { ... },
@@ -287,6 +282,9 @@ return {
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
             require("lspconfig")[server_name].setup(server)
+            if server_name == "csharp_ls" then
+              require("csharpls_extended").buf_read_cmd_bind()
+            end
           end,
         },
       })
