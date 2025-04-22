@@ -15,6 +15,7 @@ vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.timeoutlen = 300
+vim.opt.wrap = false
 vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.schedule(function()
