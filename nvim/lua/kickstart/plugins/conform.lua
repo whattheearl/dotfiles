@@ -35,7 +35,7 @@ return {
         html = { "prettierd" },
         htmlangular = { "prettierd" },
         javascript = { "prettierd" },
-        json = { "pretter" },
+        json = { "prettierd" },
         lua = { "stylua" },
         markdown = { "prettierd" },
         scss = { "prettierd" },
