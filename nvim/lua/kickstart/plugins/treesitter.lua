@@ -15,6 +15,7 @@ return {
         "html",
         "lua",
         "luadoc",
+        "make",
         "markdown",
         "markdown_inline",
         "query",
