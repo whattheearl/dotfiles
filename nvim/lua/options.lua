@@ -1,8 +1,11 @@
 vim.opt.breakindent = true
+vim.schedule(function()
+  vim.opt.clipboard = "unnamedplus"
+end)
 vim.opt.cursorline = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = "split"
-vim.opt.list = false
+vim.opt.list = true
 vim.opt.modeline = false
 vim.opt.mouse = "a"
 vim.opt.number = true
@@ -18,6 +21,3 @@ vim.opt.timeoutlen = 300
 vim.opt.wrap = false
 vim.opt.undofile = true
 vim.opt.updatetime = 250
-vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
-end)
