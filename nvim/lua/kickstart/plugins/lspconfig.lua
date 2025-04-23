@@ -1,3 +1,19 @@
+-- NOTE: silence csharp_ls info
+local original_show_message = vim.lsp.handlers["window/showMessage"]
+
+vim.lsp.handlers["window/showMessage"] = function(err, result, context, config)
+  local client = vim.lsp.get_client_by_id(context.client_id)
+  local message_type = context and context.message_type
+  if client and client.name == "csharp_ls" then
+    if message_type ~= 1 then
+      -- Suppress non-error messages
+      return
+    end
+  end
+
+  return original_show_message(err, result, context, config)
+end
+
 -- LSP Plugins
 return {
   {
