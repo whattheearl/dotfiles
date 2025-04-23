@@ -1,5 +1,3 @@
-BUILD_DIR=/tmp/dotfile/
-
 .PHONY: help packages symlinks ssh env pacman-packages aur aur-packages flatpak-packages
 
 ## help: print this help message
@@ -45,6 +43,7 @@ pacman-packages:
 		restic \
 		ripgrep \
 		tldr \
+		ttf-firacode-nerd \
 		unzip \
 		wezterm \
 		xclip \

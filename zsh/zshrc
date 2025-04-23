@@ -57,7 +57,6 @@ fi
 
 # INFO: source
 [ -s "$ZSH/oh-my-zsh.sh" ] && source $ZSH/oh-my-zsh.sh
-# [ -s "$HOME/.oh-oh-zsh/oh-my-zsh.sh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
 [ -s /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme ] && source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 [ -s /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -s /opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
