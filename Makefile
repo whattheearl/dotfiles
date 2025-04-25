@@ -14,6 +14,7 @@ symlinks:
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
 	ln -sf ${PWD}/i3 ${HOME}/.config
 	ln -sf ${PWD}/wofi ${HOME}/.config
+	ln -sf ${PWD}/prettier ${HOME}/.config
 
 ## packages: installs arch packages
 pacman-packages:
@@ -67,6 +68,11 @@ env:
 ## packages-brew: adds brew packages for air
 packages-brew:
 	brew install tldr	
+## packages-npm: installs eslint, prettier
+packages-npm:
+	@npm i -g prettier@3 \
+		prettier-plugin-svelte@3 \
+		prettier-plugin-tailwindcss@0
 
 ## aur: 3rd party package manager
 aur:

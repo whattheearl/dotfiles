@@ -8,6 +8,8 @@ alias t="make -C ~/tyl/tcp-branding-api test-integration"
 alias ff="firefox $@"
 alias lg="lazygit"
 alias v="nvim $@"
+alias eslint="eslint -c $HOME/.config/eslint/eslint.config.mjs $@"
+alias prettier="prettier --config $HOME/.config/prettier/prettierrc --write \"**/*.{js,ts,json,html,css,scss,md,yml}\" $@"
 # INFO: open aliases
 alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
 alias cp-make="cp ~/wte/dotfiles/templates/Makefile ."
