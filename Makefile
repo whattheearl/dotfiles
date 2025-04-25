@@ -14,10 +14,11 @@ symlinks:
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
 	ln -sf ${PWD}/i3 ${HOME}/.config
 	ln -sf ${PWD}/wofi ${HOME}/.config
+	ln -sf ${PWD}/eslint ${HOME}/.config
 	ln -sf ${PWD}/prettier ${HOME}/.config
 
-## packages: installs arch packages
-pacman-packages:
+## packages-pacman: installs arch packages
+packages-pacman:
 	sudo pacman -S --noconfirm --needed \
 		aspnet-runtime-8.0 \
 		base-devel \
@@ -67,12 +68,19 @@ env:
 
 ## packages-brew: adds brew packages for air
 packages-brew:
-	brew install tldr	
+	brew install tldr
+
 ## packages-npm: installs eslint, prettier
 packages-npm:
+	@cd ${HOME}/.config/eslint && npm i eslint@9 \
+		@eslint/js@9 \
+		@stylistic/eslint-plugin-js@4 \
+		@stylistic/eslint-plugin-ts@4 \
+		typescript-eslint@8
 	@npm i -g prettier@3 \
 		prettier-plugin-svelte@3 \
 		prettier-plugin-tailwindcss@0
+
 
 ## aur: 3rd party package manager
 aur:
