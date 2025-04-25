@@ -51,7 +51,9 @@ export PATH=$PATH:$HOME/wte/dotfiles/scripts
 
 # INFO: zsh 
 [ -s /usr/share/oh-my-zsh/ ] && ZSH=/usr/share/oh-my-zsh/
-plugins=(git docker-compose)
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
+plugins=(git docker-compose vi-mode)
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
