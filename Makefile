@@ -68,7 +68,8 @@ env:
 
 ## packages-brew: adds brew packages for air
 packages-brew:
-	brew install tldr
+	brew install tldr \
+		xwmx/taps/nb
 
 ## packages-npm: installs eslint, prettier
 packages-npm:
