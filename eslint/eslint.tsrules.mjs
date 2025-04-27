@@ -1,6 +1,6 @@
 export const tsRules = {
-    '@typescript-eslint/adjacent-overload-signatures': 'error',
-    '@typescript-eslint/array-type': 'off',
+    "@typescript-eslint/adjacent-overload-signatures": "error",
+    "@typescript-eslint/array-type": "off",
     // INFO: deprecitated
     // '@typescript-eslint/ban-types': [
     //     'error',
@@ -28,102 +28,109 @@ export const tsRules = {
     //         },
     //     },
     // ],
-    '@typescript-eslint/consistent-type-assertions': 'error',
+    "@typescript-eslint/consistent-type-assertions": "error",
     // INFO: only useable in ts
     // '@typescript-eslint/dot-notation': 'error',
-    '@typescript-eslint/explicit-member-accessibility': [
-        'off',
+    "@typescript-eslint/explicit-member-accessibility": [
+        "off",
         {
-            accessibility: 'explicit',
+            accessibility: "explicit",
         },
     ],
-    '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
-    '@stylistic/ts/indent': [
-        'error',
+    "@typescript-eslint/explicit-function-return-type": [
+        "error",
+        { allowExpressions: true },
+    ],
+    "@stylistic/ts/indent": [
+        "error",
         2,
         {
             SwitchCase: 1,
-            MemberExpression: 'off',
+            MemberExpression: "off",
             ignoredNodes: [
-                'ArrowFunctionExpression Identifier',
-                'ArrowFunctionExpression BlockStatement',
-                'TSTypeParameterInstantiation',
+                "ArrowFunctionExpression Identifier",
+                "ArrowFunctionExpression BlockStatement",
+                "TSTypeParameterInstantiation",
             ],
         },
     ],
-    '@stylistic/ts/member-delimiter-style': [
-        'error',
+    "@stylistic/ts/member-delimiter-style": [
+        "error",
         {
             multiline: {
-                delimiter: 'semi',
+                delimiter: "semi",
                 requireLast: true,
             },
             singleline: {
-                delimiter: 'semi',
+                delimiter: "semi",
                 requireLast: false,
             },
         },
     ],
-    '@typescript-eslint/member-ordering': 'off',
-    '@typescript-eslint/naming-convention': [
-        'error',
-        { selector: 'interface', format: ['PascalCase'], prefix: ['I'] },
+    "@typescript-eslint/member-ordering": "off",
+    "@typescript-eslint/naming-convention": [
+        "error",
+        { selector: "interface", format: ["PascalCase"], prefix: ["I"] },
         {
-            selector: 'memberLike',
-            modifiers: ['private'],
-            format: ['camelCase'],
-            leadingUnderscore: 'require',
+            selector: "memberLike",
+            modifiers: ["private"],
+            format: ["camelCase"],
+            leadingUnderscore: "require",
         },
-        { selector: 'method', format: ['PascalCase'] },
-        { selector: 'typeLike', format: ['PascalCase'] },
-        { selector: 'variableLike', format: ['camelCase'] },
-        { selector: 'typeProperty', format: ['camelCase'] },
+        { selector: "method", format: ["PascalCase"] },
+        { selector: "typeLike", format: ["PascalCase"] },
+        { selector: "variableLike", format: ["camelCase"] },
+        { selector: "typeProperty", format: ["camelCase"] },
     ],
-    '@typescript-eslint/no-empty-function': 'off',
-    '@typescript-eslint/no-empty-object-type': 'error',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-inferrable-types': [
-        'error',
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-empty-object-type": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-inferrable-types": [
+        "error",
         {
             ignoreParameters: true,
         },
     ],
-    '@typescript-eslint/no-misused-new': 'error',
-    '@typescript-eslint/no-namespace': 'error',
-    '@typescript-eslint/no-non-null-assertion': 'error',
-    '@typescript-eslint/no-parameter-properties': 'off',
-    '@typescript-eslint/no-shadow': [
-        'error',
+    "@typescript-eslint/no-misused-new": "error",
+    "@typescript-eslint/no-namespace": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-shadow": [
+        "error",
         {
-            hoist: 'all',
+            hoist: "all",
         },
     ],
-    '@typescript-eslint/no-unused-expressions': 'error',
-    '@typescript-eslint/no-use-before-define': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    '@stylistic/ts/no-extra-parens': ['error', 'all', { nestedBinaryExpressions: false }],
-    '@typescript-eslint/prefer-for-of': 'error',
-    '@typescript-eslint/prefer-function-type': 'error',
-    '@typescript-eslint/prefer-namespace-keyword': 'error',
-    '@stylistic/ts/quotes': [
-        'error',
-        'single',
+    "@typescript-eslint/no-unused-expressions": "error",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@stylistic/ts/no-extra-parens": [
+        "error",
+        "all",
+        { nestedBinaryExpressions: false },
+    ],
+    "@typescript-eslint/prefer-for-of": "error",
+    "@typescript-eslint/prefer-function-type": "error",
+    "@typescript-eslint/prefer-namespace-keyword": "error",
+    "@stylistic/ts/quotes": [
+        "error",
+        "single",
         {
             allowTemplateLiterals: true,
         },
     ],
-    '@stylistic/ts/semi': ['error', 'always'],
-    '@typescript-eslint/triple-slash-reference': [
-        'error',
+    "@stylistic/ts/semi": ["error", "always"],
+    "@typescript-eslint/triple-slash-reference": [
+        "error",
         {
-            path: 'always',
-            types: 'prefer-import',
-            lib: 'always',
+            path: "always",
+            types: "prefer-import",
+            lib: "always",
         },
     ],
-    '@stylistic/ts/type-annotation-spacing': 'error',
-    '@typescript-eslint/unified-signatures': 'error',
-    '@typescript-eslint/comma-dangle': 'off',
-    '@stylistic/ts/comma-spacing': ['error'],
-    '@typescript-eslint/arrow-body-style': 'off',
+    "@stylistic/ts/type-annotation-spacing": "error",
+    "@typescript-eslint/unified-signatures": "error",
+    "@typescript-eslint/comma-dangle": "off",
+    "@stylistic/ts/comma-spacing": ["error"],
+    "@typescript-eslint/arrow-body-style": "off",
 };
