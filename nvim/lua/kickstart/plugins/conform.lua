@@ -1,16 +1,16 @@
 return {
   { -- Autoformat
-    "stevearc/conform.nvim",
-    event = { "BufWritePre" },
-    cmd = { "ConformInfo" },
+    'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
     keys = {
       {
-        "<leader>f",
+        '<leader>f',
         function()
-          require("conform").format({ async = true, lsp_format = "fallback" })
+          require('conform').format { async = true, lsp_format = 'fallback' }
         end,
-        mode = "",
-        desc = "[F]ormat buffer",
+        mode = '',
+        desc = '[F]ormat buffer',
       },
     },
     opts = {
@@ -25,22 +25,22 @@ return {
         else
           return {
             timeout_ms = 500,
-            lsp_format = "fallback",
+            lsp_format = 'fallback',
           }
         end
       end,
       formatters_by_ft = {
-        csharp = { "csharpier" },
-        css = { "prettierd" },
-        html = { "prettierd" },
-        htmlangular = { "prettierd" },
-        javascript = { "prettierd" },
-        json = { "prettierd" },
-        lua = { "stylua" },
-        markdown = { "prettierd" },
-        scss = { "prettierd" },
-        typescript = { "prettierd" },
-        yaml = { "prettierd" },
+        csharp = { 'csharpier' },
+        css = { 'prettierd' },
+        html = { 'prettierd' },
+        htmlangular = { 'prettierd' },
+        javascript = { 'prettierd' },
+        json = { 'prettierd' },
+        lua = { 'stylua' },
+        markdown = { 'prettierd' },
+        scss = { 'prettierd' },
+        typescript = { 'prettierd' },
+        yaml = { 'prettierd' },
       },
     },
   },

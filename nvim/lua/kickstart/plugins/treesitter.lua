@@ -1,28 +1,28 @@
 return {
   { -- Highlight, edit, and navigate code
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    main = "nvim-treesitter.configs", -- Sets main module to use for opts
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
-        "angular",
-        "bash",
-        "c",
-        "c_sharp",
-        "css",
-        "diff",
-        "html",
-        "lua",
-        "luadoc",
-        "make",
-        "markdown",
-        "markdown_inline",
-        "query",
-        "scss",
-        "svelte",
-        "vim",
-        "vimdoc",
+        'angular',
+        'bash',
+        'c',
+        'c_sharp',
+        'css',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'make',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'scss',
+        'svelte',
+        'vim',
+        'vimdoc',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -32,15 +32,15 @@ return {
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { "ruby" },
+        additional_vim_regex_highlighting = { 'ruby' },
       },
 
-      indent = { enable = true, disable = { "ruby" } },
+      indent = { enable = true, disable = { 'ruby' } },
 
-      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-        pattern = { "*.component.html", "*.container.html" },
+      vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
+        pattern = { '*.component.html', '*.container.html' },
         callback = function()
-          vim.treesitter.start(nil, "angular")
+          vim.treesitter.start(nil, 'angular')
         end,
       }),
     },
