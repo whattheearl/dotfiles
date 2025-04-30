@@ -26,7 +26,7 @@ alias ff-opscenter="firefox https://admin.tcpci.com/portal/ops-center &"
 # INFO: tcp alias
 alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
 alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml -f ~/tyl/tcp-community-service-dev-compose/infrastructure/docker-compose.yml $@"
-alias dev="$HOME/tyl/dev-cli/src/index.ts $@"
+alias dev="$HOME/tyl/dev-cli/src/index.js $@"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
 
