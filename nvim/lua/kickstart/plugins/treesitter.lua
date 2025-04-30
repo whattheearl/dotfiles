@@ -37,7 +37,7 @@ return {
         additional_vim_regex_highlighting = { 'ruby' },
       },
 
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = true, disable = { 'ruby', 'javascript' } },
 
       vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
         pattern = { '*.component.html', '*.container.html' },
