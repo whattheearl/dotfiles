@@ -17,6 +17,13 @@ return {
           end
           return 'make install_jsregexp'
         end)(),
+
+        config = function()
+          require('luasnip.loaders.from_vscode').lazy_load {
+            paths = { vim.fn.stdpath 'config' .. '/snippets' },
+          }
+        end,
+
         dependencies = {
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
@@ -84,6 +91,12 @@ return {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          snippets = {
+            name = 'snippets',
+            min_keyword_length = 3,
+            module = 'blink.cmp.sources.snippets',
+            score_offset = 120,
+          },
         },
       },
 
@@ -96,7 +109,7 @@ return {
       -- the rust implementation via `'prefer_rust_with_warning'`
       --
       -- See :h blink-cmp-config-fuzzy for more information
-      fuzzy = { implementation = 'lua' },
+      fuzzy = { implementation = 'lua', sorts = { 'exact', 'score', 'sort_text' } },
 
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },

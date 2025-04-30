@@ -1,0 +1,152 @@
+{
+    "name": "friendly-snippets",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "plaintext",
+                    "markdown",
+                    "tex",
+                    "html",
+                    "global",
+                    "all"
+                ],
+                "path": "./global.json"
+            },
+            {
+                "language": [
+                    "license"
+                ],
+                "path": "./license.json"
+            },
+            {
+                "language": [
+                    "csharp",
+                    "cs"
+                ],
+                "path": "./csharp/csharp.json"
+            },
+            {
+                "language": "csharpdoc",
+                "path": "./csharp/csharpdoc.json"
+            },
+            {
+                "language": "editorconfig",
+                "path": "./editorconfig.json"
+            },
+            {
+                "language": [
+                    "gitcommit",
+                    "NeogitCommitMessage"
+                ],
+                "path": "./gitcommit.json"
+            },
+            {
+                "language": "ejs",
+                "path": "./frameworks/ejs.json"
+            },
+            {
+                "language": "lua",
+                "path": "./lua/lua.json"
+            },
+            {
+                "language": "luadoc",
+                "path": "./lua/luadoc.json"
+            },
+            {
+                "language": "sql",
+                "path": "./sql.json"
+            },
+            {
+                "language": [
+                    "shellscript",
+                    "shell",
+                    "sh",
+                    "zsh"
+                ],
+                "path": "./shell/shell.json"
+            },
+            {
+                "language": "shelldoc",
+                "path": "./shell/shelldoc.json"
+            },
+            {
+                "language": [
+                    "markdown",
+                    "rmd"
+                ],
+                "path": "./markdown.json"
+            },
+            {
+                "language": [
+                    "html",
+                    "jade",
+                    "pug",
+                    "eruby",
+                    "javascriptreact",
+                    "htmldjango",
+                    "astro",
+                    "blade"
+                ],
+                "path": "./html.json"
+            },
+            {
+                "language": [
+                    "css",
+                    "scss",
+                    "sass",
+                    "less",
+                    "stylus"
+                ],
+                "path": "./css.json"
+            },
+            {
+                "language": "terraform",
+                "path": "./terraform.json"
+            },
+            {
+                "language": "svelte",
+                "path": "./svelte.json"
+            },
+            {
+                "language": "angular",
+                "path": "./frameworks/angular/html.json"
+            },
+            {
+                "language": "angular",
+                "path": "./frameworks/angular/typescript.json"
+            },
+            {
+                "language": "angular",
+                "path": "./frameworks/angular/jsonc.json"
+            },
+            {
+                "language": "yaml",
+                "path": "./kubernetes.json"
+            },
+            {
+                "language": "yaml",
+                "path": "./docker/docker-compose.json"
+            },
+            {
+                "language": "make",
+                "path": "./make.json"
+            },
+            {
+                "language": "dockerfile",
+                "path": "./docker/docker_file.json"
+            },
+            {
+                "language": "asciidoc",
+                "path": "./asciidoc.json"
+            },
+            {
+                "language": "loremipsum",
+                "path": "./loremipsum.json"
+            }
+        ]
+    }
+}

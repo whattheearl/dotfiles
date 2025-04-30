@@ -1,0 +1,100 @@
+{
+    "Class": {
+        "prefix": "class",
+        "body": ["class ${1:Name}", "{", "    $0", "}"],
+        "description": "Class"
+    },
+    "Console.WriteLine": {
+        "prefix": "cw",
+        "body": ["System.Console.WriteLine($0);"],
+        "description": "Console.WriteLine"
+    },
+    "Foreach statement": {
+        "prefix": "foreach",
+        "body": ["foreach (${1:var} ${2:item} in ${3:collection})", "{", "    $0", "}"],
+        "description": "Foreach statement"
+    },
+    "#if": {
+        "prefix": "ifd",
+        "body": ["#if ${1:true}", "    $0", "#endif"],
+        "description": "#if"
+    },
+    "#region": {
+        "prefix": "region",
+        "body": ["#region ${1:Name}", "    $0", "#endregion"],
+        "description": "#region"
+    },
+    "Property and backing field": {
+        "prefix": "propfull",
+        "body": [
+            "private ${1:int} ${2:myVar};",
+            "public ${1:int} ${3:MyProperty}",
+            "{",
+            "    get { return ${2:myVar}; }",
+            "    set { ${2:myVar} = value; }",
+            "}",
+            "$0"
+        ],
+        "description": "Property and backing field"
+    },
+    "prop": {
+        "prefix": "prop",
+        "body": ["public ${1:int} ${2:MyProperty} { get; set; }$0"],
+        "description": "An automatically implemented property. C# 3.0 or higher"
+    },
+    "Switch statement": {
+        "prefix": "switch",
+        "body": ["switch (${1:switch_on})", "{", "    $0", "    default:", "}"],
+        "description": "Switch statement"
+    },
+    "Try finally": {
+        "prefix": "tryf",
+        "body": ["try", "{", "    $1", "}", "finally", "{", "    $0", "}"],
+        "description": "Try finally"
+    },
+    "Try catch": {
+        "prefix": "try",
+        "body": ["try", "{", "    $1", "}", "catch (${2:System.Exception})", "{", "    $0", "    throw;", "}"],
+        "description": "Try catch"
+    },
+    "Unchecked block": {
+        "prefix": "unchecked",
+        "body": ["unchecked", "{", "    $0", "}"],
+        "description": "Unchecked block"
+    },
+    "Unsafe statement": {
+        "prefix": "unsafe",
+        "body": ["unsafe", "{", "    $0", "}"],
+        "description": "Unsafe statement"
+    },
+    "constructor": {
+        "prefix": "ctor",
+        "body": ["${1:public} ${2:$TM_FILENAME_BASE}(${3:Parameters})", "{", "    $0", "}"],
+        "description": "constructor"
+    },
+    "xUnit Test": {
+        "prefix": "fact",
+        "body": ["[Fact]", "public void ${1:TestName}()", "{", "//Given", "", "//When", "", "//Then", "}$0"],
+        "description": "create xunit test method"
+    },
+    "Creates a Method structure": {
+        "prefix": "method",
+        "body": ["${1:public} ${2:void} ${3:MyMethod}(${4:string} ${5:parameter})", "{", "\t$0", "}"],
+        "description": "Creates a Method structure"
+    },
+    "Creates an Async Method structure": {
+        "prefix": "method_async",
+        "body": [
+            "${1:public} async ${2:Task}<${3:object}> ${4:MyMethodAsync}(${5:string} ${6:parameter})",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Creates an async Method structure"
+    },
+    "cls": {
+        "prefix": "cls",
+        "body": ["${1:public} class ${2:$TM_FILENAME_BASE}", "{", "\t$0", "}"],
+        "description": "Create new class"
+    }
+}
