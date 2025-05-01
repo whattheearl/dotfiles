@@ -69,7 +69,8 @@ env:
 ## packages-brew: adds brew packages for air
 packages-brew:
 	brew install tldr \
-		xwmx/taps/nb
+		xwmx/taps/nb \
+		dotnet
 
 ## packages-npm: installs eslint, prettier
 packages-npm:
