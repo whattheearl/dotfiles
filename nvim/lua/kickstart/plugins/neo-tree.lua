@@ -13,12 +13,22 @@ return {
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
+  ---@module "neo-tree"
+  ---@type neotree.Config?
   opts = {
-    filesystem = {
+    close_if_last_window = true,
+    default_source = 'git_status',
+    git_status = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
         },
+      },
+    },
+    filesystem = {
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = true,
       },
     },
   },
