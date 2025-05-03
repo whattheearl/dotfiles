@@ -1,16 +1,27 @@
 #! /usr/bin/env bash
 
-# INFO: project alias
-alias b="make -C ~/tyl/tcp-branding-api docker-test"
-alias r="make -C ~/tyl/tcp-branding-api docker-reset && make -C ~/tyl/tcp-branding-api docker-test"
-alias t="make -C ~/tyl/tcp-branding-api test-integration"
-# INFO: tool alias
+function run() {
+    tid up -d;
+    tidm wait-for-docker-up;
+    new-tab npm run -C ~/tyl/tcp-admincenter/mfe-workspace/ start:shell
+    new-tab npm run -C ~/tyl/tcp-admincenter/mfe-workspace/ start:config-remote
+    new-tab npm run -C ~/tyl/tcp-admincenter/mfe-workspace/ start:um-remote
+    new-tab npm run -C ~/tyl/tcp-admincenter/mfe-workspace/ start:dashboard-remote
+    new-tab dotnet run --project ~/tyl/tcp-admincenter/tcp-admincenter-user-management/tcp-admincenter-user-management/tcp-admincenter-user-management.csproj
+    new-tab dotnet run --project ~/tyl/tcp-admincenter/tcp-admincenter-dashboard/tcp-admincenter-dashboard/tcp-admincenter-dashboard.csproj
+    new-tab dotnet run --project ~/tyl/tcp-admincenter/tcp-admincenter-configuration/tcp-admincenter-configuration/tcp-admincenter-configuration.csproj
+    new-tab dotnet run --project ~/tyl/tcp-admincenter/shell/tcp-admincenter/tcp-admincenter.csproj
+}
+
+function new-tab() { wezterm cli spawn -- $@ }
+
+# INFO: tool
 alias ff="firefox $@"
 alias lg="lazygit"
 alias v="nvim $@"
-alias eslint="eslint -c $HOME/.config/eslint/eslint.config.mjs $@"
-alias prettier="prettier --config $HOME/.config/prettier/prettierrc --write \"**/*.{js,ts,json,html,css,scss,md,yml}\" $@"
-# INFO: open aliases
+alias eslint="dev lint"
+alias prettier="dev format"
+# INFO: open
 alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
 alias cp-make="cp ~/wte/dotfiles/templates/Makefile ."
 alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
@@ -21,14 +32,21 @@ alias e-neovim="cd $HOME/wte/dotfiles/nvim && nvim ./init.lua"
 alias e-notes="cd ~/wte/notes && v ~/wte/notes/today.md"
 alias e-wezterm="cd $HOME/wte/dotfiles/wezterm && v wezterm.lua"
 alias e-zshrc="nvim ~/.zshrc"
-alias ff-admincenter="firefox https://waynecountypa-admin.tcpci.com/org/admin-center/dashboard &"
-alias ff-opscenter="firefox https://admin.tcpci.com/portal/ops-center &"
-# INFO: tcp alias
-alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
-alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml -f ~/tyl/tcp-community-service-dev-compose/infrastructure/docker-compose.yml $@"
-alias dev="$HOME/tyl/dev-cli/src/index.js $@"
-alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@"
-alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
+# INFO: tcp
+function bs() { docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@ }
+function csd() { docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml -f ~/tyl/tcp-community-service-dev-compose/infrastructure/docker-compose.yml $@ }
+function ac() { docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml $@ }
+function dev() { ~/tyl/dev-cli/src/index.js $@ }
+function tcp() { docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@ }
+function tcpm() { make -f ~/tyl/platform-dev-environment-compose/ $@ }
+function tid() { docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@ }
+# INFO: git 
+alias ga="git add $@"
+alias gc="git commit -m $@"
+alias gl="git pull $@"
+alias gp="dev push $@"
+alias gpr="dev pr $@"
+alias gn="dev actions $@"
 
 # INFO: path
 export DOTNET_CLI_TELEMETRY_OPTOUT='true'
@@ -54,7 +72,7 @@ export PATH=$PATH:$HOME/wte/dotfiles/scripts
 [ -s $HOME/.oh-my-zsh/ ] && ZSH=$HOME/.oh-my-zsh/
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
-plugins=(git docker-compose vi-mode)
+plugins=(docker git docker-compose vi-mode)
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
