@@ -1,6 +1,7 @@
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
+vim.opt.autoindent = true
 vim.opt.cursorline = true
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevelstart = 99
@@ -16,6 +17,8 @@ vim.opt.scrolloff = 10
 vim.opt.showmode = false
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true -- enable casing if uppercase
+vim.opt.smartindent = true
+vim.opt.smarttab = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.timeoutlen = 300
