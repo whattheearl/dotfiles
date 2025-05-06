@@ -2,6 +2,9 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 vim.opt.cursorline = true
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldlevelstart = 99
+vim.opt.foldmethod = 'expr'
 vim.opt.ignorecase = true -- ignore search case
 vim.opt.inccommand = 'split'
 vim.opt.list = true
