@@ -108,10 +108,6 @@
                 "path": "./terraform.json"
             },
             {
-                "language": "svelte",
-                "path": "./svelte.json"
-            },
-            {
                 "language": "angular",
                 "path": "./frameworks/angular/html.json"
             },
