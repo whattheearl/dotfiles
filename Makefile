@@ -16,6 +16,7 @@ symlinks:
 	ln -sf ${PWD}/wofi ${HOME}/.config
 	ln -sf ${PWD}/eslint ${HOME}/.config
 	ln -sf ${PWD}/prettier ${HOME}/.config
+	ln -sf ${PWD}/aerospace ${HOME}/.config
 
 ## packages-pacman: installs arch packages
 packages-pacman:
