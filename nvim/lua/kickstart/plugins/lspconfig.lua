@@ -235,7 +235,7 @@ return {
         angularls = {},
         cssls = {},
         csharp_ls = {},
-        eslint_d = {},
+        -- eslint_d = {},
         prettierd = {},
         lua_ls = {
           -- cmd = { ... },
