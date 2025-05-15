@@ -1,8 +1,8 @@
 local wezterm = require("wezterm")
 local config = {}
 
-config.confirm_close_tab = false
 config.hide_tab_bar_if_only_one_tab = true
+config.skip_close_confirmation_for_processes_named = { "*" }
 config.warn_about_missing_glyphs = false
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
@@ -19,12 +19,10 @@ else
 end
 
 config.keys = {
-  { key = "+", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-  -- { key = "-", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-  { key = "0", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-  { key = "f", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+  { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
   { key = "n", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
   { key = "t", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+  { key = "f", mods = "CTRL", action = wezterm.action.SendString("${HOME}/wte/dotfiles/scripts/fzf-nvim.sh\n") },
 }
 
 return config
