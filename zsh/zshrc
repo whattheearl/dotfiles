@@ -1,20 +1,10 @@
 #! /usr/bin/env bash
 
-function run() {
-    tid up -d;
-    tidm wait-for-docker-up;
-    new-tab npm run -C ~/tyl/tcp-admincenter/mfe-workspace/ start:shell
-    new-tab npm run -C ~/tyl/tcp-admincenter/mfe-workspace/ start:config-remote
-    new-tab npm run -C ~/tyl/tcp-admincenter/mfe-workspace/ start:um-remote
-    new-tab npm run -C ~/tyl/tcp-admincenter/mfe-workspace/ start:dashboard-remote
-    new-tab dotnet run --project ~/tyl/tcp-admincenter/tcp-admincenter-user-management/tcp-admincenter-user-management/tcp-admincenter-user-management.csproj
-    new-tab dotnet run --project ~/tyl/tcp-admincenter/tcp-admincenter-dashboard/tcp-admincenter-dashboard/tcp-admincenter-dashboard.csproj
-    new-tab dotnet run --project ~/tyl/tcp-admincenter/tcp-admincenter-configuration/tcp-admincenter-configuration/tcp-admincenter-configuration.csproj
-    new-tab dotnet run --project ~/tyl/tcp-admincenter/shell/tcp-admincenter/tcp-admincenter.csproj
-}
-
-function new-tab() { wezterm cli spawn -- $@ }
-
+# INFO: dev-cli
+alias dva="dev action $@"
+alias dvd="dev deploy $@"
+alias dvl="dev lint $@"
+alias dvf="dev format $@"
 # INFO: tool
 alias ff="firefox $@"
 alias lg="lazygit"
@@ -38,25 +28,25 @@ function csd() { docker compose -f ~/tyl/tcp-community-service-dev-compose/docke
 function ac() { docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml $@ }
 function dev() { ~/tyl/dev-cli/src/index.js $@ }
 function tcp() { docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@ }
-function tcpm() { make -f ~/tyl/platform-dev-environment-compose/ $@ }
+function tcpm() { make -C ~/tyl/platform-dev-environment-compose/ $@ }
 function tid() { docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@ }
 # INFO: git 
 alias ga="git add $@"
 alias gc="git commit -m $@"
 alias gl="git pull $@"
-alias gp="dev push $@"
+alias gp="dev lint && dev format && git push $@"
 alias gpr="dev pr $@"
 alias gn="dev actions $@"
 
-# INFO: path
+# INFO: envars
+export MANPAGER='nvim +Man!'
 export DOTNET_CLI_TELEMETRY_OPTOUT='true'
+export BROWSER=firefox
 export NVM_DIR=${HOME}/.nvm
-export BUN_INSTALL=$HOME/.bun
 export EDITOR=nvim
 export PATH=$PATH:/Users/jon/.dotnet/tools
 export PATH=$PATH:$HOME/.config/homebrew/bin
 export PATH=$PATH:/opt/homebrew/bin
-export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$HOME/tyl/dev-cli/bin:$PATH
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/.cargo/env
@@ -67,12 +57,12 @@ export PATH=$PATH:$HOME/.dotnet/tools/kiota
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
 
-# INFO: zsh 
+# INFO: zsh
 [ -s /usr/share/oh-my-zsh/ ] && ZSH=/usr/share/oh-my-zsh/
 [ -s $HOME/.oh-my-zsh/ ] && ZSH=$HOME/.oh-my-zsh/
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
-plugins=(docker git docker-compose vi-mode)
+plugins=(docker docker-compose vi-mode)
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
@@ -89,11 +79,9 @@ fi
 [ -s "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [ -s "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ] && source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
 [ -s "$HOME/.p10k.zsh" ] && source ~/.p10k.zsh
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 [ -s "$HOME/.fzf.zsh" ] && source ~/.fzf.zsh
 [ -s "$HOME/tyl/google-identity/google-cloud-sdk/completion.zsh.inc" ] && source "$HOME/tyl/google-identity/google-cloud-sdk/completion.zsh.inc"
 [ -s "$HOME/tyl/google-identity/google-cloud-sdk/path.zsh.inc" ] && source "$HOME/tyl/google-identity/google-cloud-sdk/path.zsh.inc"
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 [ -s /opt/homebrew/opt/nvm/nvm.sh ] && source /opt/homebrew/opt/nvm/nvm.sh
 [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
 [ -s "$HOME/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
@@ -127,3 +115,5 @@ function gemini() {
       ]
     }" | jq -r ".candidates[0].content.parts[0].text" $@
 }
+
+function new-tab() { wezterm cli spawn -- $@ }
