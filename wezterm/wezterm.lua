@@ -22,7 +22,11 @@ config.keys = {
   { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
   { key = "n", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
   { key = "t", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-  { key = "f", mods = "CTRL", action = wezterm.action.SendString("${HOME}/wte/dotfiles/scripts/fzf-nvim.sh\n") },
+  {
+    key = "f",
+    mods = "CTRL",
+    action = wezterm.action.SendString("\x03;source ${HOME}/wte/dotfiles/scripts/fzf-nvim.sh\n"),
+  },
 }
 
 return config
