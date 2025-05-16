@@ -71,7 +71,9 @@ env:
 packages-brew:
 	brew install tldr \
 		xwmx/taps/nb \
-		dotnet
+		dotnet \
+		fd \
+		fzf
 
 ## packages-npm: installs eslint, prettier
 packages-npm:
