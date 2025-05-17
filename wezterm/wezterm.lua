@@ -9,6 +9,14 @@ config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
 if wezterm.target_triple == "aarch64-apple-darwin" then
   config.font_size = 14.0
+  config.keys = {
+    { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+    {
+      key = "f",
+      mods = "SUPER",
+      action = wezterm.action.SendString("${HOME}/wte/dotfiles/scripts/fzf-nvim.sh\n"),
+    },
+  }
 else
   config.font_size = 9
   config.font = wezterm.font_with_fallback({
@@ -16,17 +24,21 @@ else
     "JetBrains Mono",
     "Symbols Nerd Font",
   })
+  config.keys = {
+    { key = "+", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+    { key = "-", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+    { key = "0", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+    { key = "f", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+    { key = "n", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+    { key = "t", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+    { key = "w", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
+    { key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+    {
+      key = "f",
+      mods = "CTRL",
+      action = wezterm.action.SendString("${HOME}/wte/dotfiles/scripts/fzf-nvim.sh\n"),
+    },
+  }
 end
-
-config.keys = {
-  { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
-  { key = "n", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-  { key = "t", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-  {
-    key = "f",
-    mods = "CTRL",
-    action = wezterm.action.SendString("${HOME}/wte/dotfiles/scripts/fzf-nvim.sh\n"),
-  },
-}
 
 return config

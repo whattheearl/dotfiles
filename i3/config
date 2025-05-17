@@ -26,7 +26,6 @@ bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ t
 bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && $refresh_i3status
 
 # terminal
-bindsym $mod+f exec wezterm start -- zsh -i -e /home/jon/wte/dotfiles/scripts/fzf-nvim-i3.sh
 bindsym $mod+Return exec wezterm
 exec --no-startup-id wezterm
 # browser
@@ -47,16 +46,17 @@ bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
 bindsym $mod+shift+d exec flatpak run com.discordapp.Discord
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym Ctrl+h focus left
+bindsym Ctrl+j focus down
+bindsym Ctrl+k focus up
+bindsym Ctrl+l focus right
+
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym Ctrl+Shift+h focus left
+bindsym Ctrl+Shift+j focus down
+bindsym Ctrl+Shift+k focus up
+bindsym Ctrl+Shift+l focus right
 
 # enter fullscreen mode for the focused container
 bindsym $mod+z fullscreen toggle
@@ -71,6 +71,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+Tab workspace back_and_forth
@@ -83,6 +84,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -94,6 +96,7 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bar {
     wheel_up_cmd nop
