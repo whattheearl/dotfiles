@@ -25,7 +25,7 @@ config.keys = {
   {
     key = "f",
     mods = "CTRL",
-    action = wezterm.action.SendString("\x03;source ${HOME}/wte/dotfiles/scripts/fzf-nvim.sh\n"),
+    action = wezterm.action.SendString("${HOME}/wte/dotfiles/scripts/fzf-nvim.sh\n"),
   },
 }
 
