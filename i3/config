@@ -41,7 +41,8 @@ bindsym $mod+shift+e exec $browser https://excalidraw.com/
 bindsym $mod+shift+s exec spotify
 # menu
 bindsym $mod+space exec --no-startup-id dmenu_run
-bindsym $mod+shift+b exec flatpak run com.usebottles.bottles
+bindsym $mod+shift+r exec wezterm start -- zsh -i -e $HOME/wte/dotfiles/scripts/resolution-toggle.sh;
+bindsym $mod+shift+b exec wezterm start -- zsh -i -e $HOME/wte/dotfiles/scripts/1920x1080.sh; exec flatpak run com.usebottles.bottles; 
 bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
 bindsym $mod+shift+d exec flatpak run com.discordapp.Discord
 
