@@ -5,7 +5,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.skip_close_confirmation_for_processes_named = { "*" }
 config.warn_about_missing_glyphs = false
 config.window_close_confirmation = "NeverPrompt"
--- config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+config.window_padding = { left = 4, right = 0, top = 0, bottom = 0 }
 
 if wezterm.target_triple == "aarch64-apple-darwin" then
   config.font_size = 14.0
