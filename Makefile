@@ -23,6 +23,7 @@ packages-pacman:
 	sudo pacman -S --noconfirm --needed \
 		aspnet-runtime-8.0 \
 		base-devel \
+		bind-tools \
 		bitwarden-cli \
 		bluez \
 		bluez-utils \
