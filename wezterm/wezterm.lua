@@ -26,7 +26,7 @@ config.keys = {
   {
     key = "f",
     mods = "CTRL",
-    action = wezterm.action.SendString(". ${HOME}/wte/dotfiles/scripts/project-picker.sh\n"),
+    action = wezterm.action.SendString(". ${HOME}/wte/dotfiles/scripts/folder-picker.sh\n"),
   },
   { key = "n", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
   { key = "t", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
