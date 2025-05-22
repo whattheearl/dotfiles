@@ -82,6 +82,7 @@ fi
 [ -s "$HOME/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
 
 # INFO: ai tools
+
 function claude() {
   local prompt="$1"
   shift
@@ -101,7 +102,7 @@ function claude() {
 function gemini() {
     local prompt="$1"
     shift
-    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${AI_GEMINI}" \
+    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${AI_GEMINI}" \
     -H 'Content-Type: application/json' \
     -X POST \
     -d  "{
@@ -110,8 +111,6 @@ function gemini() {
       ]
     }" | jq -r ".candidates[0].content.parts[0].text" $@
 }
-
-function new-tab() { wezterm cli spawn -- $@ }
 
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
