@@ -1,34 +1,34 @@
 #! /usr/bin/env bash
 
 # INFO: dev-cli
-alias dva="dev action $@"
-alias dvb="dev browse $@"
-alias dvd="dev deploy $@"
-alias dvl="dev lint $@"
-alias dvf="dev format $@"
-alias dvpr="dev pr $@"
+alias a="dev action $@"
+alias bff="dev run bff";
+alias client="dev run client";
+alias d="dev deploy $@"
+alias format="dev format $@"
+alias github="dev browse github $@"
+alias lint="dev lint $@"
+alias pr="dev pr $@"
+alias r="dev run $@"
+alias web="dev browse web $@"
+
 # INFO: tool
+alias eslint="dev lint"
 alias ff="firefox $@"
 alias lg="lazygit"
-alias v="nvim $@"
-alias eslint="dev lint"
 alias prettier="dev format"
-# INFO: open
+alias v="nvim $@"
+
 alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
 alias cp-make="cp ~/wte/dotfiles/templates/Makefile ."
 alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
 alias cp-nugetconfig="cp ~/wte/dotfiles/templates/NuGet.config ."
 alias cp-prettierrc="cp ~/wte/dotfiles/templates/.prettierrc ."
-alias e-dotfiles="cd $HOME/wte/dotfiles && nvim ./readme.md"
-alias e-neovim="cd $HOME/wte/dotfiles/nvim && nvim ./init.lua"
-alias e-notes="cd ~/wte/notes && v ~/wte/notes/today.md"
-alias e-wezterm="cd $HOME/wte/dotfiles/wezterm && v wezterm.lua"
-alias e-zshrc="nvim ~/.zshrc"
+
 # INFO: tcp
 function bs() { docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@ }
 function csd() { docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml -f ~/tyl/tcp-community-service-dev-compose/infrastructure/docker-compose.yml $@ }
 function ac() { docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml $@ }
-# function dev() { ~/tyl/dev-cli/src/index.js $@ }
 function tcp() { docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@ }
 function tcpm() { make -C ~/tyl/platform-dev-environment-compose/ $@ }
 function tid() { docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@ }
@@ -82,7 +82,6 @@ fi
 [ -s "$HOME/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
 
 # INFO: ai tools
-
 function claude() {
   local prompt="$1"
   shift
@@ -91,7 +90,7 @@ function claude() {
     -H "x-api-key: $AI_CLAUDE" \
     -H "anthropic-version: 2023-06-01" \
     -d "{
-      \"model\": \"claude-3-7-sonnet-20250219\",
+      \"model\": \"claude-opus-4-20250514",
       \"max_tokens\": 1024,
       \"messages\": [
         {\"role\": \"user\", \"content\": \"$prompt\"}
@@ -102,7 +101,7 @@ function claude() {
 function gemini() {
     local prompt="$1"
     shift
-    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${AI_GEMINI}" \
+    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-preview-05-06:generateContent?key=${AI_GEMINI}" \
     -H 'Content-Type: application/json' \
     -X POST \
     -d  "{
@@ -111,15 +110,3 @@ function gemini() {
       ]
     }" | jq -r ".candidates[0].content.parts[0].text" $@
 }
-
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
