@@ -4,6 +4,7 @@
 alias a="dev action $@"
 alias bff="dev run bff";
 alias client="dev run client";
+alias claude="dev ai claude $@"
 alias d="dev deploy $@"
 alias format="dev format $@"
 alias github="dev browse github $@"
@@ -80,23 +81,6 @@ fi
 [ -s /opt/homebrew/opt/nvm/nvm.sh ] && source /opt/homebrew/opt/nvm/nvm.sh
 [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
 [ -s "$HOME/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
-
-# INFO: ai tools
-function claude() {
-  local prompt="$1"
-  shift
-  curl -s -X POST https://api.anthropic.com/v1/messages \
-    -H "Content-Type: application/json" \
-    -H "x-api-key: $AI_CLAUDE" \
-    -H "anthropic-version: 2023-06-01" \
-    -d "{
-      \"model\": \"claude-opus-4-20250514\",
-      \"max_tokens\": 1024,
-      \"messages\": [
-        {\"role\": \"user\", \"content\": \"$prompt\"}
-      ]
-    }" | jq -r ".content[0].text" $@
-}
 
 function gemini() {
     local prompt="$1"
