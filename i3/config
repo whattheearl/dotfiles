@@ -19,7 +19,6 @@ floating_modifier $mod
 focus_wrapping no
 font pango:monospace 8
 hide_edge_borders vertical
-smart_borders on
 tiling_drag modifier titlebar
 
 # sound
@@ -37,18 +36,20 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+shift+b exec flatpak run com.usebottles.bottles;
 bindsym $mod+shift+d exec flatpak run com.discordapp.Discord
 bindsym $mod+shift+e exec $browser https://excalidraw.com/
-bindsym $mod+shift+equal exec wezterm start -- zsh -i -e $HOME/wte/dotfiles/scripts/3840x2160.sh
-bindsym $mod+shift+minus exec wezterm start -- zsh -i -e $HOME/wte/dotfiles/scripts/1920x1080.sh
-bindsym $mod+shift+n exec wezterm start -- zsh -i -e $HOME/wte/dotfiles/scripts/nvim-picker.sh;
 bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
-bindsym $mod+p exec flameshot gui
+bindsym $mod+shift+Page_Down exec $HOME/wte/dotfiles/scripts/1920x1080.sh
+bindsym $mod+shift+Page_Up exec $HOME/wte/dotfiles/scripts/3840x2160.sh
 bindsym $mod+shift+Return exec firefox
 bindsym $mod+shift+s exec spotify
 bindsym $mod+shift+t exec $browser https://teams.microsoft.com/v2/
 bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym Print exec flameshot gui
 
 bindsym $mod+z fullscreen toggle
-bindsym $mod+backslash layout toggle splith tabbed
+bindsym $mod+shift+backslash layout toggle splith tabbed
+bindsym $mod+backslash split h
+bindsym $mod+minus split v
+
 bindsym $mod+a focus parent
 bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+grave scratchpad show
@@ -86,7 +87,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+# switch workspace
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
