@@ -17,15 +17,12 @@ return {
   ---@type neotree.Config?
   opts = {
     close_if_last_window = true,
-    default_source = 'git_status',
-    git_status = {
+    filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
         },
       },
-    },
-    filesystem = {
       follow_current_file = {
         enabled = true,
         leave_dirs_open = true,
