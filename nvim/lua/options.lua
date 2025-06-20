@@ -24,4 +24,4 @@ vim.opt.splitright = true
 vim.opt.timeoutlen = 300
 vim.opt.undofile = true
 vim.opt.updatetime = 250
-vim.opt.wrap = false
+vim.opt.wrap = true
