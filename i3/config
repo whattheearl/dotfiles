@@ -2,19 +2,16 @@
 set $mod Mod4
 
 # keys
+bindsym $mod+shift+c reload
 bindsym $mod+shift+Escape exec "i3lock --color 000000"
 bindsym $mod+shift+q kill
-bindsym $mod+shift+c reload
 bindsym $mod+shift+x exec "i3-msg exit"
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec --no-startup-id xset s off -dpms
-exec --no-startup-id wezterm
 
 # settings
-default_border pixel 3
-default_floating_border pixel 0
 floating_modifier $mod
 focus_wrapping no
 font pango:monospace 8

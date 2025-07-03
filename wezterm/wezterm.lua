@@ -28,14 +28,14 @@ config.keys = {
     mods = "CTRL",
     action = wezterm.action.SendString("\x15\n. ${HOME}/wte/dotfiles/scripts/folder-picker.sh\n"),
   },
-  { key = "n", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-  { key = "t", mods = "SUPER", action = wezterm.action.DisableDefaultAssignment },
-  { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
   {
-    mods = "CTRL|SHIFT",
-    key = "d",
-    action = wezterm.action.ShowDebugOverlay,
+    key = "f",
+    mods = "SUPER",
+    action = wezterm.action.SendString("\x15\n. ${HOME}/wte/dotfiles/scripts/folder-picker.sh\n"),
   },
+  { key = "w", mods = "CTRL", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+  { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+  { mods = "CTRL", key = "d", action = wezterm.action.ShowDebugOverlay },
 }
 
 return config

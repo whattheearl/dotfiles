@@ -4,7 +4,7 @@
 alias a="dev action $@"
 alias bff="dev run bff";
 alias client="dev run client";
-alias claude="dev ai claude $@"
+alias ai="dev ai claude $@"
 alias d="dev deploy $@"
 alias format="dev format $@"
 alias github="dev browse github $@"
@@ -52,6 +52,7 @@ export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:$HOME/.dotnet/tools/kiota
 export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
+export PATH=$PATH:$HOME/.local/bin
 
 # INFO: zsh
 [ -s /usr/share/oh-my-zsh/ ] && ZSH=/usr/share/oh-my-zsh/
