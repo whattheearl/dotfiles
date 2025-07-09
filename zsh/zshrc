@@ -2,11 +2,12 @@
 
 # INFO: dev-cli
 alias a="dev action $@"
-alias bff="dev run bff";
-alias client="dev run client";
-alias ai="dev ai claude $@"
+alias bff="dev run bff"
+alias cla="dev ai claude $@"
+alias client="dev run client"
 alias d="dev deploy $@"
 alias format="dev format $@"
+alias gem="dev ai gemini $@"
 alias github="dev browse github $@"
 alias lint="dev run lint $@"
 alias pr="dev pr $@"
@@ -83,16 +84,3 @@ fi
 [ -s /opt/homebrew/opt/nvm/nvm.sh ] && source /opt/homebrew/opt/nvm/nvm.sh
 [ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
 [ -s "$HOME/.config/zsh/secrets.sh" ] && source $HOME/.config/zsh/secrets.sh
-
-function gemini() {
-    local prompt="$1"
-    shift
-    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-preview-05-06:generateContent?key=${AI_GEMINI}" \
-    -H 'Content-Type: application/json' \
-    -X POST \
-    -d  "{
-      \"contents\": [
-        {\"parts\": [{\"text\": \"$prompt\"}]}
-      ]
-    }" | jq -r ".candidates[0].content.parts[0].text" $@
-}
