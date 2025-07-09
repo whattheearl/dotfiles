@@ -52,6 +52,7 @@ packages-pacman:
 		wezterm \
 		xclip \
 		xorg-xrandr \
+		xorg-xinput \
 		zsh \
 		zsh-autosuggestions \
 		zsh-history-substring-search \
