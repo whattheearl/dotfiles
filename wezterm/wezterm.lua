@@ -33,9 +33,9 @@ config.keys = {
     mods = "SUPER",
     action = wezterm.action.SendString("\x15\n. ${HOME}/wte/dotfiles/scripts/folder-picker.sh\n"),
   },
-  { key = "w", mods = "CTRL", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+  { key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
   { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
-  { mods = "CTRL", key = "d", action = wezterm.action.ShowDebugOverlay },
+  { mods = "CTRL|SHIFT", key = "d", action = wezterm.action.ShowDebugOverlay },
 }
 
 return config
