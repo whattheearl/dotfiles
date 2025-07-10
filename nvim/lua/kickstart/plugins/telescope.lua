@@ -65,7 +65,34 @@ return {
             hide_on_startup = true, -- hide previewer when picker starts
           },
         },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            find_command = {
+              'rg',
+              '--files',
+              '--no-ignore',
+              '--hidden',
+              '--glob',
+              '!.git',
+              '--glob',
+              '!node_modules',
+              '--glob',
+              '!dist',
+              '--glob',
+              '!obj',
+              '--glob',
+              '!.vscode',
+              '--glob',
+              '!.git',
+              '--glob',
+              '!bin',
+              '--glob',
+              '!.angular',
+              '--glob',
+              '!build',
+            },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
