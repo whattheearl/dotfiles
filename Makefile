@@ -19,8 +19,8 @@ symlinks:
 	ln -sf ${PWD}/aerospace ${HOME}/.config
 
 ## packages-pacman: installs arch packages
-packages-pacman:
-	sudo pacman -S --noconfirm --needed \
+packages-yay:
+	yay --noconfirm --needed \
 		aspnet-runtime-8.0 \
 		base-devel \
 		bind-tools \
@@ -35,6 +35,7 @@ packages-pacman:
 		firefox \
 		flameshot \
 		flatpak \
+		fuse3 \
 		gcc \
 		git \
 		jq \
