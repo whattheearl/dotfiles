@@ -1,4 +1,5 @@
-.PHONY: help packages symlinks ssh env pacman-packages aur aur-packages flatpak-packages
+.PHONY: help packages symlinks secrets
+SHELL := /bin/bash
 
 ## help: print this help message
 help:
@@ -20,9 +21,11 @@ symlinks:
 
 ## packages: installs arch packages
 packages:
-	git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay
-	cd ${HOME}/apps/yay
-	makepkg -si
+	command -v yay &> /dev/null || \
+		sudo pacman -S --needed git base-devel \
+		git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay \
+		cd ${HOME}/apps/yay \
+		makepkg -si
 
 	yay --noconfirm --needed -S \
 		aspnet-runtime-8.0 \
@@ -36,11 +39,11 @@ packages:
 		docker-compose \
 		dotnet-sdk-8.0 \
 		fd \
-		fzf \
 		firefox \
 		flameshot \
 		flatpak \
 		fuse3 \
+		fzf \
 		gcc \
 		git \
 		jq \
@@ -55,6 +58,7 @@ packages:
 		postgresql \
 		restic \
 		ripgrep \
+		steam \
 		tldr \
 		ttf-firacode-nerd \
 		unzip \
