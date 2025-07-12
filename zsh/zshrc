@@ -3,7 +3,9 @@
 # INFO: dev-cli
 alias a="dev action $@"
 alias bff="dev run bff"
-alias cla="dev ai claude $@"
+function cla() {
+    dev ai claude "$@" | bat --language markdown
+}
 alias client="dev run client"
 alias d="dev deploy $@"
 alias format="dev format $@"
