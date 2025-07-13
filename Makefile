@@ -26,7 +26,6 @@ packages:
 		git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay \
 		cd ${HOME}/apps/yay \
 		makepkg -si
-
 	yay --noconfirm --needed -S \
 		aspnet-runtime-8.0 \
 		base-devel \
@@ -72,7 +71,7 @@ packages:
 		zsh-history-substring-search \
 		zsh-syntax-highlighting \
 		zsh-theme-powerlevel10k-git
-
+	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount
 	flatpak install com.usebottles.bottles
 	flatpak install com.discordapp.Discord
 
@@ -82,15 +81,15 @@ secrets:
 	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.privateKey" > ${HOME}/.ssh/id_ed25519
 	bw get item 84174bac-6c19-4711-9af9-b27f0176f102 | jq -r ".sshKey.publicKey" > ${HOME}/.ssh/id_ed25519.pub
 	chmod 400 ${HOME}/.ssh/id_ed25519
-	bw get item bcac7ee2-d117-4341-a81a-b2380125a710 | jq -r ".notes" >> ${HOME}/wte/dotfiles/zsh/secrets.sh
+	bw get item bcac7ee2-d117-4341-a81a-b2380125a710 | jq -r ".notes" > ${HOME}/wte/dotfiles/zsh/secrets.sh
 
 ## packages-brew: adds brew packages for air
 packages-brew:
-	brew install tldr \
-		xwmx/taps/nb \
+	brew install \
 		dotnet \
 		fd \
-		fzf
+		fzf \
+		tldr 
 
 ## packages-npm: installs eslint, prettier
 packages-npm:
