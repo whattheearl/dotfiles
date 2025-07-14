@@ -57,6 +57,7 @@ packages:
 		postgresql \
 		restic \
 		ripgrep \
+		spotify \
 		steam \
 		tldr \
 		ttf-firacode-nerd \
