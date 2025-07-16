@@ -6,6 +6,7 @@ alias bff="dev run bff"
 alias cla="dev ai claude $@"
 alias client="dev run client"
 alias d="dev deploy $@"
+alias db="mariadb -uuser -ppassword --ssl-verify-server-cert=0 -P 3306"
 alias dev="${HOME}/tyl/dev-cli/src/index.js"
 alias format="dev format $@"
 alias gem="dev ai gemini $@"
@@ -17,13 +18,12 @@ alias pr="dev pr $@"
 alias r="dev run $@"
 alias web="dev browse web $@"
 
-# INFO: tool
-alias eslint="dev lint"
+# INFO: tools
 alias ff="firefox $@"
 alias lg="lazygit"
-alias prettier="dev format"
 alias v="nvim $@"
 
+# INFO: templates
 alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
 alias cp-make="cp ~/wte/dotfiles/templates/Makefile ."
 alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
@@ -36,7 +36,7 @@ function csd() { docker compose -f ~/tyl/tcp-community-service-dev-compose/docke
 function ac() { docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml $@ }
 function tcp() { docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@ }
 function tcpm() { make -C ~/tyl/platform-dev-environment-compose/ $@ }
-function tid() { docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@ }
+alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
 
 # INFO: envars
 export MANPAGER='nvim +Man!'
