@@ -16,8 +16,8 @@ symlinks:
 	ln -sf ${PWD}/i3 ${HOME}/.config
 	ln -sf ${PWD}/wofi ${HOME}/.config
 	ln -sf ${PWD}/eslint ${HOME}/.config
-	ln -sf ${PWD}/prettier ${HOME}/.config
 	ln -sf ${PWD}/aerospace ${HOME}/.config
+	ln -sf ${PWD}/xorg /etc/X11/xorg.conf.d
 
 ## packages: installs arch packages
 packages:
