@@ -31,7 +31,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 set $browser firefox
 bindsym $mod+Return exec wezterm
 bindsym $mod+shift+b exec flatpak run com.usebottles.bottles;
-bindsym $mod+shift+d exec flatpak run com.discordapp.Discord
 bindsym $mod+shift+e exec $browser https://excalidraw.com/
 bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
 bindsym $mod+shift+Page_Down exec $HOME/wte/dotfiles/scripts/1920x1080.sh
@@ -39,19 +38,21 @@ bindsym $mod+shift+Page_Up exec $HOME/wte/dotfiles/scripts/3840x2160.sh
 bindsym $mod+shift+Return exec firefox
 bindsym $mod+shift+s exec spotify
 bindsym $mod+shift+t exec $browser https://teams.microsoft.com/v2/
-bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym $mod+shift+space exec --no-startup-id dmenu_run
 bindsym Print exec flameshot gui
 
 bindsym $mod+z fullscreen toggle
-bindsym $mod+shift+backslash layout toggle splith tabbed
 bindsym $mod+backslash split h
 bindsym $mod+minus split v
-
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f floating toggle
+bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
+bindsym $mod+d focus child
 bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+grave scratchpad show
-bindsym $mod+f floating toggle
-bindsym $mod+equal focus mode_toggle
 
 bindsym Ctrl+h focus left
 bindsym Ctrl+j focus down
