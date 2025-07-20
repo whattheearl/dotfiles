@@ -59,6 +59,7 @@ packages:
 		ripgrep \
 		spotify \
 		steam \
+		sqlite \
 		tldr \
 		ttf-firacode-nerd \
 		unzip \
