@@ -69,18 +69,24 @@ packages:
 		xclip \
 		xorg-xinput \
 		xorg-xrandr \
-		zsh \
-		zsh-autosuggestions \
-		zsh-history-substring-search \
-		zsh-syntax-highlighting \
-		zsh-theme-powerlevel10k-git
+		zsh
+		# zsh-autosuggestions \
+		# zsh-history-substring-search \
+		# zsh-syntax-highlighting \
+		# zsh-theme-powerlevel10k-git
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount
-	flatpak install com.usebottles.bottles
-	flatpak install com.discordapp.Discord
+	flatpak install \
+		com.usebottles.bottles \
+		dev.vencord.Vesktop \
+		io.gitlab.librewolf-community \
+		org.wezfurlong.wezterm
+
 
 ## packages-fedora: installs fedora packages
 packages-fedora:
 	sudo dnf install -y \
+		docker-cli \
+		docker-compose \
 		dotnet-sdk-8.0 \
 		fd \
 		fira-code-fonts \
@@ -96,8 +102,10 @@ packages-fedora:
 		zsh \
 		zsh-autosuggestions \
 		zsh-syntax-highlighting
-	flatpak install org.wezfurlong.wezterm \
-		dev.vencord.Vesktop 
+	flatpak install \
+		dev.vencord.Vesktop \
+		io.gitlab.librewolf-community \
+		org.wezfurlong.wezterm
 
 ## secrets: adds ssh, envvars keys 
 secrets:
