@@ -9,12 +9,17 @@ config.window_padding = { left = 4, right = 0, top = 0, bottom = 0 }
 
 if wezterm.target_triple == "aarch64-apple-darwin" then
   config.font_size = 14.0
-else
+elseif wezterm.target_triple == "arch" then
   config.font_size = 9
   config.font = wezterm.font_with_fallback({
     "Fira Code Nerd Font Mono",
     "JetBrains Mono",
     "Symbols Nerd Font",
+  })
+elseif wezterm.target_triple == "aarch64-unknown-linux-gnu" then
+  config.font_size = 8
+  config.font = wezterm.font_with_fallback({
+    "Fira Code",
   })
 end
 
