@@ -43,6 +43,7 @@ packages:
 		flatpak \
 		fuse3 \
 		fzf \
+		feh \
 		gcc \
 		git \
 		jq \
@@ -58,8 +59,8 @@ packages:
 		restic \
 		ripgrep \
 		spotify \
-		steam \
 		sqlite \
+		steam \
 		tldr \
 		ttf-firacode-nerd \
 		unzip \
