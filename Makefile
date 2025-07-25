@@ -47,6 +47,7 @@ packages:
 		git \
 		jq \
 		lazygit-git \
+		librewolf \
 		lua \
 		make \
 		man \
@@ -70,17 +71,11 @@ packages:
 		xorg-xinput \
 		xorg-xrandr \
 		zsh
-		# zsh-autosuggestions \
-		# zsh-history-substring-search \
-		# zsh-syntax-highlighting \
-		# zsh-theme-powerlevel10k-git
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount
 	flatpak install \
 		com.usebottles.bottles \
 		dev.vencord.Vesktop \
-		io.gitlab.librewolf-community \
-		org.wezfurlong.wezterm
-
+		io.gitlab.librewolf-community
 
 ## packages-fedora: installs fedora packages
 packages-fedora:
@@ -106,6 +101,10 @@ packages-fedora:
 		dev.vencord.Vesktop \
 		io.gitlab.librewolf-community \
 		org.wezfurlong.wezterm
+	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount
+	flatpak install \
+		com.discordapp.Discord \
+		com.usebottles.bottles
 
 ## secrets: adds ssh, envvars keys 
 secrets:
@@ -130,5 +129,3 @@ repos:
 	@test -d ~/.zsh/zsh-history-substring-search || git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
 	@test -d ~/.zsh/zsh-syntax-highlighting || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
-
-

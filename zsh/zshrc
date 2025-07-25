@@ -23,9 +23,11 @@ alias format="dev format $@"
 alias gem="dev ai gemini $@"
 alias gethub="dev browse github $@"
 alias github="dev browse github $@"
+alias goto='cd "$(fd -t f | fzf | xargs dirname)"'
 alias harness="dev browse harness $@"
 alias lint="dev run lint $@"
 alias pr="dev pr $@"
+alias push="git add . && git commit -m 'update' && git push"
 alias r="dev run $@"
 alias web="dev browse web $@"
 
@@ -69,6 +71,13 @@ ZSH_THEME="robbyrussell"
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
 plugins=(git docker docker-compose vi-mode)
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+# INFO: source
+[ -s "$ZSH/oh-my-zsh.sh" ] && source $ZSH/oh-my-zsh.sh
 [ -s "$HOME/.p10k.zsh" ] && source ~/.p10k.zsh
 [ -s "$HOME/.fzf.zsh" ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR" ] && \. "$NVM_DIR/nvm.sh"
