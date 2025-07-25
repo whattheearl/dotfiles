@@ -114,8 +114,8 @@ secrets:
 	rbw get ssh-public > ${HOME}/.ssh/id_ed25519.pub
 	rbw get ssh-private > ${HOME}/.ssh/id_ed25519
 	rbw get secrets > ${HOME}/.secrets
-	chmod 700 ${HOME}/.ssh/id_ed25519
-	chmod 700 ${HOME}/.secrets
+	sudo -u $USER chmod 700 ${HOME}/.ssh/id_ed25519
+	sudo -u $USER chmod 700 ${HOME}/.secrets
 
 ## repos: install repositories
 repos:
