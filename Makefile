@@ -17,6 +17,7 @@ symlinks:
 	ln -sf ${PWD}/wofi ${HOME}/.config
 	ln -sf ${PWD}/eslint ${HOME}/.config
 	ln -sf ${PWD}/aerospace ${HOME}/.config
+	ln -sf ${PWD}/sway ${HOME}/.config
 	sudo rm -rf /etc/X11/xorg.conf.d && sudo ln -sf ${PWD}/xorg.conf.d /etc/X11
 
 ## packages: installs arch packages
@@ -79,6 +80,7 @@ packages:
 
 ## packages-fedora: installs fedora packages
 packages-fedora:
+	sudo dnf copr enable atim/lazygit -y
 	sudo dnf install -y \
 		docker-cli \
 		docker-compose \
@@ -88,15 +90,15 @@ packages-fedora:
 		fzf \
 		gh \
 		htop \
+		lazygit \
 		nvim \
 		rbw \
 		sddm \
+		sqlite3 \
 		sway \
 		tldr \
 		vim \
-		zsh \
-		zsh-autosuggestions \
-		zsh-syntax-highlighting
+		zsh
 	flatpak install \
 		dev.vencord.Vesktop \
 		io.gitlab.librewolf-community \
