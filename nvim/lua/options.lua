@@ -1,6 +1,4 @@
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
+vim.opt.clipboard = { 'unnamed', 'unnamedplus' }
 vim.opt.autoindent = true
 vim.opt.cursorline = true
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
