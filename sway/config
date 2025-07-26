@@ -10,6 +10,7 @@ hide_edge_borders smart
 
 input * xkb_options caps:escape
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * scale 1.5
 
 bindsym $mod+Shift+Return exec "librewolf || flatpak run io.gitlab.librewolf-community"
 bindsym $mod+Return exec "wezterm || flatpak run org.wezfurlong.wezterm"
@@ -116,19 +117,6 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Special key to take a screenshot with grim
 bindsym Print exec grim
 
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+exec waybar
 
 include /etc/sway/config.d/*
