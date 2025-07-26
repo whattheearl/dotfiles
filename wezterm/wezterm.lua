@@ -20,7 +20,7 @@ elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
   })
 elseif wezterm.target_triple == "aarch64-unknown-linux-gnu" then
   -- asahi fedora
-  config.font_size = 8
+  config.font_size = 11
   config.font = wezterm.font_with_fallback({
     "Fira Code",
   })
