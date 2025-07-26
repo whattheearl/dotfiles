@@ -38,6 +38,7 @@ packages:
 		docker-buildx \
 		docker-compose \
 		dotnet-sdk-8.0 \
+		dotnet-sdk-9.0 \
 		fd \
 		firefox \
 		flameshot \
@@ -85,6 +86,7 @@ packages-fedora:
 		docker-cli \
 		docker-compose \
 		dotnet-sdk-8.0 \
+		dotnet-sdk-9.0 \
 		fd \
 		fira-code-fonts \
 		fzf \
