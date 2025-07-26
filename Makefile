@@ -73,15 +73,16 @@ packages:
 		xorg-xinput \
 		xorg-xrandr \
 		zsh
-	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount
+	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
-		com.usebottles.bottles \
-		dev.vencord.Vesktop \
-		io.gitlab.librewolf-community
+		com.discordapp.Discord \
+		com.usebottles.bottles
 
 ## packages-fedora: installs fedora packages
 packages-fedora:
 	sudo dnf copr enable atim/lazygit -y
+	sudo dnf copr enable wezfurlong/wezterm-nightly
+	curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
 	sudo dnf install -y \
 		docker-cli \
 		docker-compose \
@@ -93,22 +94,19 @@ packages-fedora:
 		gh \
 		htop \
 		lazygit \
+		librewolf \
 		nvim \
 		rbw \
 		sddm \
 		sqlite3 \
 		sway \
 		tldr \
+		wezterm \
 		vim \
 		zsh
+	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
-		dev.vencord.Vesktop \
-		io.gitlab.librewolf-community \
-		org.wezfurlong.wezterm
-	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount
-	flatpak install \
-		com.discordapp.Discord \
-		com.usebottles.bottles
+		com.discordapp.Discord
 
 ## secrets: adds ssh, envvars keys 
 secrets:
