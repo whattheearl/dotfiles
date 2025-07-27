@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 # INFO: powerline10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -11,85 +11,71 @@ bindkey -M vicmd 'j' history-substring-search-down
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
-# INFO: dev-cli
+# INFO: alias
 alias a="dev action $@"
+alias ac="docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml $@"
 alias bff="dev run bff"
+alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
 alias cla="dev ai claude $@"
 alias client="dev run client"
+alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
+alias cp-make="cp ~/wte/dotfiles/templates/Makefile ."
+alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
+alias cp-nugetconfig="cp ~/wte/dotfiles/templates/NuGet.config ."
+alias cp-prettierrc="cp ~/wte/dotfiles/templates/.prettierrc ."
+alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml -f ~/tyl/tcp-community-service-dev-compose/infrastructure/docker-compose.yml $@"
 alias d="dev deploy $@"
 alias db="mariadb -uuser -ppassword --ssl-verify-server-cert=0 -P 3306"
 alias dev="${HOME}/tyl/dev-cli/src/index.js"
+alias ff="firefox $@"
 alias format="dev format $@"
 alias gem="dev ai gemini $@"
 alias gethub="dev browse github $@"
 alias github="dev browse github $@"
 alias goto='cd "$(fd -t f | fzf | xargs dirname)"'
 alias harness="dev browse harness $@"
+alias lg="lazygit"
 alias lint="dev run lint $@"
 alias pr="dev pr $@"
 alias push="git add . && git commit -m 'update' && git push"
 alias r="dev run $@"
-alias web="dev browse web $@"
-
-# INFO: tools
-alias ff="firefox $@"
-alias lg="lazygit"
-alias v="nvim $@"
-
-# INFO: templates
-alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
-alias cp-make="cp ~/wte/dotfiles/templates/Makefile ."
-alias cp-npmrc="cp ~/wte/dotfiles/templates/.npmrc ."
-alias cp-nugetconfig="cp ~/wte/dotfiles/templates/NuGet.config ."
-alias cp-prettierrc="cp ~/wte/dotfiles/templates/.prettierrc ."
-
-# INFO: tcp
-alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml $@"
-alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-compose.yml -f ~/tyl/tcp-community-service-dev-compose/infrastructure/docker-compose.yml $@"
-alias ac="docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml $@"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml $@"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml $@"
+alias v="nvim $@"
+alias web="dev browse web $@"
 
 # INFO: path
-export PATH=$HOME/tyl/dev-cli/bin:$PATH
-export PATH=$PATH:/opt/nvim-linux64/bin
-export PATH=$PATH:$HOME/.cargo/env
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
-export PATH=$PATH:$HOME/.local/bin
 
 # INFO: config
-export BROWSER=firefox
+export BROWSER=librewolf
 export DOTNET_CLI_TELEMETRY_OPTOUT='true'
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 [ -d "$HOME/.nvm" ] && export NVM_DIR=$HOME/.nvm
 [ -d "/usr/share/nvm" ] && export NVM_DIR=/usr/share/nvm
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # INFO: zsh
+plugins=(git docker docker-compose)
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
-plugins=(git docker docker-compose vi-mode)
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
 # INFO: source
-[ -s "$ZSH/oh-my-zsh.sh" ] && source $ZSH/oh-my-zsh.sh
+[ -d "$HOME/.oh-my-zsh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
+[ -d "$HOME/.zsh/zsh-vi-mode" ] && source ~/.zsh/zsh-vi-mode/zsh-vi-mode.zsh
+[ -d "$HOME/.zsh/zsh-autosuggestions" ] && source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -d "$HOME/.zsh/zsh-history-substring-search" ] && source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 [ -s "$HOME/.p10k.zsh" ] && source ~/.p10k.zsh
 [ -s "$HOME/.fzf.zsh" ] && source ~/.fzf.zsh
 [ -d "$NVM_DIR" ] && \. "$NVM_DIR/nvm.sh"
 [ -d "$NVM_DIR" ] && \. "$NVM_DIR/bash_completion"
 [ -d "$HOME/.zsh/powerlevel10k" ] && source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme
-[ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -d "$HOME/.zsh/zsh-autosuggestions" ] && source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -d "$HOME/.zsh/zsh-history-substring-search" ] && source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-[ -d "$HOME/.oh-my-zsh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
-# INFO: envars
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
