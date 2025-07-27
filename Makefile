@@ -21,8 +21,8 @@ symlinks:
 	ln -sf ${PWD}/waybar ${HOME}/.config
 	sudo rm -rf /etc/X11/xorg.conf.d && sudo ln -sf ${PWD}/xorg.conf.d /etc/X11
 
-## packages: installs arch packages
-packages:
+## packages-arch: installs arch packages
+packages-arch:
 	command -v yay &> /dev/null || \
 		sudo pacman -S --needed git base-devel \
 		git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay \
@@ -30,7 +30,6 @@ packages:
 		makepkg -si
 	yay --noconfirm --needed -S \
 		aspnet-runtime-8.0 \
-		base-devel \
 		bind-tools \
 		bluez \
 		bluez-utils \
@@ -47,7 +46,7 @@ packages:
 		fzf \
 		feh \
 		gcc \
-		git \
+		htop \
 		jq \
 		lazygit-git \
 		librewolf \
@@ -61,6 +60,7 @@ packages:
 		rbw \
 		restic \
 		ripgrep \
+		rg \
 		spotify \
 		sqlite \
 		steam \
@@ -91,7 +91,7 @@ packages-fedora:
 		fd \
 		fira-code-fonts \
 		fzf \
-		gh \
+		github-cli \
 		htop \
 		lazygit \
 		librewolf \
@@ -116,8 +116,8 @@ secrets:
 	rbw get ssh-public > ${HOME}/.ssh/id_ed25519.pub
 	rbw get ssh-private > ${HOME}/.ssh/id_ed25519
 	rbw get secrets > ${HOME}/.secrets
-	sudo -u ${USER} chmod 700 ${HOME}/.ssh/id_ed25519
-	sudo -u ${USER} chmod 700 ${HOME}/.secrets
+	sudo -u ${USER} chmod 600 ${HOME}/.ssh/id_ed25519
+	sudo -u ${USER} chmod 600 ${HOME}/.secrets
 
 ## repos: install repositories
 repos:
@@ -132,3 +132,4 @@ repos:
 	@test -d ~/.zsh/zsh-history-substring-search || git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
 	@test -d ~/.zsh/zsh-syntax-highlighting || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
+	@test -d ~/.nvm || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
