@@ -24,9 +24,9 @@ symlinks:
 ## packages-arch: installs arch packages
 packages-arch:
 	command -v yay &> /dev/null || \
-		sudo pacman -S --needed git base-devel \
-		git clone https://aur.archlinux.org/yay.git ${HOME}/apps/yay \
-		cd ${HOME}/apps/yay \
+		sudo pacman -S --needed git base-devel && \
+		git clone https://aur.archlinux.org/yay.git ~/apps/yay && \
+		cd ~/apps/yay && \
 		makepkg -si
 	yay --noconfirm --needed -S \
 		aspnet-runtime-8.0 \
@@ -39,12 +39,12 @@ packages-arch:
 		dotnet-sdk-8.0 \
 		dotnet-sdk-9.0 \
 		fd \
+		feh \
 		firefox \
 		flameshot \
 		flatpak \
 		fuse3 \
 		fzf \
-		feh \
 		gcc \
 		htop \
 		jq \
@@ -59,8 +59,8 @@ packages-arch:
 		postgresql \
 		rbw \
 		restic \
-		ripgrep \
 		rg \
+		ripgrep \
 		spotify \
 		sqlite \
 		steam \
@@ -101,8 +101,8 @@ packages-fedora:
 		sqlite3 \
 		sway \
 		tldr \
-		wezterm \
 		vim \
+		wezterm \
 		zsh
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
@@ -121,15 +121,15 @@ secrets:
 
 ## repos: install repositories
 repos:
-	@test -d ~/tyl/tcp-admincenter || git clone git@github.com:tyler-technologies/tcp-admincenter ~/tyl/tcp-admincenter
-	@test -d ~/tyl/tcp-ops-center || git clone git@github.com:tyler-technologies/tcp-ops-center ~/tyl/tcp-ops-center
-	@test -d ~/tyl/tcp-branding-api || git clone git@github.com:tyler-technologies/tcp-branding-api ~/tyl/tcp-branding-api
-	@test -d ~/tyl/dev-cli || git clone git@github.com:tyler-technologies/dev-cli ~/tyl/dev-cli
-	@test -d ~/wte/dotfiles || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
-	@test -d ~/wte/notes || git clone wteos.wte.sh:notes ~/wte/notes
+	@test -d ~/.nvm || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 	@test -d ~/.oh-my-zsh || git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
+	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
 	@test -d ~/.zsh/zsh-autosuggestions || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 	@test -d ~/.zsh/zsh-history-substring-search || git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
 	@test -d ~/.zsh/zsh-syntax-highlighting || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
-	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
-	@test -d ~/.nvm || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+	@test -d ~/tyl/dev-cli || git clone git@github.com:tyler-technologies/dev-cli ~/tyl/dev-cli
+	@test -d ~/tyl/tcp-admincenter || git clone git@github.com:tyler-technologies/tcp-admincenter ~/tyl/tcp-admincenter
+	@test -d ~/tyl/tcp-branding-api || git clone git@github.com:tyler-technologies/tcp-branding-api ~/tyl/tcp-branding-api
+	@test -d ~/tyl/tcp-ops-center || git clone git@github.com:tyler-technologies/tcp-ops-center ~/tyl/tcp-ops-center
+	@test -d ~/wte/dotfiles || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
+	@test -d ~/wte/notes || git clone wteos.wte.sh:notes ~/wte/notes
