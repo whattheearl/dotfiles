@@ -1,4 +1,4 @@
-.PHONY: help packages symlinks secrets
+.PHONY: help packages-arch packages-fedora symlinks secrets repos
 SHELL := /bin/bash
 
 ## help: print this help message
@@ -7,7 +7,7 @@ help:
 	@echo ${MAKEFILE_LIST}
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
 
-## symlinks: symlink apps to ${HOME}/.config
+## symlinks: symlink ~/.config and /etc/X11/xorg.conf.d
 symlinks:
 	ln -sf ${PWD}/nvim ${HOME}/.config
 	ln -sf ${PWD}/wezterm ${HOME}/.config
@@ -19,7 +19,7 @@ symlinks:
 	ln -sf ${PWD}/aerospace ${HOME}/.config
 	ln -sf ${PWD}/sway ${HOME}/.config
 	ln -sf ${PWD}/waybar ${HOME}/.config
-	sudo rm -rf /etc/X11/xorg.conf.d && sudo ln -sf ${PWD}/xorg.conf.d /etc/X11
+	sudo ln -sf ${PWD}/xorg.conf.d/* /etc/X11/xorg.conf.d
 
 ## packages-arch: installs arch packages
 packages-arch:
@@ -112,21 +112,21 @@ packages-fedora:
 secrets:
 	# rbw login
 	rbw config set email earl.jonathan@gmail.com
-	mkdir -p ${HOME}/.ssh
-	rbw get ssh-public > ${HOME}/.ssh/id_ed25519.pub
-	rbw get ssh-private > ${HOME}/.ssh/id_ed25519
-	rbw get secrets > ${HOME}/.secrets
-	sudo -u ${USER} chmod 600 ${HOME}/.ssh/id_ed25519
-	sudo -u ${USER} chmod 600 ${HOME}/.secrets
+	mkdir -p ~/.ssh
+	rbw get ssh-public > ~/.ssh/id_ed25519.pub
+	rbw get ssh-private > ~/.ssh/id_ed25519
+	rbw get secrets > ~/.secrets
+	sudo -u ${USER} chmod 600 ~/.ssh/id_ed25519
+	sudo -u ${USER} chmod 600 ~/.secrets
 
 ## repos: install repositories
 repos:
-	@test -d ${HOME}/tyl/tcp-admincenter || git clone git@github.com:tyler-technologies/tcp-admincenter ${HOME}/tyl/tcp-admincenter
-	@test -d ${HOME}/tyl/tcp-ops-center || git clone git@github.com:tyler-technologies/tcp-ops-center ${HOME}/tyl/tcp-ops-center
-	@test -d ${HOME}/tyl/tcp-branding-api || git clone git@github.com:tyler-technologies/tcp-branding-api ${HOME}/tyl/tcp-branding-api
-	@test -d ${HOME}/tyl/dev-cli || git clone git@github.com:tyler-technologies/dev-cli ${HOME}/tyl/dev-cli
-	@test -d ${HOME}/wte/dotfiles || git clone git@github.com:whattheearl/dotfiles ${HOME}/wte/dotfiles
-	@test -d ${HOME}/wte/notes || git clone wteos.wte.sh:notes ${HOME}/notes
+	@test -d ~/tyl/tcp-admincenter || git clone git@github.com:tyler-technologies/tcp-admincenter ~/tyl/tcp-admincenter
+	@test -d ~/tyl/tcp-ops-center || git clone git@github.com:tyler-technologies/tcp-ops-center ~/tyl/tcp-ops-center
+	@test -d ~/tyl/tcp-branding-api || git clone git@github.com:tyler-technologies/tcp-branding-api ~/tyl/tcp-branding-api
+	@test -d ~/tyl/dev-cli || git clone git@github.com:tyler-technologies/dev-cli ~/tyl/dev-cli
+	@test -d ~/wte/dotfiles || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
+	@test -d ~/wte/notes || git clone wteos.wte.sh:notes ~/wte/notes
 	@test -d ~/.oh-my-zsh || git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
 	@test -d ~/.zsh/zsh-autosuggestions || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 	@test -d ~/.zsh/zsh-history-substring-search || git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
