@@ -73,10 +73,10 @@ packages-arch:
 		xorg-xinput \
 		xorg-xrandr \
 		zsh
+	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
 		com.discordapp.Discord \
 		com.usebottles.bottles
-	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 
 ## packages-fedora: installs fedora packages
 packages-fedora:
@@ -104,9 +104,9 @@ packages-fedora:
 		vim \
 		wezterm \
 		zsh
+	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
 		com.discordapp.Discord
-	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 
 ## secrets: adds ssh, envvars keys 
 secrets:
