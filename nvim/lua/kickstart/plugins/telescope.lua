@@ -62,38 +62,7 @@ return {
             },
           },
           preview = {
-            hide_on_startup = false, -- hide previewer when picker starts
-          },
-          layout_config = {
-            preview_width = 0.5,
-          },
-        },
-        pickers = {
-          find_files = {
-            find_command = {
-              'rg',
-              '--files',
-              '--no-ignore',
-              '--hidden',
-              '--glob',
-              '!.git',
-              '--glob',
-              '!node_modules',
-              '--glob',
-              '!dist',
-              '--glob',
-              '!obj',
-              '--glob',
-              '!.vscode',
-              '--glob',
-              '!.git',
-              '--glob',
-              '!bin',
-              '--glob',
-              '!.angular',
-              '--glob',
-              '!build',
-            },
+            hide_on_startup = true, -- hide previewer when picker starts
           },
         },
         extensions = {
