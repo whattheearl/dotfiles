@@ -113,11 +113,13 @@ secrets:
 	# rbw login
 	rbw config set email earl.jonathan@gmail.com
 	mkdir -p ~/.ssh
-	rbw get ssh-public > ~/.ssh/id_ed25519.pub
-	rbw get ssh-private > ~/.ssh/id_ed25519
 	rbw get secrets > ~/.secrets
-	sudo -u ${USER} chmod 600 ~/.ssh/id_ed25519
+	rbw get ssh-private > ~/.ssh/id_ed25519
+	rbw get ssh-public > ~/.ssh/id_ed25519.pub
 	sudo -u ${USER} chmod 600 ~/.secrets
+	sudo -u ${USER} chmod 600 ~/.ssh/id_ed25519
+	sudo -u ${USER} chmod 644 ~/.ssh/id_ed25519.pub
+	sudo -u ${USER} chmod 700 ~/.ssh
 
 ## repos: install repositories
 repos:
