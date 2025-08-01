@@ -19,6 +19,7 @@ symlinks:
 	ln -sf ${PWD}/aerospace ${HOME}/.config
 	ln -sf ${PWD}/sway ${HOME}/.config
 	ln -sf ${PWD}/waybar ${HOME}/.config
+	ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
 	sudo ln -sf ${PWD}/xorg.conf.d/* /etc/X11/xorg.conf.d
 
 ## packages-arch: installs arch packages
