@@ -44,11 +44,14 @@ alias v="nvim"
 alias web="dev browse web"
 
 # INFO: path
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
 
 # INFO: config
-export BROWSER=librewolf
+command -v librewolf &> /dev/null && export BROWSER=librewolf
+flatpak list --app | grep librewolf &> /dev/null && xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop
 export DOTNET_CLI_TELEMETRY_OPTOUT='true'
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
@@ -78,3 +81,4 @@ fi
 [ -d "$NVM_DIR" ] && \. "$NVM_DIR/bash_completion"
 [ -d "$HOME/.zsh/powerlevel10k" ] && source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
+[ -s "/home/jon/.bun/_bun" ] && source "/home/jon/.bun/_bun"
