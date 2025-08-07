@@ -29,7 +29,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
 
 # keybinds
-set $browser librewolf
+set $browser io.gitlab.librewolf-community
 bindsym $mod+Return exec wezterm
 bindsym $mod+shift+b exec flatpak run com.usebottles.bottles
 bindsym $mod+shift+d exec flatpak run com.discordapp.Discord

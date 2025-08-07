@@ -50,7 +50,6 @@ packages-arch:
 		htop \
 		jq \
 		lazygit-git \
-		librewolf \
 		lua \
 		make \
 		man \
@@ -77,7 +76,8 @@ packages-arch:
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
 		com.discordapp.Discord \
-		com.usebottles.bottles
+		com.usebottles.bottles \
+		io.gitlab.librewolf-community
 
 ## packages-fedora: installs fedora packages
 packages-fedora:
@@ -95,7 +95,6 @@ packages-fedora:
 		github-cli \
 		htop \
 		lazygit \
-		librewolf \
 		nvim \
 		rbw \
 		sddm \
@@ -107,7 +106,8 @@ packages-fedora:
 		zsh
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
-		com.discordapp.Discord
+		com.discordapp.Discord \
+		io.gitlab.librewolf-community
 
 ## secrets: adds ssh, envvars keys 
 secrets:
