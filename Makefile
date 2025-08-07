@@ -27,8 +27,8 @@ symlinks:
 packages-arch:
 	command -v yay &> /dev/null || \
 		sudo pacman -S --needed git base-devel && \
-		git clone https://aur.archlinux.org/yay.git ~/apps/yay && \
-		cd ~/apps/yay && \
+		git clone https://aur.archlinux.org/yay.git ~/wte/yay && \
+		cd ~/wte/yay && \
 		makepkg -si
 	yay --noconfirm --needed -S \
 		aspnet-runtime-8.0 \
@@ -50,7 +50,7 @@ packages-arch:
 		gcc \
 		htop \
 		jq \
-		lazygit-git \
+		lazygit \
 		lua \
 		make \
 		man \
@@ -80,6 +80,16 @@ packages-arch:
 		com.usebottles.bottles \
 		io.gitlab.librewolf-community
 
+## backup: backup app data
+backup:
+	restic backup ${HOME}/.var/app/io.gitlab.librewolf-community/.librewolf
+
+## restore: restores app data
+restore:
+	restic restore latest --target / \
+		--include ${HOME}/.var/app/io.gitlab.librewolf-community/.librewolf
+
+
 ## packages-fedora: installs fedora packages
 packages-fedora:
 	sudo dnf copr enable atim/lazygit -y
@@ -97,6 +107,7 @@ packages-fedora:
 		htop \
 		lazygit \
 		nvim \
+		restic \
 		rbw \
 		sddm \
 		sqlite3 \
