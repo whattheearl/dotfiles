@@ -51,6 +51,7 @@ export PATH=$PATH:$HOME/wte/dotfiles/scripts
 
 # INFO: config
 xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop
+export HUSKY=0
 export DOTNET_CLI_TELEMETRY_OPTOUT='true'
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
