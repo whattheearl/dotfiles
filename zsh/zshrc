@@ -75,7 +75,6 @@ fi
 
 # INFO: source
 [ -d "$HOME/.oh-my-zsh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
-[ -d "$HOME/.zsh/zsh-vi-mode" ] && source ~/.zsh/zsh-vi-mode/zsh-vi-mode.zsh
 [ -d "$HOME/.zsh/zsh-autosuggestions" ] && source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -d "$HOME/.zsh/zsh-history-substring-search" ] && source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
