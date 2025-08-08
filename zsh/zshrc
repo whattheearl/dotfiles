@@ -14,6 +14,7 @@ bindkey -M emacs '^N' history-substring-search-down
 # INFO: alias
 alias a="dev action"
 alias ac="docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml"
+alias alert="espeak 'weewoo weewoo weewoo'"
 alias bff="dev run bff"
 alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml"
 alias cla="dev ai claude"
@@ -38,9 +39,12 @@ alias lint="dev run lint"
 alias pr="dev pr"
 alias push="git add . && git commit -m 'update' && git push"
 alias r="dev run"
+alias ready="espeak 'DING'"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml"
+alias tidup="tid up -d && wait && ready"
 alias v="nvim"
+alias wait="make -C ${HOME}/tyl/platform-dev-environment-compose wait-for-docker-up"
 alias web="dev browse web"
 
 # INFO: path
