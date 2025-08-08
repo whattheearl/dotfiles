@@ -7,6 +7,7 @@ bindsym $mod+shift+Escape exec "i3lock --color 000000"
 bindsym $mod+shift+q kill
 bindsym $mod+shift+x exec "i3-msg exit"
 
+exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec --no-startup-id xset s off -dpms
