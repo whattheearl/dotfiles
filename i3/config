@@ -1,12 +1,7 @@
 # set modkey to super
 set $mod Mod4
 
-# keys
-bindsym $mod+shift+c reload
-bindsym $mod+shift+Escape exec "i3lock --color 000000"
-bindsym $mod+shift+q kill
-bindsym $mod+shift+x exec "i3-msg exit"
-
+# startup
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
@@ -21,41 +16,53 @@ tiling_drag modifier titlebar
 
 # sound
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && $refresh_i3status
 
 # keybinds
 set $browser io.gitlab.librewolf-community
+bindsym $mod+a focus parent
+bindsym $mod+backslash split h
+bindsym $mod+d focus child
+bindsym $mod+e layout toggle split
+bindsym $mod+f floating toggle
+bindsym $mod+grave scratchpad show
+bindsym $mod+minus split v
 bindsym $mod+Return exec wezterm
+bindsym $mod+s layout stacking
 bindsym $mod+shift+b exec flatpak run com.usebottles.bottles
+bindsym $mod+shift+c reload
 bindsym $mod+shift+d exec flatpak run com.discordapp.Discord
 bindsym $mod+shift+e exec $browser https://excalidraw.com/
+bindsym $mod+shift+Escape exec "i3lock --color 000000"
+bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
 bindsym $mod+shift+Page_Down exec $HOME/wte/dotfiles/scripts/1920x1080.sh
 bindsym $mod+shift+Page_Up exec $HOME/wte/dotfiles/scripts/3840x2160.sh
+bindsym $mod+shift+q kill
+bindsym $mod+shift+r mode "resize"
 bindsym $mod+shift+Return exec $browser
 bindsym $mod+shift+s exec spotify
 bindsym $mod+shift+space exec --no-startup-id dmenu_run
 bindsym $mod+shift+t exec $browser https://teams.microsoft.com/v2/
+bindsym $mod+shift+x exec "i3-msg exit"
+bindsym $mod+space focus mode_toggle
+bindsym $mod+w layout tabbed
+bindsym $mod+z fullscreen toggle
 bindsym Print exec flameshot gui
 
-bindsym $mod+z fullscreen toggle
-bindsym $mod+backslash split h
-bindsym $mod+minus split v
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-bindsym $mod+f floating toggle
-bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
-bindsym $mod+d focus child
-bindsym $mod+Shift+grave move scratchpad
-bindsym $mod+grave scratchpad show
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Escape mode "default"
+}
 
 bindsym Ctrl+h focus left
 bindsym Ctrl+j focus down
