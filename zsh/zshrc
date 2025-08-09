@@ -66,9 +66,9 @@ ZSH_THEME=""
 [ -d "$HOME/.zsh/zsh-autosuggestions" ] && source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -d "$HOME/.zsh/zsh-history-substring-search" ] && source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 [ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -d "$NVM_DIR" ] && \. "$NVM_DIR/bash_completion"
-[ -d "$NVM_DIR" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$HOME/.bun/_bun" ] && source $HOME/.bun/_bun"
+[ -d "$NVM_DIR" ] && \. $NVM_DIR/bash_completion
+[ -d "$NVM_DIR" ] && \. $NVM_DIR/nvm.sh
+[ -s "$HOME/.bun/_bun" ] && source $HOME/.bun/_bun
 [ -s "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
 [ -s "$HOME/.p10k.zsh" ] && source $HOME/.p10k.zsh
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
