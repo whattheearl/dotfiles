@@ -5,12 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# INFO: keybind
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
-
 # INFO: alias
 alias a="dev action"
 alias ac="docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml"
@@ -42,46 +36,39 @@ alias r="dev run"
 alias ready="espeak 'DING'"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml"
-alias tidup="tid up -d && wait && ready"
+alias tidup="tid up -d && tidwait && ready"
+alias tidwait="make -C ${HOME}/tyl/platform-dev-environment-compose wait-for-docker-up"
 alias v="nvim"
-alias wait="make -C ${HOME}/tyl/platform-dev-environment-compose wait-for-docker-up"
 alias web="dev browse web"
 
 # INFO: path
+[ -d "$HOME/.nvm" ] && export NVM_DIR=$HOME/.nvm
+[ -d "/usr/share/nvm" ] && export NVM_DIR=/usr/share/nvm
 export BUN_INSTALL="$HOME/.bun"
+export DOTNET_CLI_TELEMETRY_OPTOUT='true'
+export EDITOR=nvim
+export HUSKY=0
+export MANPAGER='nvim +Man!'
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
-
-# INFO: config
-xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop
-export HUSKY=0
-export DOTNET_CLI_TELEMETRY_OPTOUT='true'
-export EDITOR=nvim
-export MANPAGER='nvim +Man!'
-[ -d "$HOME/.nvm" ] && export NVM_DIR=$HOME/.nvm
-[ -d "/usr/share/nvm" ] && export NVM_DIR=/usr/share/nvm
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=""
-
-# INFO: zsh
 plugins=(git docker docker-compose)
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
+[ ! -d "$ZSH_CACHE_DIR" ] && mkdir $ZSH_CACHE_DIR
+ZSH_THEME=""
 
 # INFO: source
 [ -d "$HOME/.oh-my-zsh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
-[ -d "$HOME/.zsh/zsh-autosuggestions" ] && source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -d "$HOME/.zsh/zsh-history-substring-search" ] && source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-[ -s "$HOME/.p10k.zsh" ] && source ~/.p10k.zsh
-[ -s "$HOME/.fzf.zsh" ] && source ~/.fzf.zsh
-[ -d "$NVM_DIR" ] && \. "$NVM_DIR/nvm.sh"
-[ -d "$NVM_DIR" ] && \. "$NVM_DIR/bash_completion"
 [ -d "$HOME/.zsh/powerlevel10k" ] && source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+[ -d "$HOME/.zsh/zsh-autosuggestions" ] && source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -d "$HOME/.zsh/zsh-history-substring-search" ] && source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+[ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -d "$NVM_DIR" ] && \. "$NVM_DIR/bash_completion"
+[ -d "$NVM_DIR" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$HOME/.bun/_bun" ] && source $HOME/.bun/_bun"
+[ -s "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
+[ -s "$HOME/.p10k.zsh" ] && source $HOME/.p10k.zsh
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
-[ -s "/home/jon/.bun/_bun" ] && source "/home/jon/.bun/_bun"
