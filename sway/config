@@ -27,25 +27,25 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+Escape exec swaylock -f -c 000000
 bindsym $mod+Shift+x exec poweroff
 
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+bindsym Ctrl+h focus left
+bindsym Ctrl+j focus down
+bindsym Ctrl+k focus up
+bindsym Ctrl+l focus right
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+bindsym Ctrl+Shift+h move left
+bindsym Ctrl+Shift+j move down
+bindsym Ctrl+Shift+k move up
+bindsym Ctrl+Shift+l move right
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+1 workspace number 1
