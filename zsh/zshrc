@@ -8,6 +8,7 @@ fi
 # INFO: alias
 alias a="dev action"
 alias ac="docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml"
+alias ai="qwn"
 alias alert="espeak 'weewoo weewoo weewoo'"
 alias bff="dev run bff"
 alias bs="docker compose -f ~/tyl/tcp-branding-api/docker-compose.yaml"
