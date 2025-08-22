@@ -51,6 +51,7 @@ packages-arch:
 		htop \
 		jq \
 		lazygit \
+		librewolf-bin \
 		lua \
 		make \
 		man \
