@@ -52,10 +52,12 @@ packages-arch:
 		jq \
 		lazygit \
 		librewolf-bin \
+		llama.cpp-vulkan \
 		lua \
 		make \
 		man \
 		mariadb \
+		mpv \
 		neovim \
 		nvm \
 		postgresql \
@@ -65,6 +67,7 @@ packages-arch:
 		ripgrep \
 		spotify \
 		sqlite \
+		stable-diffusion.cpp-vulkan-git \
 		steam \
 		tldr \
 		ttf-firacode-nerd\
