@@ -67,7 +67,6 @@ packages-arch:
 		ripgrep \
 		spotify \
 		sqlite \
-		stable-diffusion.cpp-vulkan-git \
 		steam \
 		tldr \
 		ttf-firacode-nerd\
