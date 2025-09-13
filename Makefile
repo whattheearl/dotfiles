@@ -26,10 +26,10 @@ symlinks:
 ## packages-arch: installs arch packages
 packages-arch:
 	command -v yay &> /dev/null || \
-		sudo pacman -S --needed git base-devel && \
+		(sudo pacman -S --needed git base-devel && \
 		git clone https://aur.archlinux.org/yay.git ~/wte/yay && \
 		cd ~/wte/yay && \
-		makepkg -si
+		makepkg -si)
 	yay --noconfirm --needed -S \
 		aspnet-runtime-8.0 \
 		bind-tools \
@@ -51,7 +51,7 @@ packages-arch:
 		htop \
 		jq \
 		lazygit \
-		librewolf \
+		librewolf-bin \
 		lua \
 		make \
 		man \
@@ -85,7 +85,7 @@ packages-arch:
 
 ## backup: backup data
 backup:
-	rsync -avz ~/Downloads ~/Models  ~/.cache/librewolf/ ~/Documents  wteos.wte.sh:/mnt/backups
+	rsync -avz ~/Downloads ~/Models  ~/.cache/librewolf/ ~/Documents  ~/Videos/ wteos.wte.sh:/mnt/backups
 
 ## restore: restore data
 restore:
@@ -140,11 +140,9 @@ secrets:
 
 ## repos: install repositories
 repos:
-	@test -d ~/.nvm || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+	@test -d ~/.nvm || git clone httpsd//github.com/nvm-sh/nvm.git ~/.nvm
 	@test -d ~/.oh-my-zsh || git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
 	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
-	@test -d ~/.zsh/zsh-autosuggestions || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-	@test -d ~/.zsh/zsh-history-substring-search || git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
 	@test -d ~/.zsh/zsh-syntax-highlighting || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 	@test -d ~/tyl/dev-cli || git clone git@github.com:tyler-technologies/dev-cli ~/tyl/dev-cli
 	@test -d ~/tyl/tcp-admincenter || git clone git@github.com:tyler-technologies/tcp-admincenter ~/tyl/tcp-admincenter
