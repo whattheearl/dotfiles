@@ -83,15 +83,16 @@ packages-arch:
 		com.usebottles.bottles
 		# io.gitlab.librewolf-community - flatseal issues
 
-## backup: backup app data
+## backup: backup data
 backup:
-	restic backup ${HOME}/.var/app/io.gitlab.librewolf-community/.librewolf
+	rsync -avz ~/Downloads ~/Models  ~/.cache/librewolf/ ~/Documents  wteos.wte.sh:/mnt/backups
 
-## restore: restores app data
+## restore: restore data
 restore:
-	restic restore latest --target / \
-		--include ${HOME}/.var/app/io.gitlab.librewolf-community/.librewolf
-
+	rsync -avz wteos.wte.sh:/mnt/backups/Downloads ~
+	rsync -avz wteos.wte.sh:/mnt/backups/Models ~
+	rsync wteos.wte.sh:/mnt/backups/librewolf ~/.cache/librewolf
+	rsync wteos.wte.sh:/mnt/backups/Downloads ~
 
 ## packages-fedora: installs fedora packages
 packages-fedora:
