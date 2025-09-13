@@ -51,8 +51,7 @@ packages-arch:
 		htop \
 		jq \
 		lazygit \
-		librewolf-bin \
-		llama.cpp-vulkan \
+		librewolf \
 		lua \
 		make \
 		man \
@@ -76,12 +75,13 @@ packages-arch:
 		xclip \
 		xorg-xinput \
 		xorg-xrandr \
+		ytdl \
 		zsh
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
 		com.discordapp.Discord \
-		com.usebottles.bottles \
-		io.gitlab.librewolf-community
+		com.usebottles.bottles
+		# io.gitlab.librewolf-community - flatseal issues
 
 ## backup: backup app data
 backup:
@@ -109,6 +109,7 @@ packages-fedora:
 		github-cli \
 		htop \
 		lazygit \
+		librewolf \
 		nvim \
 		restic \
 		rbw \
@@ -121,8 +122,7 @@ packages-fedora:
 		zsh
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
-		com.discordapp.Discord \
-		io.gitlab.librewolf-community
+		com.discordapp.Discord
 
 ## secrets: adds ssh, envvars keys 
 secrets:
