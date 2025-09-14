@@ -1,5 +1,6 @@
-#!/usr/env/bin bash
-git clone git@github.com/whattheearl/dotfiles /tmp
+#!/bin/bash
+sudo pacman -S git
+git clone https://github.com/whattheearl/dotfiles /tmp/dotfiles
 cd /tmp/dotfiles
 make packages-arch
 make secrets
