@@ -9,4 +9,4 @@ make secrets
 make repos
 make restore
 make symlinks
-
+sudo usermod -aG docker $USER && newgrp docker && sudo systemctl enable --now docker
