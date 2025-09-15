@@ -149,5 +149,6 @@ repos:
 	@test -d ~/tyl/tcp-admincenter || git clone git@github.com:tyler-technologies/tcp-admincenter ~/tyl/tcp-admincenter
 	@test -d ~/tyl/tcp-branding-api || git clone git@github.com:tyler-technologies/tcp-branding-api ~/tyl/tcp-branding-api
 	@test -d ~/tyl/tcp-ops-center || git clone git@github.com:tyler-technologies/tcp-ops-center ~/tyl/tcp-ops-center
+	@test -d ~/tyl/platform-dev-environment-compose || git clone git@github.com:tyler-technologies/platform-dev-environment-compose.git ~/tyl/platform-dev-environment-compose
 	@test -d ~/wte/dotfiles || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
 	@test -d ~/wte/notes || git clone wteos.wte.sh:notes ~/wte/notes
