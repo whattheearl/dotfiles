@@ -41,7 +41,7 @@ bindsym $mod+shift+e exec $browser https://excalidraw.com/
 bindsym $mod+shift+Escape exec "i3lock --color 000000"
 bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
-bindsym $mod+shift+p exec flameshot gui
+bindsym $mod+shift+p exec QT_SCALE_FACTOR=.5 flameshot gui
 bindsym $mod+shift+Page_Down exec $HOME/wte/dotfiles/scripts/1920x1080.sh
 bindsym $mod+shift+Page_Up exec $HOME/wte/dotfiles/scripts/3840x2160.sh
 bindsym $mod+shift+q kill
