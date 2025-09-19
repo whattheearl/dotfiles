@@ -22,6 +22,7 @@ symlinks:
 	ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
 	ln -sf ${PWD}/mimeapps.list ${HOME}/.config
 	ln -sf ${PWD}/Xresources ${HOME}/.Xresources
+	ln -sf ${PWD}/xprofile ${HOME}/.xprofile
 	sudo ln -sf ${PWD}/xorg.conf.d/* /etc/X11/xorg.conf.d
 
 ## packages-arch: installs arch packages

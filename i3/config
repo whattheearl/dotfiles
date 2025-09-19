@@ -2,7 +2,6 @@
 set $mod Mod4
 
 # startup
-exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec --no-startup-id xset s off -dpms
