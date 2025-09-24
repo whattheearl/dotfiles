@@ -49,16 +49,14 @@ alias web="dev browse web"
 
 # INFO: functions
 start() {
+    cd ~/tyl/tcp-ops-center
     tid up -d
-    ui up -d --build
-    wezterm start zsh -i -c "cd ~/tyl/tcp-admincenter; bff; exec zsh"
-    wezterm start zsh -i -c "cd ~/tyl/tcp-admincenter; client; exec zsh"
+    bff
+    client
     espeak 'RUNNING. weewoo weewoo weewoo' &> /dev/null
-    v ~/tyl/tcp-admincenter
 }
 stop() {
     tid down
-    ui down
     espeak 'STOPPED. weewoo weewoo weewoo' &> /dev/null
 }
 
