@@ -8,7 +8,7 @@ fi
 # INFO: alias
 alias a="dev action"
 alias ac="docker compose -f ~/tyl/tcp-admincenter/docker-compose.yml"
-alias ai="qwn"
+alias ai="qwnc"
 alias alert="espeak 'weewoo weewoo weewoo'"
 alias api="dev run api"
 alias bff="dev run bff"
@@ -35,9 +35,11 @@ alias k2="dev ai --model=moonshotai/kimi-k2"
 alias lg="lazygit"
 alias lint="dev run lint"
 alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
+alias oss="dev ai -m openai/gpt-oss-120b"
 alias pr="dev pr"
 alias push="git add . && git commit -m 'update' && git push"
-alias qwn="dev ai --model=qwen/qwen3-coder"
+alias qwni="dev ai -m qwen/qwen3-next-80b-a3b-instruct"
+alias qwnc="dev ai -m qwen/qwen3-coder"
 alias rag="node ~/wte/rag/cli/src/main.js"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml"
@@ -50,13 +52,15 @@ alias web="dev browse web"
 # INFO: functions
 start() {
     cd ~/tyl/tcp-ops-center
-    tid up -d
+    tidup
     bff
     client
     espeak 'RUNNING. weewoo weewoo weewoo' &> /dev/null
 }
 stop() {
     tid down
+    pkill node
+    pkill dotnet
     espeak 'STOPPED. weewoo weewoo weewoo' &> /dev/null
 }
 
@@ -67,6 +71,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT='true'
 export EDITOR=nvim
 export HUSKY=0
 export MANPAGER='nvim +Man!'
+export NODE_OPTIONS="--experimental-strip-types"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
@@ -92,3 +97,12 @@ ZSH_THEME=""
 [ -s "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
 [ -s "$HOME/.p10k.zsh" ] && source $HOME/.p10k.zsh
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/jon/.lmstudio/bin"
+# End of LM Studio CLI section
+
