@@ -23,7 +23,8 @@ symlinks:
 	ln -sf ${PWD}/mimeapps.list ${HOME}/.config
 	ln -sf ${PWD}/Xresources ${HOME}/.Xresources
 	ln -sf ${PWD}/xprofile ${HOME}/.xprofile
-	sudo ln -sf ${PWD}/xorg.conf.d/* /etc/X11/xorg.conf.d
+	mkdir -p ${HOME}/.xorg.conf.d
+	ln -sf ${PWD}/xorg.conf.d/* ${HOME}/.xorg.conf.d
 
 ## packages-arch: installs arch packages
 packages-arch:
