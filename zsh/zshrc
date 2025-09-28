@@ -98,12 +98,3 @@ ZSH_THEME=""
 [ -s "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
 [ -s "$HOME/.p10k.zsh" ] && source $HOME/.p10k.zsh
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/jon/.lmstudio/bin"
-# End of LM Studio CLI section
-
