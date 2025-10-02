@@ -13,6 +13,7 @@ symlinks:
 	ln -sf ${PWD}/wezterm ${HOME}/.config
 	ln -sf ${PWD}/tmux ${HOME}/.config
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
+	rm -rf ${HOME}/.config/i3
 	ln -sf ${PWD}/i3 ${HOME}/.config
 	ln -sf ${PWD}/wofi ${HOME}/.config
 	ln -sf ${PWD}/eslint ${HOME}/.config
@@ -38,6 +39,7 @@ packages-arch:
 		bind-tools \
 		bluez \
 		bluez-utils \
+		cmake \
 		docker \
 		docker-buildx \
 		docker-compose \
@@ -79,6 +81,7 @@ packages-arch:
 		xorg-xinput \
 		xorg-xrandr \
 		ytdl \
+		visual-studio-code-bin \
 		zsh
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
 	flatpak install \
@@ -143,7 +146,7 @@ secrets:
 
 ## repos: install repositories
 repos:
-	@test -d ~/.nvm || git clone httpsd//github.com/nvm-sh/nvm.git ~/.nvm
+	@test -d ~/.nvm || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 	@test -d ~/.oh-my-zsh || git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
 	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
 	@test -d ~/.zsh/zsh-syntax-highlighting || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
