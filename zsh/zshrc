@@ -31,6 +31,7 @@ alias grok="dev ai --model=x-ai/grok-4-fast"
 alias github="dev browse github"
 alias goto='cd "$(fd -t f | fzf | xargs dirname)"'
 alias gpt="dev ai --model=openai/gpt-5"
+alias gptc="dev ai --model=openai/gpt-5-codex"
 alias harness="dev browse harness"
 alias k2="dev ai --model=moonshotai/kimi-k2"
 alias lg="lazygit"
@@ -44,7 +45,7 @@ alias qwnc="dev ai -m qwen/qwen3-coder"
 alias rag="node -C ~/tyl/rag/cli/ ~/tyl/rag/cli/src/main.ts"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml"
-alias tidup="tid up -d && tidwait && ready"
+alias tidup="tid up -d && tidwait"
 alias tidwait="make -C ${HOME}/tyl/platform-dev-environment-compose wait-for-docker-up"
 alias ui="docker compose -f ~/tyl/tcp-user-import-api/docker-compose.yml"
 alias v="nvim"
@@ -63,6 +64,12 @@ stop() {
     pkill node
     pkill dotnet
     espeak 'STOPPED. weewoo weewoo weewoo' &> /dev/null
+}
+retry() {
+    while ! $($@); do
+        echo "Command failed, retrying in 5 seconds..."
+        sleep 5
+    done
 }
 
 # INFO: path
