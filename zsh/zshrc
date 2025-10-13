@@ -60,6 +60,11 @@ start() {
     client
     espeak 'RUNNING. weewoo weewoo weewoo' &> /dev/null
 }
+starttidg() {
+    tidup
+    cd ~/tyl/tid-gateway
+    ASPNETCORE_ENVIRONMENT=Development ASPNETCORE_URLS=http://*:6250 dotnet run --project tid-gateway
+}
 stop() {
     tid down
     pkill node
