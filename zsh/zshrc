@@ -50,6 +50,7 @@ alias tidwait="make -C ${HOME}/tyl/platform-dev-environment-compose wait-for-doc
 alias ui="docker compose -f ~/tyl/tcp-user-import-api/docker-compose.yml"
 alias v="nvim"
 alias web="dev browse web"
+alias yt-dlp="retry yt-dlp"
 
 # INFO: functions
 start() {
@@ -67,8 +68,8 @@ stop() {
 }
 retry() {
     while ! $($@); do
-        echo "Command failed, retrying in 5 seconds..."
-        sleep 5
+        echo "Command failed, retrying in 15 seconds..."
+        sleep 15
     done
 }
 
