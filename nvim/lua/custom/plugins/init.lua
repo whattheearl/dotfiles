@@ -5,4 +5,5 @@
 return {
   require 'custom.plugins.debugprint',
   require 'custom.plugins.oil',
+  require 'custom.plugins.marks',
 }

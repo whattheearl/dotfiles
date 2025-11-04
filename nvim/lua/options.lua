@@ -1,5 +1,5 @@
 vim.opt.autoindent = true
-vim.opt.clipboard = { 'unnamed', 'unnamedplus' }
+vim.opt.clipboard = { 'unnamedplus' }
 vim.opt.cursorline = true
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevelstart = 99
