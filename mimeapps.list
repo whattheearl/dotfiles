@@ -1,7 +1,7 @@
 
 [Default Applications]
-text/html=librewolf
-x-scheme-handler/http=librewolf
-x-scheme-handler/https=librewolf
-x-scheme-handler/about=librewolf
-x-scheme-handler/unknown=librewolf
+text/html=librewolf.desktop
+x-scheme-handler/http=librewolf.desktop
+x-scheme-handler/https=librewolf.desktop
+x-scheme-handler/about=librewolf.desktop
+x-scheme-handler/unknown=librewolf.desktop
