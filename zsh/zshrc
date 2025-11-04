@@ -24,14 +24,14 @@ alias csd="docker compose -f ~/tyl/tcp-community-service-dev-compose/docker-comp
 alias d="dev deploy"
 alias db="mariadb -uuser -ppassword --ssl-verify-server-cert=0 -P 3306"
 alias dev="${HOME}/tyl/dev-cli/src/index.js"
-alias ff="firefox"
+alias down="dev run down"
 alias format="dev format"
 alias gem="dev ai --model=google/gemini-2.5-pro"
-alias grok="dev ai --model=x-ai/grok-4-fast"
 alias github="dev browse github"
 alias goto='cd "$(fd -t f | fzf | xargs dirname)"'
 alias gpt="dev ai --model=openai/gpt-5"
 alias gptc="dev ai --model=openai/gpt-5-codex"
+alias grok="dev ai --model=x-ai/grok-4-fast"
 alias harness="dev browse harness"
 alias k2="dev ai --model=moonshotai/kimi-k2"
 alias lg="lazygit"
@@ -40,14 +40,16 @@ alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
 alias oss="dev ai -m openai/gpt-oss-120b"
 alias pr="dev pr"
 alias push="git add . && git commit -m 'update' && git push"
-alias qwni="dev ai -m qwen/qwen3-next-80b-a3b-instruct"
 alias qwnc="dev ai -m qwen/qwen3-coder"
+alias qwni="dev ai -m qwen/qwen3-next-80b-a3b-instruct"
 alias rag="node -C ~/tyl/rag/cli/ ~/tyl/rag/cli/src/main.ts"
+alias start="dev run start"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml"
 alias tid="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml -f ~/tyl/platform-dev-environment-compose/docker-compose.tid.yml"
 alias tidup="tid up -d && tidwait"
 alias tidwait="make -C ${HOME}/tyl/platform-dev-environment-compose wait-for-docker-up"
 alias ui="docker compose -f ~/tyl/tcp-user-import-api/docker-compose.yml"
+alias up="dev run up"
 alias v="nvim"
 alias web="dev browse web"
 alias yt-dlp="retry yt-dlp"
@@ -60,10 +62,17 @@ start() {
     client
     espeak 'RUNNING. weewoo weewoo weewoo' &> /dev/null
 }
-starttidg() {
-    tidup
-    cd ~/tyl/tid-gateway
-    ASPNETCORE_ENVIRONMENT=Development ASPNETCORE_URLS=http://*:6250 dotnet run --project tid-gateway
+tidg() {
+    cd ~/tyl/tid-gateway/tid-gateway
+    ASPNETCORE_ENVIRONMENT=Development \
+    ANGULAR_SERVER_HOST=localhost \
+    ASPNETCORE_URLS=http://*:6250 \
+    dotnet run tid-gateway
+}
+neww() {
+    local cmd="$@"
+    local pane_id="$(wezterm cli spawn --new-window --cwd ${PWD})"
+    echo -e "${cmd}\n" | wezterm cli send-text --pane-id "${pane_id}" --no-paste
 }
 stop() {
     tid down
@@ -73,8 +82,8 @@ stop() {
 }
 retry() {
     while ! $($@); do
-        echo "Command failed, retrying in 15 seconds..."
-        sleep 15
+        echo "Command failed, retrying in 60 seconds..."
+        sleep 60
     done
 }
 
@@ -82,6 +91,7 @@ retry() {
 [ -d "$HOME/.nvm" ] && export NVM_DIR=$HOME/.nvm
 export BUN_INSTALL="$HOME/.bun"
 export DOTNET_CLI_TELEMETRY_OPTOUT='true'
+export CHROME_BIN='/usr/bin/chromium'
 export EDITOR=nvim
 export HUSKY=0
 export MANPAGER='nvim +Man!'
