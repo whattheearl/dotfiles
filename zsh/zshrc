@@ -36,12 +36,13 @@ alias harness="dev browse harness"
 alias k2="dev ai --model=moonshotai/kimi-k2"
 alias lg="lazygit"
 alias lint="dev run lint"
+alias mm="dev ai -m minimax/minimax-m2"
 alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
 alias oss="dev ai -m openai/gpt-oss-120b"
 alias pr="dev pr"
 alias push="git add . && git commit -m 'update' && git push"
 alias qwnc="dev ai -m qwen/qwen3-coder"
-alias qwni="dev ai -m qwen/qwen3-next-80b-a3b-instruct"
+alias next="dev ai -m qwen/qwen3-next-80b-a3b-instruct"
 alias rag="node -C ~/tyl/rag/cli/ ~/tyl/rag/cli/src/main.ts"
 alias start="dev run start"
 alias tcp="docker compose -f ~/tyl/platform-dev-environment-compose/docker-compose.yml"
@@ -55,13 +56,6 @@ alias web="dev browse web"
 alias yt-dlp="retry yt-dlp"
 
 # INFO: functions
-start() {
-    cd ~/tyl/tcp-ops-center
-    tidup
-    bff
-    client
-    espeak 'RUNNING. weewoo weewoo weewoo' &> /dev/null
-}
 tidg() {
     cd ~/tyl/tid-gateway/tid-gateway
     ASPNETCORE_ENVIRONMENT=Development \
