@@ -15,6 +15,7 @@ symlinks:
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
 	rm -rf ${HOME}/.config/i3
 	ln -sf ${PWD}/i3 ${HOME}/.config
+	ln -sf ${PWD}/alacritty ${HOME}/.config
 	ln -sf ${PWD}/wofi ${HOME}/.config
 	ln -sf ${PWD}/eslint ${HOME}/.config
 	ln -sf ${PWD}/aerospace ${HOME}/.config
