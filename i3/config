@@ -32,7 +32,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f floating toggle
 bindsym $mod+grave scratchpad show
 bindsym $mod+minus split v
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec alacritty
 bindsym $mod+s layout stacking
 bindsym $mod+shift+b exec flatpak run com.usebottles.bottles
 bindsym $mod+shift+c reload
