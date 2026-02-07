@@ -31,7 +31,8 @@ alias next="dev ai -m qwen/qwen3-next-80b-a3b-instruct"
 alias oss="dev ai -m openai/gpt-oss-120b"
 alias push="git add . && git commit -m 'update' && git push"
 alias qwnc="dev ai -m qwen/qwen3-coder"
-alias v="nvim"
+alias tracker="node ~/wte/tracker/src/cli.ts"
+alias v="vim"
 alias yt-dlp="retry yt-dlp"
 
 # INFO: functions

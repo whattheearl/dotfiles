@@ -10,6 +10,7 @@ help:
 ## symlinks: symlink ~/.config and /etc/X11/xorg.conf.d
 symlinks:
 	ln -sf ${PWD}/nvim ${HOME}/.config
+	ln -sf ${PWD}/vimrc ${HOME}/.vimrc
 	ln -sf ${PWD}/wezterm ${HOME}/.config
 	ln -sf ${PWD}/tmux ${HOME}/.config
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
