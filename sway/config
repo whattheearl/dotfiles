@@ -3,7 +3,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term flatpak run com.wezfurlong.wezterm
+set $term alacritty
 set $menu wmenu-run
 
 hide_edge_borders smart
@@ -13,7 +13,8 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output * scale 1.5
 
 bindsym $mod+Shift+Return exec "librewolf || flatpak run io.gitlab.librewolf-community"
-bindsym $mod+Return exec "wezterm || flatpak run org.wezfurlong.wezterm"
+bindsym $mod+Return exec alacritty
+bindsym $mod+shift+p exec flameshot gui
 
 input type:touchpad {
     natural_scroll disabled
