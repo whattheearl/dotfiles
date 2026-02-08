@@ -1,4 +1,5 @@
-set expandtab
-set tabstop=4
-set shiftwidth=4
-hi Search ctermfg=black ctermbg=white
+set hlsearch incsearch smartcase
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab 
+
+syntax enable
+filetype plugin indent on
