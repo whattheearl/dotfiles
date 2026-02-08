@@ -2,7 +2,7 @@
 
 # INFO: powerline10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # INFO: alias
@@ -30,6 +30,7 @@ alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
 alias next="dev ai -m qwen/qwen3-next-80b-a3b-instruct"
 alias oss="dev ai -m openai/gpt-oss-120b"
 alias push="git add . && git commit -m 'update' && git push"
+alias tracker="node ~/wte/tracker/src/cli.ts"
 alias qwnc="dev ai -m qwen/qwen3-coder"
 alias tracker="node ~/wte/tracker/src/cli.ts"
 alias v="vim"
@@ -76,8 +77,8 @@ ZSH_THEME=""
 [ -d "$HOME/.zsh/zsh-history-substring-search" ] && source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 [ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -d "/usr/share/nvm" ] && source /usr/share/nvm/init-nvm.sh && source /usr/share/nvm/bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. $NVM_DIR/bash_completion
-[ -d "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh
+[ -s "$NVM_DIR/bash_completion" ] && source $NVM_DIR/bash_completion
+[ -d "$NVM_DIR/nvm.sh" ] && source $NVM_DIR/nvm.sh
 [ -s "$HOME/.bun/_bun" ] && source $HOME/.bun/_bun
 [ -s "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
 [ -s "$HOME/.p10k.zsh" ] && source $HOME/.p10k.zsh
