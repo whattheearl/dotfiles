@@ -45,8 +45,6 @@ packages-arch:
 		docker \
 		docker-buildx \
 		docker-compose \
-		dotnet-sdk-8.0 \
-		dotnet-sdk-9.0 \
 		fd \
 		feh \
 		firefox \
@@ -110,10 +108,9 @@ packages-fedora:
 	sudo dnf copr enable wezfurlong/wezterm-nightly
 	curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
 	sudo dnf install -y \
+		brightnessctl \
 		docker-cli \
 		docker-compose \
-		dotnet-sdk-8.0 \
-		dotnet-sdk-9.0 \
 		fd \
 		fira-code-fonts \
 		fzf \
@@ -128,7 +125,7 @@ packages-fedora:
 		sqlite3 \
 		sway \
 		tldr \
-		vim \
+		vim-X11 \
 		wezterm \
 		zsh
 	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
