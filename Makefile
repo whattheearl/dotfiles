@@ -55,6 +55,7 @@ packages-arch:
 		fuse3 \
 		fzf \
 		gcc \
+		gvim \
 		htop \
 		jq \
 		lazygit \

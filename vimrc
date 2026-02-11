@@ -1,5 +1,20 @@
-set hlsearch incsearch smartcase
-set tabstop=4 shiftwidth=4 softtabstop=4 expandtab 
+"clipboard settings
+set clipboard=unnamed,unnamedplus
 
-syntax enable
+"indent settings
 filetype plugin indent on
+
+"search settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+"syntax settings
+syntax enable
+
+"tab settings
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab 
