@@ -4,6 +4,9 @@ set clipboard=unnamed,unnamedplus
 "indent settings
 filetype plugin indent on
 
+"linenumber settings
+set relativenumber
+
 "search settings
 set hlsearch
 set incsearch
