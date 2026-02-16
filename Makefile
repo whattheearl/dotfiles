@@ -16,12 +16,7 @@ symlinks:
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
 	rm -rf ${HOME}/.config/i3
 	ln -sf ${PWD}/i3 ${HOME}/.config
-	echo ${HOSTNAME}
-	if [[ ${HOSTNAME} == "fedora" ]]; then \
-		ln -sf ${PWD}/alacritty/alacritty.fedora.toml ${HOME}/.config/alacritty/alacritty.toml; \
-	elif [[ ${HOSTNAME} == "fedora" ]]; then \
-		ln -sf ${PWD}/alacritty/alacritty.fedora.toml ${HOME}/.config/alacritty/alacritty.toml; \
-	fi
+	ln -sf ${PWD}/alacritty/alacritty.arch.toml ${HOME}/.config/alacritty/alacritty.toml; \
 	ln -sf ${PWD}/wofi ${HOME}/.config
 	ln -sf ${PWD}/eslint ${HOME}/.config
 	ln -sf ${PWD}/aerospace ${HOME}/.config
