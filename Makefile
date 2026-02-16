@@ -41,8 +41,6 @@ packages-arch:
 		cd ~/wte/yay && \
 		makepkg -si)
 	yay --noconfirm --needed -S \
-		aspnet-runtime-8.0 \
-		aspnet-runtime \
 		bind-tools \
 		bluez \
 		bluez-utils \
