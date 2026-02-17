@@ -35,7 +35,6 @@ alias push="git add . && git commit -m 'update' && git push"
 alias qwnc="ai -m qwen/qwen3-coder"
 alias tracker="node ~/wte/tracker/main.ts"
 alias v="~/wte/dotfiles/scripts/nvim-picker.sh"
-[ -f "/usr/bin/vimx" ] && alias v="vimx"
 alias yt-dlp="retry yt-dlp"
 
 # INFO: functions

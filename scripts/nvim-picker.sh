@@ -4,5 +4,5 @@ day=$(date +%d)
 if (( day % 2 == 0 )); then
     nvim $@
 else
-    vim $@
+    vim $@ || vimx $@
 fi
