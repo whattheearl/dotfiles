@@ -30,7 +30,6 @@ return {
         end
       end,
       formatters_by_ft = {
-        csharp = { 'csharpier' },
         css = { 'prettierd' },
         html = { 'prettierd' },
         htmlangular = { 'prettierd' },
