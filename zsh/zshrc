@@ -41,11 +41,6 @@ alias v="~/wte/dotfiles/scripts/nvim-picker.sh"
 alias yt-dlp="retry yt-dlp"
 
 # INFO: functions
-neww() {
-    local cmd="$@"
-    local pane_id="$(wezterm cli spawn --new-window --cwd ${PWD})"
-    echo -e "${cmd}\n" | wezterm cli send-text --pane-id "${pane_id}" --no-paste
-}
 retry() {
     while ! $($@); do
         echo "Command $@ failed, retrying in 60 seconds..."
@@ -82,7 +77,7 @@ ZSH_THEME=""
 [ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -d "/usr/share/nvm" ] && source /usr/share/nvm/init-nvm.sh && source /usr/share/nvm/bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && source $NVM_DIR/bash_completion
-[ -d "$NVM_DIR/nvm.sh" ] && source $NVM_DIR/nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && source $NVM_DIR/nvm.sh
 [ -s "$HOME/.bun/_bun" ] && source $HOME/.bun/_bun
 [ -s "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
 [ -s "$HOME/.p10k.zsh" ] && source $HOME/.p10k.zsh
