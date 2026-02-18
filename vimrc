@@ -1,3 +1,12 @@
+"keymap settings
+let mapleader = " "
+nnoremap <leader>e :e<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>s :split<CR>
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>w :w<CR>
+
 "clipboard settings
 set clipboard=unnamed,unnamedplus
 
