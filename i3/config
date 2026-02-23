@@ -54,7 +54,6 @@ bindsym $mod+shift+x exec "shutdown -h now"
 bindsym $mod+space focus mode_toggle
 bindsym $mod+w layout tabbed
 bindsym $mod+z fullscreen toggle
-bindsym Print exec flameshot gui
 
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
