@@ -40,7 +40,10 @@ alias tls="tracker list"
 alias tracker="node ~/wte/tracker/main.ts"
 alias tset="tracker set"
 alias v="~/wte/dotfiles/scripts/nvim-picker.sh"
-alias yt-dlp="retry yt-dlp"
+alias ytls="fd --full-path ~/wte/youtube --exclude *.txt | tail -n 30"
+alias ytr="retry yt-dlp"
+alias ytsync='cat channels.txt | xargs yt-dlp --match-filter "duration > 180" --playlist-end 10 -o "%(upload_date>%Y-%m-%d)s [%(uploader)s] %(title)s.%(ext)s"'
+alias ytwatch='ytls | xargs -I{} mpv {}'
 
 # INFO: functions
 retry() {
