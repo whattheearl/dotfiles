@@ -1,13 +1,17 @@
-.PHONY: help packages-arch packages-fedora symlinks secrets repos
 SHELL := /bin/bash
 
-## help: print this help message
+.PHONY: help
 help:
 	@echo 'Usage:'
-	@echo ${MAKEFILE_LIST}
-	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
+	@echo '	backup'
+	@echo '	packages-arch'
+	@echo '	packages-fedora'
+	@echo '	repos'
+	@echo '	restore'
+	@echo '	secrets'
+	@echo '	symlinks'
 
-## symlinks: symlink ~/.config and /etc/X11/xorg.conf.d
+.PHONY: symlinks
 symlinks:
 	ln -sf ${PWD}/nvim ${HOME}/.config
 	ln -sf ${PWD}/vimrc ${HOME}/.vimrc
@@ -28,7 +32,7 @@ symlinks:
 	ln -sf ${PWD}/xprofile ${HOME}/.xprofile
 	sudo ln -sf ${PWD}/xorg.conf.d/* /etc/X11/xorg.conf.d/
 
-## packages-arch: installs arch packages
+.PHONY: packages-arch
 packages-arch:
 	command -v yay &> /dev/null || \
 		(sudo pacman -S --needed git base-devel && \
@@ -89,18 +93,18 @@ packages-arch:
 		com.usebottles.bottles
 		# io.gitlab.librewolf-community - flatseal issues
 
-## backup: backup data
+.PHONY: backup
 backup:
 	rsync -avz ~/Downloads ~/Models  ~/.cache/librewolf/ ~/Documents  ~/Videos/ wteos.wte.sh:/mnt/backups
 
-## restore: restore data
+.PHONY: restore
 restore:
 	rsync -avz wteos.wte.sh:/mnt/backups/Downloads ~
 	rsync -avz wteos.wte.sh:/mnt/backups/Models ~
 	rsync wteos.wte.sh:/mnt/backups/librewolf ~/.cache/librewolf
 	rsync wteos.wte.sh:/mnt/backups/Downloads ~
 
-## packages-fedora: installs fedora packages
+.PHONY: packages-fedora
 packages-fedora:
 	sudo dnf copr enable atim/lazygit -y
 	sudo dnf copr enable wezfurlong/wezterm-nightly
@@ -117,8 +121,8 @@ packages-fedora:
 		lazygit \
 		librewolf \
 		nvim \
-		restic \
 		rbw \
+		restic \
 		sddm \
 		sqlite3 \
 		sway \
@@ -130,7 +134,7 @@ packages-fedora:
 	flatpak install \
 		com.discordapp.Discord
 
-## secrets: adds ssh, envvars keys 
+.PHONY: secrets
 secrets:
 	# rbw login
 	rbw config set email earl.jonathan@gmail.com
@@ -143,16 +147,11 @@ secrets:
 	sudo -u ${USER} chmod 644 ~/.ssh/id_ed25519.pub
 	sudo -u ${USER} chmod 700 ~/.ssh
 
-## repos: install repositories
+.PHONY: repos 
 repos:
 	@test -d ~/.nvm || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 	@test -d ~/.oh-my-zsh || git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
 	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
 	@test -d ~/.zsh/zsh-syntax-highlighting || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
-	@test -d ~/tyl/dev-cli || git clone git@github.com:tyler-technologies/dev-cli ~/tyl/dev-cli
-	@test -d ~/tyl/tcp-admincenter || git clone git@github.com:tyler-technologies/tcp-admincenter ~/tyl/tcp-admincenter
-	@test -d ~/tyl/tcp-branding-api || git clone git@github.com:tyler-technologies/tcp-branding-api ~/tyl/tcp-branding-api
-	@test -d ~/tyl/tcp-ops-center || git clone git@github.com:tyler-technologies/tcp-ops-center ~/tyl/tcp-ops-center
-	@test -d ~/tyl/platform-dev-environment-compose || git clone git@github.com:tyler-technologies/platform-dev-environment-compose.git ~/tyl/platform-dev-environment-compose
 	@test -d ~/wte/dotfiles || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
 	@test -d ~/wte/notes || git clone wteos.wte.sh:notes ~/wte/notes
