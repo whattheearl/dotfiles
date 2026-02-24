@@ -7,6 +7,9 @@ fi
 
 # INFO: alias
 alias ai="node ~/wte/ai/main.ts"
+alias aic="ai commit"
+alias aip="ai prompt -p"
+alias aiplan="ai prompt -i ~/wte/ai/plan.md -p"
 alias alert="espeak 'weewoo weewoo weewoo'"
 alias cla="ai -m anthropic/claude-opus-4.1"
 alias cp-editconfig="cp ~/wte/dotfiles/templates/.editorconfig ."
