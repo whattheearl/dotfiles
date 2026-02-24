@@ -7,4 +7,4 @@
 [gpg]
         format = ssh
 [push]
-	autoSetupRemote = true
+	    autoSetupRemote = true
