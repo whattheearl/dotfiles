@@ -6,12 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # INFO: alias
-alias ai="node ~/wte/ai/main.ts chat -p"
-alias plan="node ~/wte/ai/main.ts plan -p"
-alias edit="node ~/wte/ai/main.ts edit -p"
+alias ai="node ~/wte/ai/main.ts chat -m google/gemini-3.1-pro-preview -p"
 alias alert="espeak 'weewoo weewoo weewoo'"
+alias edit="node ~/wte/ai/main.ts edit -p"
 alias ga="git add"
-alias gc!="node ~/wte/ai/main.ts commit -m google/gemini-3.1-pro-preview"
+alias gc!="node ~/wte/ai/main.ts commit -m google/gemini-2.5-flash-lite"
 alias gc="git commit"
 alias gca="git commit --amend --verbose"
 alias gl="git pull"
@@ -22,6 +21,7 @@ alias lg="lazygit"
 alias micd="echo '5-1' | sudo tee /sys/bus/usb/drivers/usb/bind"
 alias micu="echo '5-1' | sudo tee /sys/bus/usb/drivers/usb/unbind"
 alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
+alias plan="node ~/wte/ai/main.ts plan -p"
 alias rss="node ~/wte/rss/main.ts"
 alias tdel="tracker delete"
 alias tinfo="tracker info"
