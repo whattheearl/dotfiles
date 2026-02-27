@@ -6,11 +6,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # INFO: alias
-alias ai="node ~/wte/ai/main.ts chat -m google/gemini-3.1-pro-preview -p"
-alias alert="espeak 'weewoo weewoo weewoo'"
-alias edit="node ~/wte/ai/main.ts edit -p"
+# MODELS: qwen/qwen3-coder google/gemini-3.1-pro-preview google/gemini-3-flash-preview anthropic/claude-opus-4.6
+MODEL=google/gemini-3.1-pro-preview
+MODEL_FAST=qwen/qwen3-coder
+alias ac="ai chat -m ${MODEL_FAST} -p"
+alias act="ai chat -m ${MODEL} -p"
+alias ae="ai edit -m ${MODEL}"
+alias agc="ai commit -m ${MODEL_FAST}"
+alias ai="node ~/wte/ai/main.ts"
+alias ap="ai plan -m ${MODEL}"
 alias ga="git add"
-alias gc!="node ~/wte/ai/main.ts commit -m google/gemini-3-flash-preview"
 alias gc="git commit"
 alias gca="git commit --amend --verbose"
 alias gco="git checkout"
@@ -22,8 +27,6 @@ alias gsw="git switch"
 alias gswd="git switch dev"
 alias gswm="git switch master"
 alias lg="lazygit"
-alias micd="echo '5-1' | sudo tee /sys/bus/usb/drivers/usb/bind"
-alias micu="echo '5-1' | sudo tee /sys/bus/usb/drivers/usb/unbind"
 alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
 alias plan="node ~/wte/ai/main.ts plan -p"
 alias rss="node ~/wte/rss/main.ts"
