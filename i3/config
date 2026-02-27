@@ -40,14 +40,13 @@ bindsym $mod+shift+d exec flatpak run com.discordapp.Discord
 bindsym $mod+shift+e exec $browser https://excalidraw.com/
 bindsym $mod+shift+Escape exec "i3lock --color 000000"
 bindsym $mod+Shift+grave move scratchpad
+bindsym $mod+shift+m exec pactl set-default-sink alsa_output.usb-R__DE_R__DE_PodMic_USB_22B8AFC6-00.analog-stereo
 bindsym $mod+shift+o exec flatpak run com.obsproject.Studio
 bindsym $mod+shift+p exec QT_SCALE_FACTOR=.5 flameshot gui
-bindsym $mod+shift+Page_Down exec $HOME/wte/dotfiles/scripts/1920x1080.sh
-bindsym $mod+shift+Page_Up exec $HOME/wte/dotfiles/scripts/3840x2160.sh
 bindsym $mod+shift+q kill
 bindsym $mod+shift+r mode "resize"
 bindsym $mod+shift+Return exec $browser
-bindsym $mod+shift+s exec spotify
+bindsym $mod+shift+s exec pactl set-default-sink alsa_output.pci-0000_0f_00.6.analog-stereo
 bindsym $mod+shift+space exec --no-startup-id dmenu_run
 bindsym $mod+shift+t exec $browser https://teams.microsoft.com/v2/
 bindsym $mod+shift+x exec "shutdown -h now"
