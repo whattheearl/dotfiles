@@ -3,13 +3,13 @@ SHELL := /bin/bash
 .PHONY: help
 help:
 	@echo 'Usage:'
-	@echo '	backup'
-	@echo '	packages-arch'
-	@echo '	packages-fedora'
-	@echo '	repos'
-	@echo '	restore'
-	@echo '	secrets'
-	@echo '	symlinks'
+	@echo '    backup'
+	@echo '    packages'
+	@echo '    packages-flatpaks'
+	@echo '    repos'
+	@echo '    restore'
+	@echo '    secrets'
+	@echo '    symlinks'
 
 .PHONY: symlinks
 symlinks:
@@ -32,10 +32,10 @@ symlinks:
 	ln -sf ${PWD}/xprofile ${HOME}/.xprofile
 	sudo ln -sf ${PWD}/xorg.conf.d/* /etc/X11/xorg.conf.d/
 
-.PHONY: packages-arch
-packages-arch:
+.PHONY: packages
+packages:
 	command -v yay &> /dev/null || \
-		(sudo pacman -S --needed git base-devel && \
+		(sudo pacman -S --needed --noconfirm git base-devel && \
 		git clone https://aur.archlinux.org/yay.git ~/wte/yay && \
 		cd ~/wte/yay && \
 		makepkg -si)
@@ -73,7 +73,6 @@ packages-arch:
 		restic \
 		rg \
 		ripgrep \
-		spotify \
 		sqlite \
 		steam \
 		tldr \
@@ -87,11 +86,13 @@ packages-arch:
 		ytdl \
 		visual-studio-code-bin \
 		zsh
-	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
+
+.PHONY: packages-flatpaks
+packages-flatpaks:
 	flatpak install \
+		com.spotify.Client \
 		com.discordapp.Discord \
 		com.usebottles.bottles
-		# io.gitlab.librewolf-community - flatseal issues
 
 .PHONY: backup
 backup:
@@ -103,36 +104,6 @@ restore:
 	rsync -avz wteos.wte.sh:/mnt/backups/Models ~
 	rsync wteos.wte.sh:/mnt/backups/librewolf ~/.cache/librewolf
 	rsync wteos.wte.sh:/mnt/backups/Downloads ~
-
-.PHONY: packages-fedora
-packages-fedora:
-	sudo dnf copr enable atim/lazygit -y
-	sudo dnf copr enable wezfurlong/wezterm-nightly
-	curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
-	sudo dnf install -y \
-		brightnessctl \
-		docker-cli \
-		docker-compose \
-		fd \
-		fira-code-fonts \
-		fzf \
-		github-cli \
-		htop \
-		lazygit \
-		librewolf \
-		nvim \
-		rbw \
-		restic \
-		sddm \
-		sqlite3 \
-		sway \
-		tldr \
-		vim-X11 \
-		wezterm \
-		zsh
-	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
-	flatpak install \
-		com.discordapp.Discord
 
 .PHONY: secrets
 secrets:
@@ -149,9 +120,10 @@ secrets:
 
 .PHONY: repos 
 repos:
-	@test -d ~/.nvm || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 	@test -d ~/.oh-my-zsh || git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
 	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
 	@test -d ~/.zsh/zsh-syntax-highlighting || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 	@test -d ~/wte/dotfiles || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
 	@test -d ~/wte/notes || git clone wteos.wte.sh:notes ~/wte/notes
+	@test -d ~/wte/ai || git clone wteos.wte.sh:ai ~/wte/ai && cd ~/wte/ai && npm i
+	@test -d ~/wte/tracker || git clone wteos.wte.sh:tracker ~/wte/tracker && cd ~/wte/tracker && npm i
