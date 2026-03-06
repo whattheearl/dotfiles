@@ -1,22 +1,33 @@
 #!/bin/bash
-
 # curl -s https://raw.githubusercontent.com/whattheearl/dotfiles/main/setup.sh | bash
 
-sudo pacman -S git make --noconfirm
-git clone https://github.com/whattheearl/dotfiles /tmp/dotfiles
-cd /tmp/dotfiles
+set -e
+HOSTNAME=$(hostnamectl hostname)
 
-[[ $HOST -eq "ws" ]] && \
-    nmcli connection modify Wired\ connection\ 1 ipv4.dns "10.0.0.1" && \
+echo "${HOSTNAME} setup"
+if [[ "$HOSTNAME" == "ws" ]]; then
+    sudo pacman -S git make --noconfirm;
+elif [[ "$HOSTNAME" == "asahi" ]]; then
+    sudo dnf install make git -y;
+fi
+
+git clone https://github.com/whattheearl/dotfiles ${HOME}/wte/dotfiles
+cd ${HOME}/wte/dotfiles
+
+make all
+
+# setup nvm
+source ~/.nvm/nvm.sh && \
+    nvm install --lts && 
+    nvm use --lts
+# setup docker
+sudo usermod -aG docker ${USER} && \
+    newgrp docker && \
+    sudo systemctl enable --now docker
+# setup dns
+if [[ "$HOSTNAME" == "ws" ]]; then
+    nmcli connection modify Wired\ connection\ 1 ipv4.dns "10.0.0.1"
     nmcli connection show Wired\ connection\ 1 | grep ipv4.dns:
-make packages
+fi
 
-source ~/.nvm/nvm.sh && nvm install --lts && nvm use --lts
-sudo usermod -aG docker ${USER} && sudo newgrp docker
-[[ $HOST -eq "ws" ]] && sudo systemctl enable --now docker
-[[ $HOST -eq "ws" ]] && sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
-[[ $HOST -eq "ws" ]] && make packages-flatpaks
-make secrets
-make repos
-make symlinks
-# make restore
+echo 'COMPLETE'
