@@ -2,8 +2,7 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {
-  require 'custom.plugins.debugprint',
-  require 'custom.plugins.oil',
-  require 'custom.plugins.marks',
-}
+
+---@module 'lazy'
+---@type LazySpec
+return {}
