@@ -13,8 +13,11 @@ set clipboard=unnamed,unnamedplus
 "indent settings
 filetype plugin indent on
 
-"linenumber settings
+"ui
 set relativenumber
+highlight CursorLine cterm=bold ctermbg=236 guibg=#1c1c1c
+highlight CursorLineNr cterm=bold ctermfg=Yellow guifg=Yellow
+set cursorline
 
 "search settings
 set hlsearch
