@@ -123,6 +123,7 @@ packages-asahi:
 		htop \
 		lazygit \
 		librewolf \
+		luarocks \
 		nvim \
 		rbw \
 		restic \
