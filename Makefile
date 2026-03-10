@@ -58,6 +58,8 @@ packages-arch:
 		cd ~/wte/yay && \
 		makepkg -si)
 	yay --noconfirm --needed -S \
+		alacritty \
+		age \
 		bind-tools \
 		bluez \
 		bluez-utils \
@@ -113,6 +115,7 @@ packages-arch:
 packages-asahi:
 	sudo dnf install -y \
 		alacritty \
+		age \
 		brightnessctl \
 		docker-cli \
 		docker-compose \
