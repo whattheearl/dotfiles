@@ -99,15 +99,12 @@ packages-arch:
 		tldr \
 		ttf-firacode-nerd\
 		unzip \
-		visual-studio-code-bin \
 		xclip \
 		xorg-xinput \
 		xorg-xrandr \
 		ytdl \
-		visual-studio-code-bin \
 		zsh
 	flatpak install \
-		com.discordapp.Discord \
 		com.usebottles.bottles
 
 
