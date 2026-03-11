@@ -107,4 +107,23 @@ require("lazy").setup({
   checker = { enabled = false },
 })
 
+require('nvim-treesitter').install({
+  'bash',
+  'c',
+  'css',
+  'diff',
+  'html',
+  'javascript',
+  'lua',
+  'luadoc',
+  'make',
+  'markdown',
+  'markdown_inline',
+  'query',
+  'svelte',
+  'typescript',
+  'vim',
+  'vimdoc',
+})
+
 -- vim: ts=2 sts=2 sw=2 et
