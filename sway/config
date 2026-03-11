@@ -9,23 +9,22 @@ set $menu wmenu-run
 hide_edge_borders smart
 
 input * xkb_options caps:escape
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output * scale 1.5
-
-bindsym $mod+Shift+Return exec "librewolf || flatpak run io.gitlab.librewolf-community"
-bindsym $mod+Return exec alacritty
-bindsym $mod+shift+p exec flameshot gui
 
 input type:touchpad {
     natural_scroll disabled
     dwt enabled
 }
 
-bindsym $mod+Shift+q kill
-bindsym $mod+shift+space exec $menu
 floating_modifier $mod normal
+
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+Escape exec swaylock -f -c 000000
+bindsym $mod+shift+p exec grim
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+Return exec librewolf
+bindsym $mod+shift+space exec $menu
 bindsym $mod+Shift+x exec poweroff
 
 bindsym Ctrl+h focus left
@@ -115,7 +114,6 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ t
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Special key to take a screenshot with grim
-bindsym Print exec grim
 
 exec waybar
 

@@ -1,23 +1,4 @@
 /* Waybar configuration ration reference: https://github.com/Alexays/Waybar/wiki/Configuration */
-@keyframes blink-warning {
-    70% {
-        color: white;
-    }
-    to {
-        color: white;
-        background-color: orange;
-    }
-}
-@keyframes blink-critical {
-    70% {
-        color: white;
-    }
-    to {
-        color: white;
-        background-color: red;
-    }
-}
-
 /* Reset all styles */
 * {
     border: none;
@@ -30,7 +11,7 @@
 /* The whole bar */
 #waybar {
     background: black;
-    color: #41ff00;
+    color: #ffffff;
     font-family:
         Cantarell,
         Noto Sans,
@@ -55,9 +36,6 @@
 
 /* Module styles */
 #battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 #battery.warning {
@@ -66,16 +44,6 @@
 
 #battery.critical {
     color: red;
-}
-
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
 }
 
 #cpu.warning {
@@ -87,9 +55,6 @@
 }
 
 #memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 #memory.warning {
@@ -98,8 +63,6 @@
 
 #memory.critical {
     color: red;
-    animation-name: blink-critical;
-    animation-duration: 2s;
 }
 
 #mode {
@@ -151,8 +114,8 @@
 }
 
 #workspaces button.focused {
-    border-color: #41ff00;
-    color: #41ff00;
+    border-color: #ffffff;
+    color: #ffffff;
     background-color: black;
 }
 
