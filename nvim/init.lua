@@ -198,6 +198,24 @@ vim.lsp.config['ts_ls'] = {
   end,
 }
 
+vim.lsp.config['svelte'] = {
+  cmd = { 'svelteserver', '--stdio' },
+  filetypes = { 'svelte' },
+  root_dir = function(bufnr, on_dir)
+    local root_markers = { { 'package.json' }, '.git' }
+    local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
+    on_dir(project_root)
+  end,
+  -- settings = {
+  --   svelte = {
+  --     plugin = {
+  --       svelte = {
+  --         defaultScriptLanguage = "ts",
+  --       },
+  --     },
+  --   },
+  -- },
+}
 
 
 
