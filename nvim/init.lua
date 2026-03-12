@@ -41,6 +41,19 @@ vim.keymap.set('n', '<leader>sg', ':FzfLua live_grep<CR>', { desc = 'Search grep
 vim.keymap.set('n', '<leader>sb', ':FzfLua buffers<CR>', { desc = 'Search files.' })
 vim.keymap.set('n', '<leader>sf', ':FzfLua files<CR>', { desc = 'Search files.' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(event)
+    local opts = { buffer = event.buf, noremap = true, silent = true }
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, vim.tbl_extend('force', opts, { desc = 'Code action' }))
+    vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, vim.tbl_extend('force', opts, { desc = 'Format buffer' }))
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, vim.tbl_extend('force', opts, { desc = 'Go to definition' }))
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation,
+      vim.tbl_extend('force', opts, { desc = 'Go to implementation' }))
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, vim.tbl_extend('force', opts, { desc = 'Go to references' }))
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend('force', opts, { desc = 'Hover docs' }))
+  end
+})
 
 -- autocommands
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -53,7 +66,7 @@ vim.api.nvim_create_autocmd("BufReadPre", {
   pattern = "/home/jon/wte/notes/*",
   callback = function()
     vim.fn.system("cd /home/jon/wte/notes && git add -A && git commit -m 'autocmd'");
-   local result = vim.fn.system("cd /home/jon/wte/notes && git -C /home/jon/wte/notes pull --rebase")
+    local result = vim.fn.system("cd /home/jon/wte/notes && git -C /home/jon/wte/notes pull --rebase")
     if vim.v.shell_error ~= 0 and not result:find("Already up to date.") then
       vim.notify("Git pull failed: " .. result, vim.log.levels.WARN)
     end
@@ -63,7 +76,8 @@ vim.api.nvim_create_autocmd("BufReadPre", {
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "/home/jon/wte/notes/*",
   callback = function()
-    local output = vim.fn.system("git -C /home/jon/wte/notes add -A && git -C /home/jon/wte/notes commit -m 'autocmd' && git -C /home/jon/wte/notes push")
+    local output = vim.fn.system(
+      "git -C /home/jon/wte/notes add -A && git -C /home/jon/wte/notes commit -m 'autocmd' && git -C /home/jon/wte/notes push")
     if vim.v.shell_error ~= 0 and not output:find("Your branch is up to date") then
       print("git push failed: " .. vim.v.shell_error)
       print("Output: " .. output)
@@ -77,8 +91,8 @@ vim.diagnostic.config {
   severity_sort = true,
   float = { border = 'rounded', source = 'if_many' },
   underline = { severity = { min = vim.diagnostic.severity.WARN } },
-  virtual_text = false, -- Text shows up at the end of the line
-  virtual_lines = true, -- Text shows up underneath the line, with virtual lines
+  virtual_text = true,   -- Text shows up at the end of the line
+  virtual_lines = false, -- Text shows up underneath the line, with virtual lines
   jump = { float = true },
 }
 
@@ -90,7 +104,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -125,5 +139,66 @@ require('nvim-treesitter').install({
   'vim',
   'vimdoc',
 })
+
+vim.lsp.config['lua_ls'] = {
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
+  root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
+  settings = {
+    Lua = {
+      -- completion = { callSnippet = 'Replace' },
+      hint = {
+        enable = true,
+        arrayIndex = 'Disable',
+      },
+      runtime = {
+        version = 'LuaJIT',
+      },
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME,
+          '${3rd}/luv/library',
+        },
+      },
+    }
+  }
+}
+
+vim.lsp.config['bashls'] = {
+  cmd = { 'bash-language-server', 'start' },
+  filetypes = { 'bash', 'sh', 'zsh' },
+}
+
+vim.lsp.config['html'] = {
+  -- doesn't have a formatter
+  cmd = { 'vscode-html-language-server', '--stdio' },
+  filetypes = { 'html' },
+  embeddedLanguages = { css = true, javascript = true },
+}
+
+vim.lsp.config['cssls'] = {
+  cmd = { 'vscode-css-language-server', '--stdio' },
+  filetypes = { 'css', 'scss', 'less' },
+  settings = {
+    css = { validate = true },
+    scss = { validate = true },
+    less = { validate = true },
+  },
+}
+
+vim.lsp.config['ts_ls'] = {
+  cmd = { 'typescript-language-server', '--stdio' },
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+  root_dir = function(bufnr, on_dir)
+    local root_markers = { { 'tsconfig.json', 'jsconfig.json', 'package.json' }, '.git' }
+    -- Fallback to the current working directory if no project root is found.
+    local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
+    on_dir(project_root)
+  end,
+}
+
+
+
 
 -- vim: ts=2 sts=2 sw=2 et
