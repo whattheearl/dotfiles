@@ -48,6 +48,7 @@ symlinks:
 	ln -sf ${PWD}/wofi ${HOME}/.config
 	ln -sf ${PWD}/xprofile ${HOME}/.xprofile
 	ln -sf ${PWD}/Xresources ${HOME}/.Xresources
+	ln -sf ${PWD}/ripgreprc ${HOME}/.ripgreprc
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
 
 .PHONY: packages-arch

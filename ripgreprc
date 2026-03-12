@@ -1,0 +1,3 @@
+--glob=!.git/*
+--glob=!package-lock.json
+--smart-case
