@@ -147,6 +147,9 @@ vim.lsp.config['lua_ls'] = {
   settings = {
     Lua = {
       -- completion = { callSnippet = 'Replace' },
+      diagnostics = {
+        missing_parameters = false,
+      },
       hint = {
         enable = true,
         arrayIndex = 'Disable',
