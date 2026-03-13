@@ -1,35 +1,4 @@
-"keymap settings
-let mapleader = " "
-nnoremap <leader>e :e<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>s :split<CR>
-nnoremap <leader>t :tabnew<CR>
-nnoremap <leader>v :vsplit<CR>
-nnoremap <leader>w :w<CR>
-
-"clipboard settings
-set clipboard=unnamed,unnamedplus
-
-"indent settings
-filetype plugin indent on
-
-"ui
-set relativenumber
 highlight CursorLine cterm=bold ctermbg=236 guibg=#1c1c1c
 highlight CursorLineNr cterm=bold ctermfg=Yellow guifg=Yellow
-set cursorline
-
-"search settings
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-"syntax settings
-syntax enable
-
-"tab settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab 
+set clipboard=unnamed,unnamedplus
+set relativenumber
