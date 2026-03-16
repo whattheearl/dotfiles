@@ -1,3 +1,4 @@
 [font]
-    normal = { family = "JetBrainsMono", style = "Regular" }
-    size = 9.0
+    normal = { family = "FiraCodeNerdFont", style = "Regular" }
+    #normal = { family = "JetBrainsMono", style = "Regular" }
+    size = 8
