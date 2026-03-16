@@ -150,11 +150,11 @@ secrets:
 
 .PHONY: repos 
 repos:
-	@test -d ~/.nvm || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
-	@test -d ~/.oh-my-zsh || git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
-	@test -d ~/.zsh/powerlevel10k || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
-	@test -d ~/.zsh/zsh-syntax-highlighting || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
-	@test -d ~/wte/dotfiles || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
-	@test -d ~/wte/notes || git clone wteos.wte.sh:notes ~/wte/notes
-	@test -d ~/wte/ai || git clone wteos.wte.sh:ai ~/wte/ai && cd ~/wte/ai
-	@test -d ~/wte/tracker || git clone wteos.wte.sh:tracker ~/wte/tracker
+	[[ -d ~/.nvm ]] || git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+	[[ -d ~/.oh-my-zsh ]] || git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
+	[[ -d ~/.zsh/powerlevel10k ]] || git clone --depth 1 https://github.com/romkatv/powerlevel10k  ~/.zsh/powerlevel10k
+	[[ -d ~/.zsh/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
+	[[ -d ~/wte/dotfiles ]] || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
+	[[ -d ~/wte/notes ]] || git clone wteos.wte.sh:notes ~/wte/notes
+	[[ -d ~/wte/ai ]] || git clone wteos.wte.sh:ai ~/wte/ai && cd ~/wte/ai
+	[[ -d ~/wte/tracker ]] || git clone wteos.wte.sh:tracker ~/wte/tracker
