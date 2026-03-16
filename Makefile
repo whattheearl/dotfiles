@@ -25,19 +25,17 @@ all:
 
 .PHONY: symlinks
 symlinks:
-	sudo ln -sf ${PWD}/xorg.conf.d/* /etc/X11/xorg.conf.d/
-	sudo ln -s /usr/bin/fusermount3 /usr/bin/fusermount || true
-	rm -rf ${HOME}/.config/i3
 	mkdir -p ${HOME}/.config/alacritty
 	if [[ "${HOSTNAME}" == "ws" ]]; then \
 		ln -sf ${PWD}/alacritty/alacritty.ws.toml ${HOME}/.config/alacritty/alacritty.toml; \
 	elif [[ "${HOSTNAME}" == "asahi" ]] then \
 		ln -sf ${PWD}/alacritty/alacritty.asahi.toml ${HOME}/.config/alacritty/alacritty.toml; \
-		sudo ln -sf /usr/bin/vimx /usr/bin/vim || true; \
+		[[ ! -x ${HOME}/.locals/vim ]] && ln -sf /usr/bin/vimx ${HOME}/.locals/vim; \
 	fi
-	ln -sf ${PWD}/aerospace ${HOME}/.config
-	ln -sf ${PWD}/eslint ${HOME}/.config
+	ln -sf ${PWD}/xorg.conf.d/* ${HOME}/.xorg.conf.d/
+	ln -sf /usr/bin/fusermount3 ${HOME}/.local/bin/fusermount
 	ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
+	[[ -d ${HOME}/.config/i3 ]] && rm -r ${HOME}/.config/i3
 	ln -sf ${PWD}/i3 ${HOME}/.config
 	ln -sf ${PWD}/mimeapps.list ${HOME}/.config
 	ln -sf ${PWD}/nvim ${HOME}/.config
