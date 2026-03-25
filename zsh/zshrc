@@ -20,7 +20,7 @@ alias ap="ai plan -m ${MODEL} -p"
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
-alias gca!="git add -A && git commit -m $(date -Iseconds) && git push -f"
+alias gca!="git add -A && git commit -m $(date -Iseconds) && git push"
 alias gca="git commit --amend --verbose"
 alias gco="git checkout"
 alias gcom="git checkout master"
@@ -33,6 +33,7 @@ alias gswd="git switch dev"
 alias gswm="git switch master"
 alias lg="lazygit"
 alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
+alias nn="~/notes/scripts/newnote.sh"
 alias rss="node ~/wte/rss/main.ts"
 alias tdel="tracker delete"
 alias tinfo="tracker info"
@@ -42,7 +43,17 @@ alias tset="tracker set"
 alias v="nvim"
 alias ytls='fd --full-path ~/wte/youtube -E "*.txt" | tail -n 30'
 alias ytr="retry yt-dlp"
-alias ytsync='cat ~/wte/youtube/channels.txt | xargs yt-dlp --match-filter "duration > 180" --playlist-end 10 -o "/home/jon/wte/youtube/%(upload_date>%Y-%m-%d)s [%(uploader)s] %(title)s.%(ext)s"'
+alias ytsync='cat ~/wte/youtube/channels.txt | xargs yt-dlp \
+	--restrict-filenames \
+	--no-overwrites \
+	--limit-rate 5M \
+	--sleep-interval 2 \
+	--max-sleep-interval 5 \
+	--retries 10 \
+	--socket-timeout 30 \
+	--match-filter "duration > 180" \
+	--playlist-end 10 \
+	-o "/home/jon/wte/youtube/%(upload_date>%Y-%m-%d)s [%(uploader)s] %(title)s.%(ext)s"'
 alias ytwatch='ytls | mpv --playlist=-'
 
 # INFO: functions
