@@ -62,29 +62,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank() end,
 })
 
-vim.api.nvim_create_autocmd("BufReadPre", {
-  pattern = "/home/jon/wte/notes/*",
-  callback = function()
-    vim.fn.system("cd /home/jon/wte/notes && git add -A && git commit -m 'autocmd'");
-    local result = vim.fn.system("cd /home/jon/wte/notes && git -C /home/jon/wte/notes pull --rebase")
-    if vim.v.shell_error ~= 0 and not result:find("Already up to date.") then
-      vim.notify("Git pull failed: " .. result, vim.log.levels.WARN)
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "/home/jon/wte/notes/*",
-  callback = function()
-    local output = vim.fn.system(
-      "git -C /home/jon/wte/notes add -A && git -C /home/jon/wte/notes commit -m 'autocmd' && git -C /home/jon/wte/notes push")
-    if vim.v.shell_error ~= 0 and not output:find("Your branch is up to date") then
-      print("git push failed: " .. vim.v.shell_error)
-      print("Output: " .. output)
-    end
-  end,
-})
-
 -- diagnostics
 vim.diagnostic.config {
   update_in_insert = false,
