@@ -8,12 +8,12 @@ fi
 # INFO: alias
 # MODELS_FAST: minimax/minimax-m2.5 qwen/qwen3-coder google/gemini-3-flash-preview
 # MODELS: google/gemini-3.1-pro-preview anthropic/claude-opus-4.6 qwen/qwen3.5-397b-a17ba anthropic/claude-sonnet-4.6
-MODEL="anthropic/claude-sonnet-4.6"
-MODEL_FAST="qwen/qwen3-coder"
+MODEL="anthropic/claude-opus-4.6"
+MODEL_FAST="google/gemini-3-flash-preview"
 alias ac="ai chat -m ${MODEL_FAST} -p"
 alias act="ai chat -m ${MODEL} -p"
 alias ae="ai edit -m ${MODEL}"
-alias agc="ai commit -m ${MODEL_FAST}"
+alias agc="ai git commit -m ${MODEL_FAST}"
 alias agca="agc -a"
 alias ai="node ~/wte/ai"
 alias ap="ai plan -m ${MODEL} -p"
