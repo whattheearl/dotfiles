@@ -3,14 +3,20 @@ return {
   dependencies = { 'rafamadriz/friendly-snippets' },
   version = '1.*',
   opts = {
-    keymap = { preset = 'default' },
     appearance = {
       nerd_font_variant = 'mono'
     },
     completion = {
+      menu = {
+        auto_show = false,
+      },
       documentation = {
-        auto_show = false
+        auto_show = false,
       }
+    },
+    keymap = {
+      preset = 'default',
+      ['<C-.>'] = { 'show', 'show_documentation', 'hide_documentation' },
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
