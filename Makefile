@@ -48,6 +48,7 @@ symlinks:
 	ln -sf ${PWD}/Xresources ${HOME}/.Xresources
 	ln -sf ${PWD}/ripgreprc ${HOME}/.ripgreprc
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
+	ln -sf ${PWD}/npmrc ${HOME}/.npmrc
 
 .PHONY: packages-arch
 packages-arch:
