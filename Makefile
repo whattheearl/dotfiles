@@ -32,8 +32,10 @@ symlinks:
 		ln -sf ${PWD}/alacritty/alacritty.asahi.toml ${HOME}/.config/alacritty/alacritty.toml; \
 		[[ ! -x ${HOME}/.locals/vim ]] && ln -sf /usr/bin/vimx ${HOME}/.locals/vim; \
 	fi
+	mkdir -p ${HOME}/.xorg.conf.d
 	ln -sf ${PWD}/xorg.conf.d/* ${HOME}/.xorg.conf.d/
-	ln -sf /usr/bin/fusermount3 ${HOME}/.local/bin/fusermount
+	mkdir -p ${HOME}/.local/bin
+	[[ -s /usr/bin/fusermount3 ]] && ln -sf /usr/bin/fusermount3 ${HOME}/.local/bin/fusermount
 	ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
 	[[ -d ${HOME}/.config/i3 ]] && rm -r ${HOME}/.config/i3
 	ln -sf ${PWD}/i3 ${HOME}/.config
@@ -58,6 +60,7 @@ packages-arch:
 		git clone https://aur.archlinux.org/yay.git ~/wte/yay && \
 		cd ~/wte/yay && \
 		makepkg -si)
+	yay -Rns --noconfirm vim || true
 	yay --noconfirm --needed -S \
 		alacritty \
 		age \
