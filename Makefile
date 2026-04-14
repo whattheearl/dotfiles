@@ -64,6 +64,7 @@ packages-arch:
 		bind-tools \
 		bluez \
 		bluez-utils \
+		bun \
 		cmake \
 		docker \
 		docker-buildx \
