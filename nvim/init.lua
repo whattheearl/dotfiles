@@ -77,49 +77,28 @@ vim.diagnostic.config {
   jump = { float = true },
 }
 
--- lazy
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out,                            "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-vim.opt.rtp:prepend(lazypath)
+vim.pack.add({ "https://github.com/mason-org/mason.nvim" })
+require("mason").setup()
 
--- Setup lazy.nvim
-require("lazy").setup({
-  spec = {
-    { import = "plugins" },
+vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
+require('fzf-lua').setup({
+  grep = {
+    rg_opts =
+    "--column --line-number --no-heading --color=always --smart-case --glob '!package-lock.json' --glob '!*.age'"
   },
-  checker = { enabled = false },
+  files = {
+    cwd_prompt = false,
+    file_icons = false,
+    winopts = {
+      preview = {
+        hidden = "hidden",
+      },
+    },
+  },
 })
 
-require('nvim-treesitter').install({
-  'bash',
-  'c',
-  'css',
-  'diff',
-  'html',
-  'javascript',
-  'lua',
-  'luadoc',
-  'make',
-  'markdown',
-  'markdown_inline',
-  'query',
-  'svelte',
-  'typescript',
-  'vim',
-  'vimdoc',
-})
+vim.pack.add({ 'https://github.com/stevearc/oil.nvim' })
+require("oil").setup()
 
 vim.lsp.config['lua_ls'] = {
   cmd = { 'lua-language-server' },
@@ -148,18 +127,20 @@ vim.lsp.config['lua_ls'] = {
     }
   }
 }
+vim.lsp.enable('lua_ls')
 
 vim.lsp.config['bashls'] = {
   cmd = { 'bash-language-server', 'start' },
   filetypes = { 'bash', 'sh', 'zsh' },
 }
+vim.lsp.enable('bashls')
 
 vim.lsp.config['html'] = {
-  -- doesn't have a formatter
   cmd = { 'vscode-html-language-server', '--stdio' },
   filetypes = { 'html' },
   embeddedLanguages = { css = true, javascript = true },
 }
+vim.lsp.enable('html')
 
 vim.lsp.config['cssls'] = {
   cmd = { 'vscode-css-language-server', '--stdio' },
@@ -170,6 +151,7 @@ vim.lsp.config['cssls'] = {
     less = { validate = true },
   },
 }
+vim.lsp.enable('cssls')
 
 vim.lsp.config['ts_ls'] = {
   cmd = { 'typescript-language-server', '--stdio' },
@@ -181,6 +163,7 @@ vim.lsp.config['ts_ls'] = {
     on_dir(project_root)
   end,
 }
+vim.lsp.enable('ts_ls')
 
 vim.lsp.config['svelte'] = {
   cmd = { 'svelteserver', '--stdio' },
@@ -190,17 +173,7 @@ vim.lsp.config['svelte'] = {
     local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
     on_dir(project_root)
   end,
-  -- settings = {
-  --   svelte = {
-  --     plugin = {
-  --       svelte = {
-  --         defaultScriptLanguage = "ts",
-  --       },
-  --     },
-  --   },
-  -- },
 }
-
-
+vim.lsp.enable('svelte')
 
 -- vim: ts=2 sts=2 sw=2 et

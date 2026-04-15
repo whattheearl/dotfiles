@@ -80,6 +80,7 @@ export EDITOR=nvim
 export HUSKY=0
 export MANPAGER='nvim +Man!'
 export NODE_OPTIONS="--experimental-strip-types"
+export OLLAMA_TELEMETRY_DISABLED=1
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
 export PATH=$PATH:/home/jon/.local/bin
