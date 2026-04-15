@@ -98,6 +98,7 @@ packages-arch:
 		restic \
 		rg \
 		ripgrep \
+		rsync \
 		spotify \
 		sqlite \
 		steam \
