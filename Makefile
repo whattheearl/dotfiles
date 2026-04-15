@@ -105,6 +105,7 @@ packages-arch:
 		ttf-firacode-nerd\
 		unzip \
 		xclip \
+		xorg-xset \
 		xorg-xinput \
 		xorg-xrandr \
 		ytdl \
