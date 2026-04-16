@@ -5,22 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite-preview    openai/gpt-5.4-nano anthropic/claude-haiku-4.5
-# MODELS_TEXT_MEDIUM:   google/gemini-3-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6 qwen/qwen3-coder
+# MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite-preview    openai/gpt-5.4-nano     qwen/qwen3-coder
+# MODELS_TEXT_MEDIUM:   google/gemini-3-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6
 # MODELS_TEXT_LARGE:    google/gemini-3.1-pro-preview           openai/gpt-5.4-pro  anthropic/claude-opus-4.6
-MODEL_TEXT_SMALL="qwen/qwen3-coder"
+MODEL_TEXT_SMALL="google/gemini-3.1-flash-lite-preview"
 MODEL_TEXT_MEDIUM="google/gemini-3-flash-preview"
 MODEL_TEXT_LARGE="anthropic/claude-opus-4.6"
 
 # INFO: alias
-alias ac="ai commit -m ${MODEL_TEXT_MEDIUM}"
-alias aca="ac -a"
-alias ad="ai diff -m ${MODEL_TEXT_MEDIUM}"
-alias ae="ai edit -m ${MODEL_TEXT_LARGE}"
-alias aimg="ai image -p"
-alias ap="ai plan -m ${MODEL_TEXT_LARGE} -p"
-alias at="ai text -m ${MODEL_TEXT_MEDIUM} -p"
-alias att="ai text -m ${MODEL_TEXT_LARGE} -p"
+alias commit="ai commit -m ${MODEL_TEXT_SMALL}"
 alias ga="git add"
 alias gb="git branch"
 alias gba="git branch -a"
@@ -33,13 +26,15 @@ alias gl="git pull"
 alias glo="git log --oneline"
 alias gp="git push"
 alias gr="git reset"
-alias gwip="git commit -am 'WIP'; git push;"
 alias gsw="git switch"
 alias gswd="git switch dev"
 alias gswm="git switch master"
+alias gwip="git commit -am 'WIP'; git push;"
 alias lg="lazygit"
 alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
 alias nn="~/notes/scripts/newnote.sh"
+alias q="ai text -m ${MODEL_TEXT_MEDIUM} -p"
+alias qq="ai text -m ${MODEL_TEXT_LARGE} -p"
 alias rss="node ~/wte/rss/main.ts"
 alias tdel="tracker delete"
 alias tinfo="tracker info"
