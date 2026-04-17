@@ -4,29 +4,32 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- settings
-vim.o.breakindent = true
-vim.o.confirm = true
-vim.o.cursorline = true
-vim.o.expandtab = true
-vim.o.ignorecase = true
-vim.o.inccommand = 'split'
-vim.o.list = true
-vim.o.mouse = 'a'
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.scrolloff = 10
-vim.o.shiftwidth = 4
-vim.o.showmode = false
-vim.o.signcolumn = 'yes'
-vim.o.smartcase = true
-vim.o.softtabstop = 4
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.tabstop = 4
-vim.o.timeoutlen = 300
-vim.o.undofile = true
-vim.o.updatetime = 250
+vim.opt.backup = false
+vim.opt.breakindent = true
+vim.opt.confirm = true
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.ignorecase = true
+vim.opt.inccommand = 'split'
+vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.mouse = 'a'
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 10
+vim.opt.shiftwidth = 4
+vim.opt.showmode = false
+vim.opt.signcolumn = 'yes'
+vim.opt.smartcase = true
+vim.opt.softtabstop = 4
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.swapfile = false
+vim.opt.tabstop = 4
+vim.opt.timeoutlen = 300
+vim.opt.undofile = true
+vim.opt.updatetime = 250
+vim.opt.writebackup = false
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- keymap
