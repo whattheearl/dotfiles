@@ -112,7 +112,7 @@ packages-arch:
 		ytdl \
 		zsh
 	flatpak install \
-		com.usebottles.bottles
+		com.valvesoftware.Steam
 
 
 .PHONY: packages-asahi

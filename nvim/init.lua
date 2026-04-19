@@ -6,6 +6,7 @@ vim.g.maplocalleader = ' '
 -- settings
 vim.opt.backup = false
 vim.opt.breakindent = true
+vim.opt.clipboard = 'unnamedplus'
 vim.opt.confirm = true
 vim.opt.cursorline = true
 vim.opt.expandtab = true
@@ -30,7 +31,6 @@ vim.opt.timeoutlen = 300
 vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.writebackup = false
-vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- keymap
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

@@ -41,7 +41,6 @@ alias tinfo="tracker info"
 alias tls="tracker list"
 alias tracker="node ~/wte/tracker/main.ts"
 alias tset="tracker set"
-alias update="cd ~/wte/dotfiles && gp; cd ~/wte/ai && gp && make install; cd ~/wte/portfolio && gp;"
 alias v="nvim"
 alias ytls='fd --full-path ~/wte/youtube -E "*.txt" | tail -n 30'
 alias ytr="retry yt-dlp"
