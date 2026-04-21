@@ -64,7 +64,6 @@ packages-arch:
 	yay --noconfirm --needed -S \
 		alacritty \
 		age \
-		bind-tools \
 		bluez \
 		bluez-utils \
 		bun \
@@ -87,14 +86,12 @@ packages-arch:
 		llama.cpp-vulkan \
 		lua \
 		make \
-		man \
 		mariadb \
 		mpv \
 		neovim \
 		nvm \
 		rbw \
 		restic \
-		rg \
 		ripgrep \
 		rsync \
 		spotify \
