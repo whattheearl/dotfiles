@@ -8,12 +8,8 @@
   outputs = { self, nixpkgs }: {
 
     packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+    packages.x86_64-linux.home-manager = nixpkgs.legacyPackages.x86_64-linux.home-manager;
 
-    packages.x86_64-linux.default = {
-        self.packages.x86_64-linux = [
-            hello
-            home-manager
-        ];
-    };
+
   };
 }
