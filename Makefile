@@ -30,7 +30,7 @@ symlinks:
 		ln -sf ${PWD}/alacritty/alacritty.ws.toml ${HOME}/.config/alacritty/alacritty.toml; \
 	elif [[ "${HOSTNAME}" == "asahi" ]] then \
 		ln -sf ${PWD}/alacritty/alacritty.asahi.toml ${HOME}/.config/alacritty/alacritty.toml; \
-		[[ ! -x ${HOME}/.locals/vim ]] && ln -sf /usr/bin/vimx ${HOME}/.locals/vim; \
+		# [[ ! -x ${HOME}/.locals/vim ]] && ln -sf /usr/bin/vimx ${HOME}/.locals/vim; \
 	fi
 	mkdir -p ${HOME}/.xorg.conf.d
 	ln -sf ${PWD}/xorg.conf.d/* ${HOME}/.xorg.conf.d/
@@ -40,7 +40,7 @@ symlinks:
 	[[ -d ${HOME}/.config/i3 ]] && rm -r ${HOME}/.config/i3
 	ln -sf ${PWD}/i3 ${HOME}/.config
 	ln -sf ${PWD}/mimeapps.list ${HOME}/.config
-	ln -sf ${PWD}/nvim ${HOME}/.config
+	# ln -sf ${PWD}/nvim ${HOME}/.config
 	ln -sf ${PWD}/sway ${HOME}/.config
 	ln -sf ${PWD}/tmux ${HOME}/.config
 	ln -sf ${PWD}/vimrc ${HOME}/.vimrc

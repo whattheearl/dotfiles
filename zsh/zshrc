@@ -99,3 +99,4 @@ ZSH_THEME=""
 [ -s "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
 [ -s "$HOME/.p10k.zsh" ] && source $HOME/.p10k.zsh
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
+[ -s "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ] && source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" 
