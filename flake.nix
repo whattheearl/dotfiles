@@ -13,9 +13,7 @@
         self.packages.x86_64-linux = {
             hello,
             home-manager
-        }
-    }
-    packages.x86_64-linux.default = self.packages.x86_64-linux.home-manager;
-
+        };
+    };
   };
 }
