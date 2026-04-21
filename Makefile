@@ -76,7 +76,6 @@ packages-arch:
 		feh \
 		firefox \
 		flameshot \
-		flatpak \
 		fuse3 \
 		fzf \
 		gcc \
@@ -93,7 +92,6 @@ packages-arch:
 		mpv \
 		neovim \
 		nvm \
-		postgresql \
 		rbw \
 		restic \
 		rg \
@@ -111,9 +109,6 @@ packages-arch:
 		xorg-xrandr \
 		ytdl \
 		zsh
-	flatpak install \
-		com.valvesoftware.Steam
-
 
 .PHONY: packages-asahi
 packages-asahi:
