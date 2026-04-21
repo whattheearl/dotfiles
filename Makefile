@@ -52,6 +52,7 @@ symlinks:
 	ln -sf ${PWD}/zsh/zshrc ${HOME}/.zshrc
 	ln -sf ${PWD}/npmrc ${HOME}/.npmrc
 	ln -sf ${PWD}/bunfig.toml ${HOME}/.bunfig.toml
+	ln -sf ${PWD}/nix ${HOME}/.config
 
 .PHONY: packages-arch
 packages-arch:
