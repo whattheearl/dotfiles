@@ -98,7 +98,8 @@ packages-arch:
 		sqlite \
 		steam \
 		tldr \
-		ttf-firacode-nerd\
+		ttf-firacode-nerd \
+		typescript-language-server \
 		unzip \
 		xclip \
 		xorg-xset \
