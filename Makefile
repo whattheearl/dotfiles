@@ -40,7 +40,7 @@ symlinks:
 	[[ -d ${HOME}/.config/i3 ]] && rm -r ${HOME}/.config/i3
 	ln -sf ${PWD}/i3 ${HOME}/.config
 	ln -sf ${PWD}/mimeapps.list ${HOME}/.config
-	# ln -sf ${PWD}/nvim ${HOME}/.config
+	ln -sf ${PWD}/nvim ${HOME}/.config
 	ln -sf ${PWD}/sway ${HOME}/.config
 	ln -sf ${PWD}/tmux ${HOME}/.config
 	ln -sf ${PWD}/vimrc ${HOME}/.vimrc
