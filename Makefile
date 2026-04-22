@@ -33,7 +33,7 @@ symlinks:
 		# [[ ! -x ${HOME}/.locals/vim ]] && ln -sf /usr/bin/vimx ${HOME}/.locals/vim; \
 	fi
 	mkdir -p ${HOME}/.xorg.conf.d
-	ln -sf ${PWD}/xorg.conf.d/* ${HOME}/.xorg.conf.d/
+	ln -sf ${PWD}/xorg.conf.d ${HOME}
 	mkdir -p ${HOME}/.local/bin
 	[[ -s /usr/bin/fusermount3 ]] && ln -sf /usr/bin/fusermount3 ${HOME}/.local/bin/fusermount
 	ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
