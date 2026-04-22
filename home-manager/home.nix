@@ -7,14 +7,14 @@
 
     xdg.enable = true;
     xdg.configFile = {
+        "home-manager".source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/home-manager";
         "mimeapps.list".source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/mimeapps.list";
         i3.source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/i3";
         nix.source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/nix";
+        nvim.source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/nvim";
         sway.source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/sway";
         waybar.source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/waybar";
         wofi.source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/wofi";
-        "home-manager".source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/home-manager";
-        nvim.source = config.lib.file.mkOutOfStoreSymlink "/home/jon/wte/dotfiles/nvim";
     };
 
     home.file = {
@@ -34,8 +34,8 @@
 
     home.packages = [
         pkgs.age
-        pkgs.bun
         pkgs.brightnessctl
+        pkgs.bun
         pkgs.chromium
         pkgs.cmake
         pkgs.fd
@@ -47,8 +47,8 @@
         pkgs.jq
         pkgs.lazygit
         pkgs.luarocks
-        pkgs.nodejs
         pkgs.neovim
+        pkgs.nodejs
         pkgs.rbw
         pkgs.ripgrep
         pkgs.rsync
