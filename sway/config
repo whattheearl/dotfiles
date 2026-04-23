@@ -7,6 +7,7 @@ set $term alacritty
 set $menu wmenu-run
 
 hide_edge_borders smart
+focus_follows_mouse no
 
 input * xkb_options caps:escape
 output * scale 1.5

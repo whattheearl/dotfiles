@@ -21,7 +21,7 @@ sudo dnf install -y \
 	librewolf \
 	luarocks \
 	make \
-	nvim \
+	# neovim \
 	rbw \
 	sddm \
 	sqlite3 \
@@ -29,6 +29,14 @@ sudo dnf install -y \
 	tldr \
 	vim-X11 \
 	zsh
+
+# temp build from source
+git clone --branch v0.12.2 https://github.com/neovim/neovim $HOME/oss/neovim
+cd $HOME/oss/neovim
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+sha256sum $HOME/oss/neovim/build/bin/nvim
+echo "7ad904f4710c3c0ef936f65d727fa746b235a66927ddb86e498953d20dba5f0f /usr/local/bin/nvim"
 
 echo 'create secrets...'
 createSecrets

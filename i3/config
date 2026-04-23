@@ -10,6 +10,7 @@ exec --no-startup-id xset s off -dpms
 # settings
 floating_modifier $mod
 focus_wrapping no
+focus_follows_mouse no
 font pango:monospace 8
 hide_edge_borders vertical
 tiling_drag modifier titlebar
