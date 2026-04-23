@@ -56,7 +56,7 @@ symlinks:
 .PHONY: packages-arch
 packages-arch:
 	command -v yay &> /dev/null || \
-		(sudo pacman -S --needed --noconfirm git base-devel && \
+		(sudo pacman -S --needed --noconfirm base-devel && \
 		git clone https://aur.archlinux.org/yay.git ~/wte/yay && \
 		cd ~/wte/yay && \
 		makepkg -si)
@@ -67,7 +67,6 @@ packages-arch:
 		bluez \
 		bluez-utils \
 		bun \
-		cmake \
 		docker \
 		docker-buildx \
 		docker-compose \
@@ -75,7 +74,6 @@ packages-arch:
 		feh \
 		firefox \
 		flameshot \
-		fuse3 \
 		fzf \
 		gcc \
 		gvim \
@@ -84,14 +82,10 @@ packages-arch:
 		lazygit \
 		librewolf-bin \
 		llama.cpp-vulkan \
-		lua \
-		make \
-		mariadb \
 		mpv \
 		neovim \
 		nvm \
 		rbw \
-		restic \
 		ripgrep \
 		rsync \
 		spotify \
@@ -100,7 +94,6 @@ packages-arch:
 		tldr \
 		ttf-firacode-nerd \
 		typescript-language-server \
-		unzip \
 		xclip \
 		xorg-xset \
 		xorg-xinput \
