@@ -37,23 +37,31 @@
         pkgs.brightnessctl
         pkgs.bun
         pkgs.chromium
-        pkgs.cmake
         pkgs.fd
         pkgs.feh
         pkgs.firefox-bin
+        pkgs.flameshot
         pkgs.fzf
         pkgs.git
         pkgs.htop
         pkgs.jq
         pkgs.lazygit
+        pkgs.llama-cpp-vulkan
         pkgs.luarocks
+        pkgs.mpv
         pkgs.neovim
         pkgs.nodejs
         pkgs.rbw
         pkgs.ripgrep
         pkgs.rsync
+        pkgs.spotify
         pkgs.sqlite
+        pkgs.steam
         pkgs.tldr
+        pkgs.xclip
+        # pkgs.xorg-xinput
+        # pkgs.xorg-xrandr
+        # pkgs.xorg-xset
         pkgs.zsh
     ];
 }

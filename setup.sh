@@ -6,7 +6,7 @@ HOSTNAME=$(hostnamectl hostname)
 
 echo "${HOSTNAME} setup"
 if [[ "$HOSTNAME" == "ws" ]]; then
-    sudo pacman -S git make --noconfirm;
+    sudo pacman -S base-devel --noconfirm;
 elif [[ "$HOSTNAME" == "asahi" ]]; then
     sudo dnf install make git -y;
 fi

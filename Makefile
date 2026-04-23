@@ -57,56 +57,21 @@ symlinks:
 .PHONY: packages-arch
 packages-arch:
 	command -v yay &> /dev/null || \
-		(sudo pacman -S --needed --noconfirm git base-devel && \
 		git clone https://aur.archlinux.org/yay.git ~/wte/yay && \
 		cd ~/wte/yay && \
 		makepkg -si)
-	yay -Rns --noconfirm vim || true
 	yay --noconfirm --needed -S \
 		alacritty \
-		age \
 		bluez \
 		bluez-utils \
-		bun \
-		cmake \
 		docker \
 		docker-buildx \
 		docker-compose \
-		fd \
-		feh \
-		firefox \
-		flameshot \
-		fuse3 \
-		fzf \
-		gcc \
-		gvim \
-		htop \
-		jq \
-		lazygit \
-		librewolf-bin \
-		llama.cpp-vulkan \
-		lua \
-		make \
-		mariadb \
-		mpv \
-		neovim \
-		nvm \
-		rbw \
-		restic \
-		ripgrep \
-		rsync \
-		spotify \
-		sqlite \
-		steam \
-		tldr \
 		ttf-firacode-nerd\
-		unzip \
-		xclip \
 		xorg-xset \
 		xorg-xinput \
 		xorg-xrandr \
-		ytdl \
-		zsh
+		ytdl
 
 .PHONY: packages-asahi
 packages-asahi:
