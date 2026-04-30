@@ -1,10 +1,11 @@
 [[ $- != *i* ]] && return
 
 parse_git_branch() {
-    git branch --show-current 2> /dev/null
+	local branch=$(git branch --show-current 2> /dev/null)
+	[[ ! -z $branch ]] && echo " $branch"
 }
 
-export PS1="\w \[\033[0;32m\]\$(parse_git_branch)\[\033[0m\] \$ "
+export PS1="\w\[\033[0;32m\]\$(parse_git_branch)\[\033[0m\]\$ "
 
 # MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite-preview    openai/gpt-5.4-nano     qwen/qwen3-coder
 # MODELS_TEXT_MEDIUM:   google/gemini-3-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6
