@@ -34,10 +34,10 @@ function createSecrets() {
 }
 
 function cloneRepos() {
-	[ -d ~/wte/dotfiles ] || git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
-	[ -d ~/wte/notes ] || git clone wteos.wte.sh:notes ~/wte/notes
-	[ -d ~/wte/ai ] || (git clone wteos.wte.sh:ai ~/wte/ai && cd ~/wte/ai && bun install && make install)
-	[ -d ~/wte/tracker ] || git clone wteos.wte.sh:tracker ~/wte/tracker
+	[ ! -d ~/wte/dotfiles ] && git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
+	[ ! -d ~/wte/notes ] && git clone wteos.wte.sh:notes ~/wte/notes
+	[ ! -d ~/wte/ai ] && (git clone wteos.wte.sh:ai ~/wte/ai && cd ~/wte/ai && bun install && make install)
+	[ ! -d ~/wte/tracker ] && git clone wteos.wte.sh:tracker ~/wte/tracker
 }
 
 function changeShell() {
