@@ -1,9 +1,10 @@
-#!/usr/bin/env bash
+[[ $- != *i* ]] && return
 
-# INFO: powerline10k
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+parse_git_branch() {
+    git branch --show-current 2> /dev/null
+}
+
+export PS1="\w \[\033[0;32m\]\$(parse_git_branch)\[\033[0m\] \$ "
 
 # MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite-preview    openai/gpt-5.4-nano     qwen/qwen3-coder
 # MODELS_TEXT_MEDIUM:   google/gemini-3-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6
@@ -13,6 +14,7 @@ MODEL_TEXT_MEDIUM="google/gemini-3-flash-preview"
 MODEL_TEXT_LARGE="anthropic/claude-opus-4.7"
 
 # INFO: alias
+alias d="go build -C ~/wte/dev && ~/wte/dev/dev"
 alias commit="ai commit -m ${MODEL_TEXT_MEDIUM}"
 alias ga="git add"
 alias gb="git branch"
@@ -26,10 +28,12 @@ alias gl="git pull"
 alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gp="git push"
 alias gr="git reset"
+alias gs="git status"
 alias gsw="git switch"
 alias gswd="git switch dev"
 alias gswm="git switch master"
 alias gwip="git commit -am 'WIP'; git push;"
+alias ls="ls -lah"
 alias lg="lazygit"
 alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
 alias nn="~/notes/scripts/newnote.sh"
@@ -42,6 +46,7 @@ alias tls="tracker list"
 alias tracker="node ~/wte/tracker/main.ts"
 alias tset="tracker set"
 alias v="nvim"
+alias vb="nvim ~/.bashrc"
 alias ytls='fd --full-path ~/wte/youtube -E "*.txt" | tail -n 30'
 alias ytr="retry yt-dlp"
 alias ytsync='cat ~/wte/youtube/channels.txt | xargs yt-dlp \
@@ -77,26 +82,9 @@ export NODE_OPTIONS="--experimental-strip-types"
 export OLLAMA_TELEMETRY_DISABLED=1
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:$HOME/wte/dotfiles/scripts
-export PATH=$PATH:/home/jon/.local/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
-export ZSH="$HOME/.oh-my-zsh"
-VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
-VI_MODE_SET_CURSOR=true
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-[ ! -d "$ZSH_CACHE_DIR" ] && mkdir $ZSH_CACHE_DIR
-ZSH_THEME=""
 
 # INFO: source
-[ -d "$HOME/.oh-my-zsh" ] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
-[ -d "$HOME/.zsh/powerlevel10k" ] && source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme
-[ -d "$HOME/.zsh/zsh-autosuggestions" ] && source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -d "$HOME/.zsh/zsh-history-substring-search" ] && source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-[ -d "$HOME/.zsh/zsh-syntax-highlighting" ] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -d "/usr/share/nvm" ] && source /usr/share/nvm/init-nvm.sh && source /usr/share/nvm/bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && source $NVM_DIR/bash_completion
-[ -s "$NVM_DIR/nvm.sh" ] && source $NVM_DIR/nvm.sh
-[ -s "$HOME/.bun/_bun" ] && source $HOME/.bun/_bun
-[ -s "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
-[ -s "$HOME/.p10k.zsh" ] && source $HOME/.p10k.zsh
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
-[ -s "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ] && source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" 
+

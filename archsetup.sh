@@ -7,8 +7,8 @@ source ./utils.sh
 echo 'installing packages...'
 command -v yay > /dev/null 2>&1 ||
 	(sudo pacman -S --needed --noconfirm base-devel &&
-	git clone https://aur.archlinux.org/yay.git ~/wte/yay &&
-	cd ~/wte/yay &&
+	git clone https://aur.archlinux.org/yay.git ~/oss/yay &&
+	cd ~/oss/yay &&
 	makepkg -si)
 
 yay --noconfirm --needed -S \
@@ -47,8 +47,7 @@ yay --noconfirm --needed -S \
 	xorg-xinput \
 	xorg-xrandr \
 	xorg-xset \
-	ytdl \
-	zsh
+	ytdl
 
 echo 'create secrets...'
 createSecrets

@@ -3,6 +3,7 @@
 function symlinkDotfiles() {
 	git clone https://github.com/whattheearl/dotfiles "${HOME}/wte/dotfiles" 2>/dev/null || true
 	cd "${HOME}/wte/dotfiles"
+	ln -sf "${PWD}/bashrc" "${HOME}/.bashrc"
 	ln -sf "${PWD}/bunfig.toml" "${HOME}/.bunfig.toml"
 	ln -sf "${PWD}/git/gitconfig" "${HOME}/.gitconfig"
 	rmdir "${HOME}/.config/i3" > /dev/null 2>&1 || true
@@ -18,7 +19,6 @@ function symlinkDotfiles() {
 	ln -sf "${PWD}/xorg.conf.d" "${HOME}/.xorg.conf.d"
 	ln -sf "${PWD}/xprofile" "${HOME}/.xprofile"
 	ln -sf "${PWD}/Xresources" "${HOME}/.Xresources"
-	ln -sf "${PWD}/zsh/zshrc" "${HOME}/.zshrc"
 }
 
 function createSecrets() {

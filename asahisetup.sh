@@ -27,8 +27,7 @@ sudo dnf install -y \
 	sqlite3 \
 	sway \
 	tldr \
-	vim-X11 \
-	zsh
+	vim-X11
 
 # temp build from source
 git clone --branch v0.12.2 https://github.com/neovim/neovim $HOME/oss/neovim
