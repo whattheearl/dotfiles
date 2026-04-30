@@ -14,6 +14,7 @@ sudo dnf install -y \
 	docker-compose \
 	fd \
 	fira-code-fonts \
+	firefox \
 	fzf \
 	git \
 	htop \
@@ -22,6 +23,7 @@ sudo dnf install -y \
 	luarocks \
 	make \
 	# neovim \
+	nodejs \
 	rbw \
 	sddm \
 	sqlite3 \
