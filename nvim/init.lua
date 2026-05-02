@@ -15,8 +15,8 @@ vim.opt.inccommand = 'split'
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.mouse = 'a'
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.number = true
+-- vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 4
 vim.opt.showmode = false
@@ -103,59 +103,53 @@ require('fzf-lua').setup({
 vim.pack.add({ 'https://github.com/stevearc/oil.nvim' })
 require("oil").setup()
 
-vim.lsp.config['lua_ls'] = {
-  cmd = { 'lua-language-server' },
-  filetypes = { 'lua' },
-  root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
-  settings = {
-    Lua = {
-      -- completion = { callSnippet = 'Replace' },
-      diagnostics = {
-        missing_parameters = false,
-      },
-      hint = {
-        enable = true,
-        arrayIndex = 'Disable',
-      },
-      runtime = {
-        version = 'LuaJIT',
-      },
-      workspace = {
-        checkThirdParty = false,
-        library = {
-          vim.env.VIMRUNTIME,
-          '${3rd}/luv/library',
-        },
-      },
-    }
-  }
-}
-vim.lsp.enable('lua_ls')
-
-vim.lsp.config['bashls'] = {
-  cmd = { 'bash-language-server', 'start' },
-  filetypes = { 'bash', 'sh', 'zsh' },
-}
-vim.lsp.enable('bashls')
-
-vim.lsp.config['html'] = {
-  cmd = { 'vscode-html-language-server', '--stdio' },
-  filetypes = { 'html' },
-  embeddedLanguages = { css = true, javascript = true },
-}
-vim.lsp.enable('html')
-
-vim.lsp.config['cssls'] = {
-  cmd = { 'vscode-css-language-server', '--stdio' },
-  filetypes = { 'css', 'scss', 'less' },
-  settings = {
-    css = { validate = true },
-    scss = { validate = true },
-    less = { validate = true },
-  },
-}
-vim.lsp.enable('cssls')
-
+-- vim.lsp.config['lua_ls'] = {
+--   cmd = { 'lua-language-server' },
+--   filetypes = { 'lua' },
+--   root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
+--   settings = {
+--     Lua = {
+--       -- completion = { callSnippet = 'Replace' },
+--       diagnostics = {
+--         missing_parameters = false,
+--       },
+--       hint = {
+--         enable = true,
+--         arrayIndex = 'Disable',
+--       },
+--       runtime = {
+--         version = 'LuaJIT',
+--       },
+--       workspace = {
+--         checkThirdParty = false,
+--         library = {
+--           vim.env.VIMRUNTIME,
+--           '${3rd}/luv/library',
+--         },
+--       },
+--     }
+--   }
+-- }
+-- vim.lsp.enable('lua_ls')
+--
+-- vim.lsp.config['html'] = {
+--   cmd = { 'vscode-html-language-server', '--stdio' },
+--   filetypes = { 'html' },
+--   embeddedLanguages = { css = true, javascript = true },
+-- }
+-- vim.lsp.enable('html')
+--
+-- vim.lsp.config['cssls'] = {
+--   cmd = { 'vscode-css-language-server', '--stdio' },
+--   filetypes = { 'css', 'scss', 'less' },
+--   settings = {
+--     css = { validate = true },
+--     scss = { validate = true },
+--     less = { validate = true },
+--   },
+-- }
+-- vim.lsp.enable('cssls')
+--
 vim.lsp.config['ts_ls'] = {
   cmd = { 'typescript-language-server', '--stdio' },
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
@@ -168,15 +162,27 @@ vim.lsp.config['ts_ls'] = {
 }
 vim.lsp.enable('ts_ls')
 
-vim.lsp.config['svelte'] = {
-  cmd = { 'svelteserver', '--stdio' },
-  filetypes = { 'svelte' },
+vim.lsp.config['gopls'] = {
+  cmd = { 'gopls' },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
   root_dir = function(bufnr, on_dir)
-    local root_markers = { { 'package.json' }, '.git' }
+    local root_markers = { 'go.mod', '.git' }
+    -- Fallback to the current working directory if no project root is found.
     local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
     on_dir(project_root)
   end,
 }
-vim.lsp.enable('svelte')
+vim.lsp.enable('gopls')
+--
+-- vim.lsp.config['svelte'] = {
+--   cmd = { 'svelteserver', '--stdio' },
+--   filetypes = { 'svelte' },
+--   root_dir = function(bufnr, on_dir)
+--     local root_markers = { { 'package.json' }, '.git' }
+--     local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
+--     on_dir(project_root)
+--   end,
+-- }
+-- vim.lsp.enable('svelte')
 
 -- vim: ts=2 sts=2 sw=2 et
