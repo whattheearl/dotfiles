@@ -1,12 +1,5 @@
 [[ $- != *i* ]] && return
 
-parse_git_branch() {
-	local branch=$(git branch --show-current 2> /dev/null)
-	[[ ! -z $branch ]] && echo " $branch"
-}
-
-export PS1="\w\[\033[0;32m\]\$(parse_git_branch)\[\033[0m\]\$ "
-
 # MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite-preview    openai/gpt-5.4-nano     qwen/qwen3-coder
 # MODELS_TEXT_MEDIUM:   google/gemini-3-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6
 # MODELS_TEXT_LARGE:    google/gemini-3.1-pro-preview           openai/gpt-5.4-pro  anthropic/claude-opus-4.6
@@ -15,7 +8,12 @@ MODEL_TEXT_MEDIUM="google/gemini-3-flash-preview"
 MODEL_TEXT_LARGE="anthropic/claude-opus-4.7"
 
 # INFO: alias
-alias d="go build -C ~/wte/dev && ~/wte/dev/dev"
+##--- quick list
+alias r="docker build ~/wte/home -t mynginx:latest && docker run -p 8080:8080 --name mynginx mynginx:latest"
+alias create='bun run ~/wte/dev/index.ts create'
+alias vd='cd ~/wte/dev && nvim +22 ~/wte/dev/cmd/create.ts'
+alias vw='cd ~/wte/web-template && nvim .'
+#----
 alias commit="ai commit -m ${MODEL_TEXT_MEDIUM}"
 alias ga="git add"
 alias gb="git branch"
@@ -34,20 +32,16 @@ alias gsw="git switch"
 alias gswd="git switch dev"
 alias gswm="git switch master"
 alias gwip="git commit -am 'WIP'; git push;"
-alias ls="ls -lah"
 alias lg="lazygit"
-alias n="cd ~/wte/notes && nvim ~/wte/notes/todo.md"
+alias l="ls -F"
 alias nn="~/notes/scripts/newnote.sh"
 alias q="ai text -m ${MODEL_TEXT_MEDIUM}"
 alias qq="ai text -m ${MODEL_TEXT_LARGE}"
 alias rss="node ~/wte/rss/main.ts"
-alias tdel="tracker delete"
-alias tinfo="tracker info"
-alias tls="tracker list"
-alias tracker="node ~/wte/tracker/main.ts"
-alias tset="tracker set"
+alias sb="source ~/.bashrc"
 alias v="nvim"
-alias vb="nvim ~/.bashrc"
+alias vb="nvim +12 ~/.bashrc"
+alias vt="nvim ~/wte/notes/todo.md"
 alias ytls='fd --full-path ~/wte/youtube -E "*.txt" | tail -n 30'
 alias ytr="retry yt-dlp"
 alias ytsync='cat ~/wte/youtube/channels.txt | xargs yt-dlp \
@@ -71,21 +65,22 @@ retry() {
     done
 }
 
-# INFO: path
-[ -d "$HOME/.nvm" ] && export NVM_DIR=$HOME/.nvm
+parse_git_branch() {
+    local branch=$(git branch --show-current 2> /dev/null)
+    # some color escape issue when parsed by echo i think saw a solution with ysap but too lazy to check
+    [[ ! -z $branch ]] && echo " $branch"
+}
+
+# INFO: envvars
 export BUN_INSTALL="$HOME/.bun"
-export DOTNET_CLI_TELEMETRY_OPTOUT='true'
 export CHROME_BIN='/usr/bin/chromium'
 export EDITOR=nvim
 export HUSKY=0
-export MANPAGER='nvim +Man!'
-export NODE_OPTIONS="--experimental-strip-types"
+export MANPAGER='nvim +Man!';
 export OLLAMA_TELEMETRY_DISABLED=1
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH=$PATH:$HOME/wte/dotfiles/scripts
-export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin
+export PATH="$PATH:$BUN_INSTALL/bin:$HOME/wte/dotfiles/scripts:$HOME/.local/bin:$HOME/go/bin"
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PS1="\w\[\033[0;32m\]\$(parse_git_branch)\[\033[0m\]\$ "
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
-
-# INFO: source
 [ -s "$HOME/.secrets" ] && source $HOME/.secrets
 
