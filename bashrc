@@ -3,12 +3,18 @@
 # MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite-preview    openai/gpt-5.4-nano     qwen/qwen3-coder
 # MODELS_TEXT_MEDIUM:   google/gemini-3-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6
 # MODELS_TEXT_LARGE:    google/gemini-3.1-pro-preview           openai/gpt-5.4-pro  anthropic/claude-opus-4.6
-MODEL_TEXT_SMALL="google/gemini-3.1-flash-lite-preview"
-MODEL_TEXT_MEDIUM="google/gemini-3-flash-preview"
 MODEL_TEXT_LARGE="anthropic/claude-opus-4.7"
+MODEL_TEXT_MEDIUM="google/gemini-3-flash-preview"
+MODEL_TEXT_SMALL="google/gemini-3.1-flash-lite-preview"
 
-# INFO: alias
-##--- quick list
+# prompt
+HISTCONTROL=ignoredups
+HISTFILESIZE=20000
+HISTSIZE=10000
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# alias
+#--- quick list
 alias r="docker build ~/wte/home -t mynginx:latest && docker run -p 8080:8080 --name mynginx mynginx:latest"
 alias create='bun run ~/wte/dev/index.ts create'
 alias vd='cd ~/wte/dev && nvim +22 ~/wte/dev/cmd/create.ts'
@@ -57,7 +63,7 @@ alias ytsync='cat ~/wte/youtube/channels.txt | xargs yt-dlp \
 	-o "/home/jon/wte/youtube/%(upload_date>%Y-%m-%d)s [%(uploader)s] %(title)s.%(ext)s"'
 alias ytwatch='ytls | mpv --playlist=-'
 
-# INFO: functions
+# functions
 retry() {
     while ! $($@); do
         echo "Command $@ failed, retrying in 60 seconds..."
@@ -71,7 +77,7 @@ parse_git_branch() {
     [[ ! -z $branch ]] && echo " $branch"
 }
 
-# INFO: envvars
+# envvars
 export BUN_INSTALL="$HOME/.bun"
 export CHROME_BIN='/usr/bin/chromium'
 export EDITOR=nvim
