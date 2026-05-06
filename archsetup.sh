@@ -34,6 +34,7 @@ yay --noconfirm --needed -S \
 	mpv \
 	neovim \
 	nvm \
+	pipewire-pulse \
 	rbw \
 	ripgrep \
 	rsync \
@@ -43,11 +44,13 @@ yay --noconfirm --needed -S \
 	tldr \
 	ttf-firacode-nerd \
 	typescript-language-server \
+	wireplumber \
 	xclip \
 	xorg-xinput \
 	xorg-xrandr \
 	xorg-xset \
 	ytdl
+systemctl --user restart pipewire
 
 echo 'create secrets...'
 createSecrets
