@@ -54,6 +54,7 @@ createSecrets
 
 echo 'symlink dotfiles...'
 symlinkDotfiles
+mkdir ${HOME}/.config/alacritty
 ln -sf "${PWD}/alacritty/alacritty.ws.toml" "${HOME}/.config/alacritty/alacritty.toml"
 
 echo 'config network...'

@@ -6,7 +6,7 @@ function symlinkDotfiles() {
 	ln -sf "${PWD}/bashrc" "${HOME}/.bashrc"
 	ln -sf "${PWD}/bunfig.toml" "${HOME}/.bunfig.toml"
 	ln -sf "${PWD}/git/gitconfig" "${HOME}/.gitconfig"
-	rmdir "${HOME}/.config/i3" > /dev/null 2>&1 || true
+	rm -rf "${HOME}/.config/i3"
 	ln -sf "${PWD}/i3" "${HOME}/.config"
 	ln -sf "${PWD}/mimeapps.list" "${HOME}/.config"
 	ln -sf "${PWD}/npmrc" "${HOME}/.npmrc"
@@ -34,12 +34,10 @@ function createSecrets() {
 }
 
 function cloneRepos() {
-	[ ! -d ~/wte/dotfiles ] && git clone git@github.com:whattheearl/dotfiles ~/wte/dotfiles
-	[ ! -d ~/wte/notes ] && git clone wteos.wte.sh:notes ~/wte/notes
-	[ ! -d ~/wte/ai ] && (git clone wteos.wte.sh:ai ~/wte/ai && cd ~/wte/ai && bun install && make install)
-	[ ! -d ~/wte/tracker ] && git clone wteos.wte.sh:tracker ~/wte/tracker
+	[ ! -d ~/wte/notes ] && git clone wteos.wte.sh:repos/notes ~/wte/notes
+	[ ! -d ~/wte/ai ] && (git clone wteos.wte.sh:repos/ai ~/wte/ai && cd ~/wte/ai && bun install && make install)
 }
 
 function changeShell() {
-	chsh -s /bin/sh
+	chsh -s /bin/bash
 }
