@@ -17,10 +17,12 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 #--- quick list
 alias r="docker build ~/wte/home -t mynginx:latest && docker run -p 8080:8080 --name mynginx mynginx:latest"
 alias create='bun run ~/wte/dev/index.ts create'
+alias fd="fd --color=never"
 alias vd='cd ~/wte/dev && nvim +22 ~/wte/dev/cmd/create.ts'
 alias vw='cd ~/wte/web-template && nvim .'
 #----
 alias commit="ai commit -m ${MODEL_TEXT_MEDIUM}"
+alias skb="setxkbmap -option caps:escape && setxkbmap -option altwin:swap_alt_win"
 alias ga="git add"
 alias gb="git branch"
 alias gba="git branch -a"
@@ -41,11 +43,12 @@ alias gwip="git commit -am 'WIP'; git push;"
 alias lg="lazygit"
 alias l="ls -F"
 alias nn="~/notes/scripts/newnote.sh"
-alias q="ai text -m ${MODEL_TEXT_MEDIUM}"
+alias q="ai text -m ${MODEL_TEXT_MEDIUM} --status"
 alias qq="ai text -m ${MODEL_TEXT_LARGE}"
 alias rss="node ~/wte/rss/main.ts"
 alias sb="source ~/.bashrc"
 alias v="nvim"
+alias vv="nvim -c \"normal '0'\""
 alias vb="nvim +18 ~/.bashrc"
 alias vt="nvim ~/wte/notes/todo.md"
 alias ytls='fd --full-path ~/wte/youtube -E "*.txt" | tail -n 30'
