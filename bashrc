@@ -12,6 +12,7 @@ HISTCONTROL=ignoredups
 HISTFILESIZE=20000
 HISTSIZE=10000
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+shopt -s histappend
 
 # alias
 #--- quick list
@@ -22,7 +23,6 @@ alias vd='cd ~/wte/dev && nvim +22 ~/wte/dev/cmd/create.ts'
 alias vw='cd ~/wte/web-template && nvim .'
 #----
 alias commit="ai commit -m ${MODEL_TEXT_MEDIUM}"
-alias skb="setxkbmap -option caps:escape && setxkbmap -option altwin:swap_alt_win"
 alias ga="git add"
 alias gb="git branch"
 alias gba="git branch -a"
@@ -40,17 +40,19 @@ alias gsw="git switch"
 alias gswd="git switch dev"
 alias gswm="git switch master"
 alias gwip="git commit -am 'WIP'; git push;"
-alias lg="lazygit"
 alias l="ls -F"
+alias lg="lazygit"
 alias nn="~/notes/scripts/newnote.sh"
 alias q="ai text -m ${MODEL_TEXT_MEDIUM} --status"
 alias qq="ai text -m ${MODEL_TEXT_LARGE}"
 alias rss="node ~/wte/rss/main.ts"
 alias sb="source ~/.bashrc"
+alias skb="setxkbmap -option caps:escape && setxkbmap -option altwin:swap_alt_win"
 alias v="nvim"
-alias vv="nvim -c \"normal '0'\""
 alias vb="nvim +18 ~/.bashrc"
+alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="nvim ~/wte/notes/todo.md"
+alias vv="nvim -c \"normal '0'\""
 alias ytls='fd --full-path ~/wte/youtube -E "*.txt" | tail -n 30'
 alias ytr="retry yt-dlp"
 alias ytsync='cat ~/wte/youtube/channels.txt | xargs yt-dlp \
