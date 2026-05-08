@@ -34,8 +34,8 @@ function createSecrets() {
 }
 
 function cloneRepos() {
-	[ ! -d ~/wte/notes ] && git clone wteos.wte.sh:repos/notes ~/wte/notes
-	[ ! -d ~/wte/ai ] && (git clone wteos.wte.sh:repos/ai ~/wte/ai && cd ~/wte/ai && bun install && make install)
+	[ ! -d ~/wte/notes ] && git clone wte.sh:wte/notes ~/wte/notes
+	[ ! -d ~/wte/ai ] && (git clone wte.sh:wte/ai ~/wte/ai && cd ~/wte/ai && bun install && make install)
 }
 
 function changeShell() {
