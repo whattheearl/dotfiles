@@ -87,7 +87,7 @@ vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
 require('fzf-lua').setup({
   grep = {
     rg_opts =
-    "--column --line-number --no-heading --color=always --smart-case --glob '!package-lock.json' --glob '!*.age'"
+    "--column --line-number --no-heading --color=always --smart-case --glob '!package-lock.json' --glob '!*.age' --glob '!bun.lock'"
   },
   files = {
     cwd_prompt = false,
