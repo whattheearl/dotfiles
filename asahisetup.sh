@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # https://raw.githubusercontent.com/whattheearl/dotfiles/master/asahisetup.sh
 
-source ./utils.sh
+. ./utils.sh
 
 echo 'install packages...'
 sudo dnf install -y \

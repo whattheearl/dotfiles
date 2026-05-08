@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 function symlinkDotfiles() {
 	git clone https://github.com/whattheearl/dotfiles "${HOME}/wte/dotfiles" 2>/dev/null || true

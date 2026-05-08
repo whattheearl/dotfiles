@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# https://raw.githubusercontent.com/whattheearl/dotfiles/master/archsetup.sh
-
-source ./utils.sh
+. utils.sh
 
 echo 'installing packages...'
 command -v yay > /dev/null 2>&1 ||
