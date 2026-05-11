@@ -16,7 +16,7 @@ shopt -s histappend
 
 # alias
 #--- quick list
-alias r="docker build ~/wte/home -t mynginx:latest && docker run -p 8080:8080 --name mynginx mynginx:latest"
+alias r="cd ~/wte/dev && go run ."
 alias create='bun run ~/wte/dev/index.ts create'
 alias fd="fd --color=never"
 alias vd='cd ~/wte/dev && nvim +22 ~/wte/dev/cmd/create.ts'
@@ -53,29 +53,8 @@ alias vb="nvim +19 ~/.bashrc"
 alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="nvim ~/wte/notes/todo.md"
 alias vv="nvim -c \"normal '0'\""
-alias ytls='fd --full-path ~/wte/youtube -E "*.txt" | tail -n 30'
-alias ytr="retry yt-dlp"
-alias ytsync='cat ~/wte/youtube/channels.txt | xargs yt-dlp \
-	--restrict-filenames \
-	--no-overwrites \
-	--limit-rate 5M \
-	--sleep-interval 2 \
-	--max-sleep-interval 5 \
-	--retries 10 \
-	--socket-timeout 30 \
-	--match-filter "duration > 180" \
-	--playlist-end 10 \
-	-o "/home/jon/wte/youtube/%(upload_date>%Y-%m-%d)s [%(uploader)s] %(title)s.%(ext)s"'
-alias ytwatch='ytls | mpv --playlist=-'
 
 # functions
-retry() {
-    while ! $($@); do
-        echo "Command $@ failed, retrying in 60 seconds..."
-        sleep 60
-    done
-}
-
 parse_git_branch() {
     local branch=$(git branch --show-current 2> /dev/null)
     # some color escape issue when parsed by echo i think saw a solution with ysap but too lazy to check
