@@ -61,6 +61,13 @@ parse_git_branch() {
     [[ ! -z $branch ]] && echo " $branch"
 }
 
+retry() {
+    while ! $($@); do
+        echo "Command $@ failed, retrying in 60 seconds..."
+        sleep 60
+    done
+}
+
 # envvars
 export BUN_INSTALL="$HOME/.bun"
 export CHROME_BIN='/usr/bin/chromium'

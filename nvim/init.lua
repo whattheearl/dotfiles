@@ -1,3 +1,16 @@
+-- colors
+vim.cmd("colorscheme default")
+vim.cmd("syntax off")
+
+local groups = {
+  "Normal", "Identifier", "Keyword", "String", "Function",
+  "Comment", "Statement", "PreProc", "Type", "Constant", "Special"
+}
+
+for _, group in ipairs(groups) do
+  vim.api.nvim_set_hl(0, group, { fg = "#ffffff", bg = group == "Normal" and "NONE" or nil })
+end
+
 -- global setting
 vim.g.have_nerd_font = false
 vim.g.mapleader = ' '
@@ -15,8 +28,6 @@ vim.opt.inccommand = 'split'
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.mouse = 'a'
--- vim.opt.number = true
--- vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 4
 vim.opt.showmode = false
@@ -31,7 +42,6 @@ vim.opt.timeoutlen = 300
 vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.writebackup = false
-vim.cmd('syntax off')
 
 -- keymap
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
