@@ -8,6 +8,7 @@ command -v yay > /dev/null 2>&1 ||
 	git clone https://aur.archlinux.org/yay.git ~/oss/yay &&
 	cd ~/oss/yay &&
 	makepkg -si)
+
 yay --noconfirm --needed -S \
 	age \
 	alacritty \
@@ -25,7 +26,7 @@ yay --noconfirm --needed -S \
 	htop \
 	jq \
 	lazygit \
-	librewolf-bin \
+	librewolf \
 	llama.cpp-vulkan \
 	man \
 	mpv \
@@ -46,6 +47,7 @@ yay --noconfirm --needed -S \
 	xorg-xinput \
 	xorg-xrandr \
 	xorg-xset
+
 systemctl --user restart pipewire
 
 echo 'create secrets...'
