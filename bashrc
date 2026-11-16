@@ -17,7 +17,6 @@ shopt -s histappend
 # alias
 #--- quick list
 alias r="cd ~/wte/dev && go run ."
-alias create='bun run ~/wte/dev/index.ts create'
 alias fd="fd --color=never"
 alias vd='cd ~/wte/dev && nvim +22 ~/wte/dev/cmd/create.ts'
 alias vw='cd ~/wte/web-template && nvim .'
@@ -43,8 +42,8 @@ alias gwip="git commit -am 'WIP'; git push;"
 alias l="ls -F"
 alias lg="lazygit"
 alias nn="~/notes/scripts/newnote.sh"
-alias q="ai text -m ${MODEL_TEXT_MEDIUM} --status"
-alias qq="ai text -m ${MODEL_TEXT_LARGE}"
+alias q="node ~/wte/ai/dist/ai.cjs text -m ${MODEL_TEXT_MEDIUM} --status"
+alias qq="node ~/wte/ai/dist/ai.cjs text -m ${MODEL_TEXT_LARGE}"
 alias rss="node ~/wte/rss/main.ts"
 alias sb="source ~/.bashrc"
 alias skb="setxkbmap -option caps:escape && setxkbmap -option altwin:swap_alt_win"
@@ -69,13 +68,12 @@ retry() {
 }
 
 # envvars
-export BUN_INSTALL="$HOME/.bun"
 export CHROME_BIN='/usr/bin/chromium'
 export EDITOR=nvim
 export HUSKY=0
 export MANPAGER='nvim +Man!';
 export OLLAMA_TELEMETRY_DISABLED=1
-export PATH="$PATH:$BUN_INSTALL/bin:$HOME/wte/dotfiles/scripts:$HOME/.local/bin:$HOME/go/bin"
+export PATH="$PATH:$HOME/wte/dotfiles/scripts:$HOME/.local/bin:$HOME/go/bin"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PS1="\w\[\033[0;32m\]\$(parse_git_branch)\[\033[0m\]\$ "
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
