@@ -1,11 +1,11 @@
 [[ $- != *i* ]] && return
 
-# MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite-preview    openai/gpt-5.4-nano     qwen/qwen3-coder
-# MODELS_TEXT_MEDIUM:   google/gemini-3-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6
-# MODELS_TEXT_LARGE:    google/gemini-3.1-pro-preview           openai/gpt-5.4-pro  anthropic/claude-opus-4.6
+# MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite openai/gpt-5.4-nano     qwen/qwen3-coder
+# MODELS_TEXT_MEDIUM:   google/gemini-3.8-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6
+# MODELS_TEXT_LARGE:    google/gemini-4-argon openai/gpt-5.4-pro  anthropic/claude-opus-4.6
 MODEL_TEXT_LARGE="anthropic/claude-opus-4.7"
-MODEL_TEXT_MEDIUM="google/gemini-3-flash-preview"
-MODEL_TEXT_SMALL="google/gemini-3.1-flash-lite-preview"
+MODEL_TEXT_MEDIUM="google/gemini-3.8-flash"
+MODEL_TEXT_SMALL="google/gemini-3.5-flash-lite"
 
 # prompt
 HISTCONTROL=ignoredups
