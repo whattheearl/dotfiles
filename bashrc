@@ -3,8 +3,9 @@
 # MODELS_TEXT_SMALL:    google/gemini-3.1-flash-lite openai/gpt-5.4-nano     qwen/qwen3-coder
 # MODELS_TEXT_MEDIUM:   google/gemini-3.8-flash-preview           openai/gpt-5.4-mini anthropic/claude-sonnet-4.6
 # MODELS_TEXT_LARGE:    google/gemini-4-argon openai/gpt-5.4-pro  anthropic/claude-opus-4.6
-MODEL_TEXT_LARGE="anthropic/claude-opus-4.7"
-MODEL_TEXT_MEDIUM="google/gemini-3.8-flash"
+MODEL_TEXT_LARGE="anthropic/claude-opus-5.5"
+#$MODEL_TEXT_MEDIUM="google/gemini-3.8-flash"
+MODEL_TEXT_MEDIUM="deepseek/deepseek-v4.1-flash-1017"
 MODEL_TEXT_SMALL="google/gemini-3.5-flash-lite"
 
 # prompt
@@ -21,6 +22,7 @@ alias fd="fd --color=never"
 alias vd='cd ~/wte/dev && nvim +22 ~/wte/dev/cmd/create.ts'
 alias vw='cd ~/wte/web-template && nvim .'
 #----
+alias ai="~/wte/ai/dist/ai.mjs"
 alias commit="ai commit -m ${MODEL_TEXT_MEDIUM}"
 alias ga="git add"
 alias gb="git branch"
@@ -42,8 +44,8 @@ alias gwip="git commit -am 'WIP'; git push;"
 alias l="ls -F"
 alias lg="lazygit"
 alias nn="~/notes/scripts/newnote.sh"
-alias q="node ~/wte/ai/dist/ai.cjs text -m ${MODEL_TEXT_MEDIUM} --status"
-alias qq="node ~/wte/ai/dist/ai.cjs text -m ${MODEL_TEXT_LARGE}"
+alias q="ai text -m ${MODEL_TEXT_MEDIUM} --status"
+alias qq="ai text -m ${MODEL_TEXT_LARGE}"
 alias rss="node ~/wte/rss/main.ts"
 alias sb="source ~/.bashrc"
 alias skb="setxkbmap -option caps:escape && setxkbmap -option altwin:swap_alt_win"
