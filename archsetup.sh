@@ -14,7 +14,6 @@ yay --noconfirm --needed -S \
 	alacritty \
 	bluez \
 	bluez-utils \
-	bun \
 	docker \
 	docker-buildx \
 	docker-compose \

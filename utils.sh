@@ -4,7 +4,6 @@ function symlinkDotfiles() {
 	git clone https://github.com/whattheearl/dotfiles "${HOME}/wte/dotfiles" 2>/dev/null || true
 	cd "${HOME}/wte/dotfiles"
 	ln -sf "${PWD}/bashrc" "${HOME}/.bashrc"
-	ln -sf "${PWD}/bunfig.toml" "${HOME}/.bunfig.toml"
 	ln -sf "${PWD}/git/gitconfig" "${HOME}/.gitconfig"
 	rm -rf "${HOME}/.config/i3"
 	ln -sf "${PWD}/i3" "${HOME}/.config"
@@ -35,7 +34,7 @@ function createSecrets() {
 
 function cloneRepos() {
 	[ ! -d ~/wte/notes ] && git clone wte.sh:wte/notes ~/wte/notes
-	[ ! -d ~/wte/ai ] && (git clone wte.sh:wte/ai ~/wte/ai && cd ~/wte/ai && bun install && make install)
+	[ ! -d ~/wte/ai ] && (git clone wte.sh:wte/ai ~/wte/ai && cd ~/wte/ai && npm install && make build && make install)
 }
 
 function changeShell() {
